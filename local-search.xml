@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>test</title>
+    <link href="/2023/03/21/test/"/>
+    <url>/2023/03/21/test/</url>
+    
+    <content type="html"><![CDATA[<p> 嘀嘀嘀</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>毕业设计</title>
+    <link href="/2022/06/25/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+    <url>/2022/06/25/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/</url>
+    
+    <content type="html"><![CDATA[<p>毕业设计</p><p>1、jsp汉字乱码</p><p>首行添加：</p><pre><code class="jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</code></pre><p>2、数据库连接问题</p><p>读取properties问题</p><p><a href="https://www.jb51.net/article/195047.htm" target="_blank" rel="noopener">https://www.jb51.net/article/195047.htm</a></p><p>通过重新安装8.0版本Mysql数据库及对应驱动包解决</p><p>3、authorize标签</p><p><a href="authz:authorize">authz:authorize</a>是一个流程控制标签，能够在满足特定安全需求的条件下显示它的内容体。它有三个互斥的参数：<br>n  ifAllGranted――是一个由逗号分隔的权限列表，用户必须拥有所有列出的权限才能渲染标签体；<br>n  ifAnyGranted――是一个由逗号分隔的权限列表，用户必须至少拥有其中的一个才能渲染标签体；<br>n  ifNotGranted――是一个由逗号分隔的权限列表，用户必须不拥有其中的任何一个才能渲染标签体。</p><p>从标签源码可以知道，authorize标签判断顺序是： access-&gt;url-&gt;ifNotGranted-&gt;ifAllGranted-&gt;ifAnyGranted 但他们的关系是“与”: 即只要其中任何一个属性不满足则该标签中间的内容将不会显示给用户,举个例子:</p><p>4、<strong>IsAuthenticated</strong> 属性是一个布尔值，指示当前用户是否已通过身份验证（已登录）。</p><p>如果当前用户已通过身份验证，则该属性值是一个布尔值 <strong>true</strong>，否则是 <strong>false</strong>。</p><p>isAnonymous() 匿名登录返回true</p><p>5/j_spring_security_check </p><p>spring security 3.x默认登录拦截URL</p><p>5<code>&lt;img src</code>标签引用网络地址图片不显示</p><p>​    这因为在引用链接时,浏览器对地址发起请求加上了refre这个请求头,而有些服务器能根据refre反盗所以引用失败返回403。</p><p>解决：加一行代码就行：<meta name="referrer" content="no-referrer"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>win10修改中文用户名</title>
+    <link href="/2022/06/25/win10%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87%E7%94%A8%E6%88%B7%E5%90%8D/"/>
+    <url>/2022/06/25/win10%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87%E7%94%A8%E6%88%B7%E5%90%8D/</url>
+    
+    <content type="html"><![CDATA[<h3 id="win10修改中文用户名"><a href="#win10修改中文用户名" class="headerlink" title="win10修改中文用户名"></a>win10修改中文用户名</h3><p>1、win+R输入regedit</p><p>2、CTRL + F 搜索 ProfileList</p><p>从下面所有中找到<code>C\Users\中文用户名</code>一项，修改为英文用户名</p><p>3、重启，将C盘users下中文用户名修改为第二步修改的英文用户名，再次重启</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Docker试水</title>
+    <link href="/2021/03/29/Docker%E8%AF%95%E6%B0%B4/"/>
+    <url>/2021/03/29/Docker%E8%AF%95%E6%B0%B4/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>博客自动备份</title>
+    <link href="/2021/03/28/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/"/>
+    <url>/2021/03/28/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="java">origin  https://gitee.com/promefire/blog-backup.git (fetch)origin  https://gitee.com/promefire/blog-backup.git (push)</code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>博客添加每日诗词</title>
+    <link href="/2021/03/22/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/"/>
+    <url>/2021/03/22/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%AF%8F%E6%97%A5%E8%AF%97%E8%AF%8D/</url>
+    
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><hr><p>先留个位，待补充</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Nginx相关</title>
+    <link href="/2021/03/11/Nginx%E7%9B%B8%E5%85%B3/"/>
+    <url>/2021/03/11/Nginx%E7%9B%B8%E5%85%B3/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Nginx服务器"><a href="#Nginx服务器" class="headerlink" title="Nginx服务器"></a>Nginx服务器</h2><blockquote><p>Nginx 是一个高性能的HTTP和反向代理web服务器</p></blockquote><blockquote><p>热部署:就是在应用正在运行的时候升级软件，却不需要重新启动应用。</p></blockquote><h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>什么是正向代理？</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>服务器</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>字符串相关</title>
+    <link href="/2021/03/06/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <url>/2021/03/06/%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    
+    <content type="html"><![CDATA[<h3 id="String转char数组"><a href="#String转char数组" class="headerlink" title="String转char数组"></a>String转char数组</h3><p>方法一：</p><pre><code class="java">String s = &quot;dscsvfdd&quot;;List list = new LinkedList();for(int i = 0;i &lt; s.length();i++){list.add(s.charAt(i));}</code></pre><p><code>str.charAt(int index)</code>返回指定索引处的字符</p><pre><code class="java">public char charAt(int index) {        if ((index &lt; 0) || (index &gt;= value.length)) {            throw new StringIndexOutOfBoundsException(index);        }        return value[index];    }</code></pre><p>方法二：转换为char数组</p><pre><code class="java"> char[] c= s.toCharArray();        for (char a:c) {            list.add(a);        }</code></pre><h3 id="char数组转String"><a href="#char数组转String" class="headerlink" title="char数组转String"></a>char数组转String</h3><p>法一：在构建String时建立</p><pre><code class="java">char data = {&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;};String str1 = new String(data)</code></pre><ul><li><code>String(char[])</code>方法源码</li></ul><pre><code class="java"> public String(char value[]) {        this.value = Arrays.copyOf(value, value.length);    }</code></pre><ul><li><code>Arrays.copyOf(char[] int)</code></li></ul><pre><code class="java">public static char[] copyOf(char[] original, int newLength) {        char[] copy = new char[newLength];        System.arraycopy(original, 0, copy, 0,                         Math.min(original.length, newLength));        return copy;    }</code></pre><p>法二：</p><pre><code class="java">String str2 = String.Valueof(data)</code></pre><ul><li>源码</li></ul><pre><code class="java">public static String valueOf(char data[]) {        return new String(data);    }</code></pre><h3 id="char数组排序"><a href="#char数组排序" class="headerlink" title="char数组排序"></a>char数组排序</h3><pre><code class="java">Arrays.sort(data);</code></pre><h3 id="判断两个字符数组是否相等"><a href="#判断两个字符数组是否相等" class="headerlink" title="判断两个字符数组是否相等"></a>判断两个字符数组是否相等</h3><pre><code class="java"> Arrays.equals(char[] s1, char[] s2);</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>String</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>错误及解决</title>
+    <link href="/2021/03/06/%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3/"/>
+    <url>/2021/03/06/%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3/</url>
+    
+    <content type="html"><![CDATA[<h2 id="错误及解决"><a href="#错误及解决" class="headerlink" title="错误及解决"></a>错误及解决</h2><h4 id="1、No-constructor-found-matching异常"><a href="#1、No-constructor-found-matching异常" class="headerlink" title="1、No constructor found matching异常"></a>1、No constructor found matching异常</h4><ul><li>缺少无参构造函数</li></ul><h4 id="2、文件夹与moudle"><a href="#2、文件夹与moudle" class="headerlink" title="2、文件夹与moudle"></a>2、文件夹与moudle</h4><p>moudle右下角有小蓝块，没有则是普通的文件夹</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210306215753.png" srcset="/img/loading.gif" alt="7"></p><h4 id="3、idea目录错误"><a href="#3、idea目录错误" class="headerlink" title="3、idea目录错误"></a>3、idea目录错误</h4><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210306215732.png" srcset="/img/loading.gif" alt="88888888"></p><h4 id="4、报错：Non-static-method-‘inital-’-cannot-be-referenced-from-a-static-contex"><a href="#4、报错：Non-static-method-‘inital-’-cannot-be-referenced-from-a-static-contex" class="headerlink" title="4、报错：Non-static method ‘inital()’ cannot be referenced from a static contex"></a>4、报错：Non-static method ‘inital()’ cannot be referenced from a static contex</h4><h4 id="5、idea写spring新建moudle是缺少pom-xml文件"><a href="#5、idea写spring新建moudle是缺少pom-xml文件" class="headerlink" title="5、idea写spring新建moudle是缺少pom.xml文件"></a>5、idea写spring新建moudle是缺少pom.xml文件</h4><p>解决：错误新建了Javaee文件，应该是新建maven文件</p><h4 id="6、动态代理代理的是接口，不是他的实现类"><a href="#6、动态代理代理的是接口，不是他的实现类" class="headerlink" title="6、动态代理代理的是接口，不是他的实现类"></a>6、动态代理代理的是接口，不是他的实现类</h4><pre><code class="java">public class Mytest {    public static void main(String[] args) {        ApplicationContext context = new ClassPathXmlApplicationContext(&quot;Context.xml&quot;);        UserServiceImpl userservice = (UserServiceImpl) context.getBean(&quot;userservice&quot;);        userservice.search();    }}</code></pre><pre><code>报错：Exception in thread &quot;main&quot; java.lang.ClassCastException: com.sun.proxy.$Proxy5 cannot be cast to com.aop.user.UserServiceImpl</code></pre><p>解决：不能用接口的实现类（UserServiceImpl）转换转换Proxy的实现类，它们是同级，应该用接口（UserService）来实现</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>踩坑</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java项目部署至服务器</title>
+    <link href="/2021/03/06/Java%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E8%87%B3%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <url>/2021/03/06/Java%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E8%87%B3%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<h3 id="部署流程："><a href="#部署流程：" class="headerlink" title="部署流程："></a>部署流程：</h3><p>1、服务器配置好Java web项目运行环境</p><p>2、本地将java web项目打包成<code>.jar</code>或<code>.war</code>文件</p><p>3、将打包好的文件上传至服务器并移动至tomcat安装目录下<code>webapps</code>路径下</p><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>1、服务器安装Java环境，即下载jdk</p><pre><code class="sh">yum -y install java-1.8.0-openjdk</code></pre><p>2、服务器安装tomcat</p><p><a href="http://tomcat.apache.org/" target="_blank" rel="noopener">Tomcat官网</a>下载<code>tar.gz</code>安装包并上传至服务器解压，在bin目录下输入</p><pre><code class="sh">./startup.sh</code></pre><p>启动服务器</p><h3 id="项目打包"><a href="#项目打包" class="headerlink" title="项目打包"></a>项目打包</h3><p>1、点击<code>Project Structure</code> -&gt; 点上边绿色加号 -&gt; 点击 <code>Web Application: Archive</code> -&gt; 选择<code>For&#39;XXX&#39;</code>—&gt; 上面<code>Include in project</code>勾选 -&gt; 点击Apply 、ok</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210306180346.png" srcset="/img/loading.gif" alt="image-20210306175841970"></p><p>2、点击菜单栏的<code>build</code> ，选择<code>build Artifacts</code></p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210306180229.png" srcset="/img/loading.gif" alt="image-20210306180229527"></p><p>3、最后在<code>out</code>文件夹找到生成的<code>war</code>包</p><h3 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h3><p>把打包好的<code>war</code>包放到<code>tomcat</code>的<strong><code>webapps</code></strong>文件夹下，然后重启<code>tomcat</code>就可以了，<strong><code>tomcat</code>会自动解压</strong>。<br> 注意项目启动后访问路径会发生变化，如之前的访问路径是<code>/hello</code>,那么此时就得加上<code>webapps</code>下解压的那个项目文件夹的名字，即<code>/项目文件名/hello</code>。</p><h3 id="附："><a href="#附：" class="headerlink" title="附："></a>附：</h3><h3 id="Linux开启Mysql远程连接"><a href="#Linux开启Mysql远程连接" class="headerlink" title="Linux开启Mysql远程连接"></a>Linux开启Mysql远程连接</h3><p>1、开启用户的远程访问权限</p><pre><code class="mysql">mysql -uroot -pgrant all privileges on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;123456&#39; with grant option;flush privileges;</code></pre><blockquote><p>% 代表任意主机，可替换为ip地址。root是用户名，‘123456’指定登录密码，与root用户密码无关，不影响</p></blockquote><p>2、开启防火墙端口</p><pre><code class="sh">firewall-cmd --zone=public --add-port=80/tcp --permanent</code></pre><p>3、重启防火墙</p><p>使用idea测试，连接成功</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210306181017.png" srcset="/img/loading.gif" alt="image-20210306181017759"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>部署</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>长亭日暮</title>
+    <link href="/2021/03/02/%E9%95%BF%E4%BA%AD%E6%97%A5%E6%9A%AE/"/>
+    <url>/2021/03/02/%E9%95%BF%E4%BA%AD%E6%97%A5%E6%9A%AE/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="35c0d0497497325dcd7378c257ac53694f0bf511e8395435fd8f520db3a6b6f4">c9d1002c250a451cc409dcc2aed332236c3d621032f88327a2db6da16979f15d5cb7648a83919107969ddc92d863abe1db97ebc06f1ee9b5bf47b4b46578f83ea4bfe17b48bafb0de0b1d4c205aed6781bb76bb1081225ef1b269c6abd7565c79e0fb511c62874d619301b9177f98857e9b3ed2c664932f9ac74c6180c1d6ee433ff6c66e1098a8d83fca67a72416062c7f211cd2bcb55368e634a763f3b6454f03891467485ae44657ea1f1446b78c80c897ae0a36ad89b106e1e40d2f2049e6a46e62d6678f18d69b4cbfdd4da4ba91bf798710d43546de1f6c8e514d2117291b8b13df6cd734383ce9ad0a6594d7127d6e8d9db47181b132e337759a09f6b67b9d433d3d9eb32e8e04efcc6bac34c47602b63a245fc8593ef9d7759206ed5ecaf2fb86949a6330ba58809a548da7f2fe070ed346e48fc9a40bcc2e905c008285005f26a3079d23040b1d3548cd25d5fad431ac397db2686ab629901d900523938c6b82d53add56419ab9d6057f0f6a6444c3be5f024fb59116cd8c2a0a3d7508a0127fa53b77cb1cde6777dc7b2af999433de8fdb99cd1c70005198c4e0dff1249fadcf375bc732e3eb1c5ddba84f9076cb6a26b421c175dba7bbb12cd75eb90503e26e8efa037d4e32800eabe6d1148ef65172ce9090a9bbd6609d4c6b2c28fab571037eaf4181911a4f56889d79deaa0328c5d73967b6df9057c4b28b79</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">输入密码48699527</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>随笔</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>实现博客每日换肤</title>
+    <link href="/2021/02/22/%E7%88%AC%E5%8F%96bing%E5%9B%BE%E7%89%87/"/>
+    <url>/2021/02/22/%E7%88%AC%E5%8F%96bing%E5%9B%BE%E7%89%87/</url>
+    
+    <content type="html"><![CDATA[<h1 id="实现博客每日换肤"><a href="#实现博客每日换肤" class="headerlink" title="实现博客每日换肤"></a>实现博客每日换肤</h1><h2 id="1、爬取bing图片"><a href="#1、爬取bing图片" class="headerlink" title="1、爬取bing图片"></a>1、爬取bing图片</h2><p>使用requests库获取网页html，正则表达式获取图片链接，python’库<code>datetime</code>标注日期，crontab建立定时任务每天爬取</p><p>代码如下：</p><pre><code class="python">import reimport requestsimport datetimeurl = &#39;https://www.bing.com/&#39;headers = {&quot;user-agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36&quot;}response = requests.get(url,headers = headers).textpicUrl =re.findall(r&#39;style=&quot;background-image: url(.*?);&#39;,response,re.S)Url = &#39;https://www.bing.com/&#39; + picUrl[0]pic = requests.get(Url)file1 = &#39;E:\Desktop\\screen\\&#39; + str(datetime.datetime.now().year)+&#39;-&#39;+str(datetime.datetime.now().month)+&#39;-&#39;+str(datetime.datetime.now().day) + &#39;.jpg&#39;file2 = &#39;E:\\blog\\myblog\\themes\\fluid\\source\\img\\&#39; +  &#39;default.jpg&#39;fp = open(file1,&#39;wb&#39;)fp.write(pic.content)fp.close()fp = open(file2,&#39;wb&#39;)fp.write(pic.content)fp.close()</code></pre><hr><p>file1保存图片</p><p>file2直接将图片下载到hexo目录下fluid主题下的资源文件夹中，命名为default.jpg,自动覆盖上一天的图片。以实现自动更换博客顶部图片</p><p><img src="https://gitee.com/Promefire0/pics/raw/master/img/20210304194352.png" srcset="/img/loading.gif" alt="image-20210304194345149"></p><h2 id="2、编写bat文件-实现图片爬取及博客部署"><a href="#2、编写bat文件-实现图片爬取及博客部署" class="headerlink" title="2、编写bat文件,实现图片爬取及博客部署"></a>2、编写bat文件,实现图片爬取及博客部署</h2><pre><code class="sh">e:cd Desktop\screenpython download.pycd E:\blog\myblogstart E:\Git\bin\sh.exe -c &quot;hexo clean &amp;&amp; hexo d -g&quot;exit</code></pre><h2 id="3、设置windows定时任务，设置为超过时间立即执行"><a href="#3、设置windows定时任务，设置为超过时间立即执行" class="headerlink" title="3、设置windows定时任务，设置为超过时间立即执行"></a>3、设置windows定时任务，设置为超过时间立即执行</h2><p><img src="https://gitee.com/Promefire0/pics/raw/master/img/20210304195707.png" srcset="/img/loading.gif" alt="image-20210304195707823"></p><p><img src="https://gitee.com/Promefire0/pics/raw/master/img/20210304195728.png" srcset="/img/loading.gif" alt="image-20210304195728504"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>python</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>爬虫</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>单调栈</title>
+    <link href="/2021/02/20/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+    <url>/2021/02/20/%E5%8D%95%E8%B0%83%E6%A0%88/</url>
+    
+    <content type="html"><![CDATA[<h1 id="单调栈问题"><a href="#单调栈问题" class="headerlink" title="单调栈问题"></a>单调栈问题</h1><h2 id="什么是单调栈"><a href="#什么是单调栈" class="headerlink" title="什么是单调栈"></a>什么是单调栈</h2><p>维护一个栈，里面的元素的大小按照他们所在栈内的位置，满足一定的单调性</p><h2 id="84、柱状图中最大的矩形"><a href="#84、柱状图中最大的矩形" class="headerlink" title="84、柱状图中最大的矩形"></a>84、<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">柱状图中最大的矩形</a></h2><h3 id="解法一：暴力法（超时）"><a href="#解法一：暴力法（超时）" class="headerlink" title="解法一：暴力法（超时）"></a>解法一：暴力法（超时）</h3><pre><code class="java">class Solution {    public int largestRectangleArea(int[] heights) {        int len = heights.length;        if(len == 1) return heights[0];        int maxArea = 0;        for (int i = 0;i &lt; len;i++){            System.out.println(&quot;i = &quot; + i);            int left = i;            int right = i;            for(int j = i - 1;j &gt;= 0;j--){                if(heights[j] &lt; heights[i]){                    left = j;                    break;                }                else{                    left = -1;                    //假设之前还有一个比heights【i】小                }            }            for(int k = i + 1;k &lt; len;k++){                if(heights[k] &lt; heights[i]){                    right = k ;                    break;                }                else{                    right = len;                }            }            System.out.println(&quot;left = &quot;+ left);            System.out.println(&quot;right = &quot;+ right);            int Area = 0;            if(left != i &amp;&amp; right != i){                Area = heights[i] * (right - left - 1);            }            else if((left == i &amp;&amp; right != i) || (left != i &amp;&amp; right == i) ){                Area = heights[i] * (right - left);            }            else if(left - right == 0 ){                Area = heights[i];            }            System.out.println(&quot;Area = &quot;+ Area);            maxArea = Area &gt; maxArea? Area:maxArea;        }        return maxArea;    }}</code></pre><h3 id="解法二：符合后进先出规律，使用栈"><a href="#解法二：符合后进先出规律，使用栈" class="headerlink" title="解法二：符合后进先出规律，使用栈"></a>解法二：符合后进先出规律，使用栈</h3><blockquote><p>栈存放下标，并且对应的高度按从小到大顺序排列</p></blockquote><p>遍历每个高度，如果当前高度比栈顶的高度大，将当前下标入栈，否则，将栈顶元素出栈（这个高度矩形的面积已经可以确定），如果栈顶出栈后栈空，意味着之前没有比他小的柱形，即这个高度的矩形可以扩展到最左边，即<code>width = i</code>。如果出栈后栈不为空，说明<strong>新栈顶</strong>就是栈顶(已出栈）该高度的左边界，即<code>width = i - stack.peekLast() - 1</code>,记录过程中的最大面积。</p><p>遍历结束后，如果此时栈不为空，并且已知栈内高度从小到大排列，所以可以得出<strong>每一个高度的矩形都可以扩展道最右边</strong>。在对宽度<code>Width</code>的计算中，只需把<code>i</code>替换成数组长度<code>len</code>。</p><p>最后返回最大面积</p><pre><code class="java">class Solution {    public int largestRectangleArea(int[] heights) {        int len = heights.length;        //特判        if(len == 0){            return 0;        }        if(len == 1){            return heights[0];        }        Deque&lt;Integer&gt; stack = new ArrayDeque&lt;&gt;();        int area = 0;        //遍历每个高度        for(int i = 0;i &lt; len;i++){            int now = heights[i];            while(!stack.isEmpty() &amp;&amp; now &lt; heights[stack.peekLast()]){                int height = heights[stack.removeLast()];                //相同的话将栈顶元素弹出                while(!stack.isEmpty() &amp;&amp; heights[stack.peekLast()] == height){                    stack.removeLast();                }                int width;                //栈为空说明没有比这个高度更小的柱形，即这个高度的柱形可以扩展到最左边                if(stack.isEmpty()){                    width = i;                }else {                    width = i - stack.peekLast() - 1;                }                area = Math.max(area,height * width);            }            //当前高度比栈顶的高度大，入栈            stack.addLast(i);        }        while(!stack.isEmpty()){            int height = heights[stack.removeLast()];            //相同的话将栈顶元素弹出            while(!stack.isEmpty() &amp;&amp; heights[stack.peekLast()] == height){                stack.removeLast();            }            int width;            //栈为空说明没有比这个高度更小的柱形，即这个高度的柱形可以扩展到最左边            if(stack.isEmpty()){                width = len;            }else {                width = len - stack.peekLast() - 1;            }            area = Math.max(area,height * width);        }        return area;        }}</code></pre><h3 id="解法二优化：使用哨兵节点"><a href="#解法二优化：使用哨兵节点" class="headerlink" title="解法二优化：使用哨兵节点"></a>解法二优化：使用哨兵节点</h3><p>加入哨兵节点 即在数组首尾加入一个高度为0的柱形</p><p>哨兵1可以保证栈非空，从而可以在代码逻辑中删去所有判断栈为空的操作</p><p>哨兵2可以保证一轮遍历结束后，计算出的最大面积即为所求，省去了上面遍历结束后弹栈的操作。因为有哨兵2的存在，它比栈内所有的高度都小，都要进行弹栈操作。简化代码</p><pre><code class="java">class Solution {    public int largestRectangleArea(int[] heights) {        int len = heights.length;        if(len == 0){            return 0;        }        if(len == 1){            return heights[0];        }        int[] Heights = new int[len + 2];        for(int i = 0;i &lt; len ;i++){            Heights[i + 1] = heights[i];        }        len += 2;        heights = Heights;        int area = 0;        Deque&lt;Integer&gt; stack = new ArrayDeque&lt;&gt;();        stack.addLast(0);//加入哨兵节点，保证栈非空        for(int i = 1;i &lt; len;i++){            while( heights[i] &lt; heights[stack.peekLast()]){                int height = heights[stack.removeLast()];                int width = i - stack.peekLast() - 1;                area = Math.max(area,height * width);            }            stack.addLast(i);        }        return area;        }}</code></pre><h2 id="496、下一个更大元素Ⅰ"><a href="#496、下一个更大元素Ⅰ" class="headerlink" title="496、下一个更大元素Ⅰ"></a>496、<a href="https://leetcode-cn.com/problems/next-greater-element-i/" target="_blank" rel="noopener">下一个更大元素Ⅰ</a></h2><h3 id="法一、暴力法"><a href="#法一、暴力法" class="headerlink" title="法一、暴力法"></a>法一、暴力法</h3><p><code>hashmap</code>保存数组<code>nums2</code>中元素及对应的下标</p><pre><code class="java">class Solution {    public int[] nextGreaterElement(int[] nums1, int[] nums2) {        HashMap&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;();        int[] result = new int[nums1.length];        Arrays.fill(result,-1);        for(int i = 0;i &lt; nums2.length;i++){            map.put(nums2[i],i);        }        for(int i =0;i &lt; nums1.length;i++){            int location = map.get(nums1[i]);            for(int j = location;j &lt; nums2.length;j++){                if(nums2[j] &gt; nums1[i]){                    result[i] = nums2[j];                    break;                }            }        }    return result;    }</code></pre><h3 id="法二：单调栈"><a href="#法二：单调栈" class="headerlink" title="法二：单调栈"></a>法二：单调栈</h3><p>维护一个单调递减的栈，如果遇到了大于栈顶元素的值，那么这个值一定是栈顶元素的下一个更大的元素。将栈顶元素弹出，写入map。最后将数组元素遍历结束，如果栈不为空，说明站内元素找不到更大的元素，即为-1</p><pre><code class="java">class Solution {    public int[] nextGreaterElement(int[] nums1, int[] nums2) {            HashMap&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;();            Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();            int[] result = new int[nums1.length];            for(int i = 0;i &lt; nums2.length;i++){                while (!stack.isEmpty() &amp;&amp; stack.peek() &lt; nums2[i]){                    map.put(stack.pop(),nums2[i]);                }                stack.push(nums2[i]);            }            while (!stack.isEmpty()){                map.put(stack.pop(),-1);            }            for(int i = 0;i &lt; nums1.length;i++){                result[i] = map.get(nums1[i]);            }            return result;        }}</code></pre><h3 id="739、每日温度"><a href="#739、每日温度" class="headerlink" title="739、每日温度"></a><a href="https://leetcode-cn.com/problems/daily-temperatures/" target="_blank" rel="noopener">739、每日温度</a></h3><p>简简单单</p><blockquote><p>一开始傻乎乎地将数组元素值存进栈，之后在 知元素值求下表问题上出错，因为我是用map&lt;T[i],i&gt;存储，而给定数组中可以出现重复温度，这些重复温度在map中仅记录最新值。</p><p>应该为存放下标</p></blockquote><blockquote><p>我用的是Stack&lt;&gt;集合，提交只击败24%</p><p>官方题解使用队列模拟栈<code>Deque&lt;Integer&gt; stack = new LinkedList&lt;Integer&gt;();</code>。击败76%，记录学习</p></blockquote><pre><code class="java">class Solution {    public int[] dailyTemperatures(int[] T) {        Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();        int[] result = new int[T.length];        Arrays.fill(result,0);        for(int i = 0;i &lt; T.length;i++){            while (!stack.isEmpty() &amp;&amp; T[stack.peek()] &lt; T[i]){                //int j = stack.pop();                result[stack.peek()] = i - stack.pop() ;            }            stack.push(i);        }        return result;    }}</code></pre><p>问题：</p><p>Leetcode 42 接雨水</p><p>Leetcode 503 下一个更大元素||</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring(二)  AOP</title>
+    <link href="/2021/02/12/Spring(%E4%BA%8C)%20%20AOP/"/>
+    <url>/2021/02/12/Spring(%E4%BA%8C)%20%20AOP/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Spring-二-AOP"><a href="#Spring-二-AOP" class="headerlink" title="Spring(二)  AOP"></a>Spring(二)  AOP</h1><p>AOP的底层机制就是动态代理！</p><h2 id="一、静态-动态代理"><a href="#一、静态-动态代理" class="headerlink" title="一、静态/动态代理"></a>一、静态/动态代理</h2><p>Spring AOP中的动态代理主要有两种方式，JDK动态代理和CGLIB动态代理。</p><p>JDK动态代理通过反射来接收被代理的类，并且<strong>要求被代理的类必须实现一个接口</strong>。JDK动态代理的核心是InvocationHandler接口和Proxy类。</p><p>如果目标类没有实现接口，那么Spring AOP会选择使用CGLIB来动态代理目标类。</p><p>CGLIB（Code Generation Library），是一个代码生成的类库，可以在运行时动态的生成某个类的子类，注意，CGLIB是通过继承的方式做的动态代理，因此如果某个类被标记为final，那么它是无法使用CGLIB做动态代理的。</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210212205231.png" srcset="/img/loading.gif" alt="image-20210212205231361"></p><pre><code>基于接口的代理两个类InvocationHandler调用处理程序返回结果proxy提供生成动态代理类和实例的静态方法</code></pre><h2 id="二、一些名词"><a href="#二、一些名词" class="headerlink" title="二、一些名词"></a>二、一些名词</h2><ul><li>横切关注点：跨越应用程序多个模块的方法或功能。即是，与我们业务逻辑无关的，但是我们需要关注的部分，就是横切关注点。如日志 , 安全 , 缓存 , 事务等等 ….</li><li>切面（ASPECT）：横切关注点 被模块化 的特殊对象。即，它是一个类。</li><li>通知（Advice）：切面必须要完成的工作。即，它是类中的一个方法。</li><li>目标（Target）：被通知对象。</li><li>代理（Proxy）：向目标对象应用通知之后创建的对象。</li><li>切入点（PointCut）：切面通知 执行的 “地点”的定义。</li><li>连接点（JointPoint）：与切入点匹配的执行点。</li></ul><h2 id="三、实现方法："><a href="#三、实现方法：" class="headerlink" title="三、实现方法："></a>三、实现方法：</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>使用spring的API接口（xml配置）主要是Spring接口实现</p><pre><code class="xml">  &lt;bean id=&quot;userservice&quot; class=&quot;com.aop.user.UserServiceImpl&quot;/&gt;    &lt;bean id=&quot;log&quot; class=&quot;com.aop.promefire.Log&quot;/&gt;    &lt;bean id=&quot;afterLog&quot; class=&quot;com.aop.promefire.AfterLog&quot;/&gt;    &lt;aop:config&gt;        &lt;!--切入点--&gt;        &lt;!--excution表达式   UserServiceImpl.* 表示类中所有方法 --&gt;        &lt;!--UserServiceImpl.*(..) 两个点表示可以有任意个参数--&gt;        &lt;aop:pointcut id=&quot;pointcut&quot; expression=&quot;execution(* com.aop.user.UserServiceImpl.*(..))&quot;/&gt;        &lt;aop:advisor advice-ref=&quot;log&quot; pointcut-ref=&quot;pointcut&quot;/&gt;        &lt;aop:advisor advice-ref=&quot;afterLog&quot; pointcut-ref=&quot;pointcut&quot;/&gt;    &lt;/aop:config&gt;</code></pre><h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>自定义类实现AOP（主要是切面定义）</p><p>定义一个增强类：</p><pre><code class="java">public class DiyPointCut {    public void before(){        System.out.println(&quot;======方法前======&quot;);    }    public void after(){        System.out.println(&quot;======方法后======&quot;);    }}</code></pre><pre><code class="java"> &lt;bean id =&quot;diy&quot; class=&quot;com.aop.diy.DiyPointCut&quot;/&gt;    &lt;aop:config&gt;        &lt;aop:aspect ref=&quot;diy&quot;&gt;            &lt;!--切入点--&gt;            &lt;aop:pointcut id=&quot;pointcut&quot; expression=&quot;execution(* com.aop.user.UserServiceImpl.*(..))&quot;/&gt;            &lt;aop:before method=&quot;before&quot; pointcut-ref=&quot;pointcut&quot;/&gt;            &lt;aop:after method=&quot;after&quot; pointcut-ref=&quot;pointcut&quot;/&gt;        &lt;/aop:aspect&gt;    &lt;/aop:config&gt;</code></pre><h2 id="附：execution表达式"><a href="#附：execution表达式" class="headerlink" title="附：execution表达式"></a>附：execution表达式</h2><p>语法格式：</p><pre><code class="xml">execution(&lt;修饰符模式&gt;？&lt;返回类型模式&gt;&lt;方法名模式&gt;(&lt;参数模式&gt;)&lt;异常模式&gt;?)</code></pre><p>示例：</p><pre><code class="xml">execution(* com.sample.service.impl..*.*(..))</code></pre><p>解释：</p><ul><li>execution()，表达式的主体</li><li>第一个“*”符号，表示返回值类型任意；</li><li>com.sample.service.impl，AOP所切的服务的包名，即我们的业务部分</li><li>包名后面的“..”，表示当前包及子包</li><li>第二个“*”，表示类名，即所有类</li><li>.*(..)，表示任何方法名，括号表示参数，两个点表示任何参数类型</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Spring</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Spring</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring(一)</title>
+    <link href="/2021/02/08/Spring(%E4%B8%80)/"/>
+    <url>/2021/02/08/Spring(%E4%B8%80)/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h2 id="一、IOC理论"><a href="#一、IOC理论" class="headerlink" title="一、IOC理论"></a>一、IOC理论</h2><p>对于新增或修改业务，不需要修改代码。只需要修改配置文件，</p><h2 id="二、实例化容器"><a href="#二、实例化容器" class="headerlink" title="二、实例化容器"></a>二、实例化容器</h2><h4 id="bean骨架"><a href="#bean骨架" class="headerlink" title="bean骨架"></a>bean骨架</h4><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;    &lt;bean id=&quot;...&quot; class=&quot;...&quot;&gt;        &lt;!-- collaborators and configuration for this bean go here --&gt;    &lt;/bean&gt;    &lt;bean id=&quot;...&quot; class=&quot;...&quot;&gt;        &lt;!-- collaborators and configuration for this bean go here --&gt;    &lt;/bean&gt;    &lt;!-- more bean definitions go here --&gt;&lt;/beans&gt;</code></pre><h2 id="三、IOC创建对象方式"><a href="#三、IOC创建对象方式" class="headerlink" title="三、IOC创建对象方式"></a>三、IOC创建对象方式</h2><p>1、默认使用无参构造创建</p><p>2、使用有参构造</p><p>​    1、下标赋值</p><pre><code class="XML">&lt;bean id=&quot;user&quot; class=&quot;com.promefire.injection.User&quot;&gt;        &lt;!-- collaborators and configuration for this bean go here --&gt;        &lt;constructor-arg index=&quot;0&quot; value=&quot;智杰&quot;/&gt;    &lt;/bean&gt;</code></pre><p>​    2、类型赋值</p><pre><code class="Xml">&lt;bean id = &quot;user&quot; class = &quot;com.promefire.injection.User&quot;&gt;        &lt;constructor-arg type=&quot;java.lang.String&quot; value=&quot; （Type赋值）智杰&quot;/&gt;    &lt;/bean&gt;</code></pre><blockquote><p> 不建议使用，可能会有多个相同类型的变量</p></blockquote><p>​    3、参数名</p><pre><code class="XML">&lt;bean id = &quot;user&quot; class = &quot;com.promefire.injection.User&quot;&gt;        &lt;constructor-arg name=&quot;name&quot; value=&quot;promefire&quot;/&gt;    &lt;/bean&gt;</code></pre><p>配置文件加载的时候，容器中管理的对象已经被初始化</p><blockquote><p>不能忘记写有参构造函数，否则会报错</p></blockquote><pre><code class="JAVA">@Test    public void text1() {        ApplicationContext context = new ClassPathXmlApplicationContext(&quot;Userbeans.xml&quot;);        User user = (User) context.getBean(&quot;user&quot;);        //User user = context.getBeans(&quot;user&quot;,User.class);        //可以省去强转类型        System.out.println(user);    }</code></pre><h2 id="四、Spring-配置"><a href="#四、Spring-配置" class="headerlink" title="四、Spring 配置"></a>四、Spring 配置</h2><h4 id="1、别名"><a href="#1、别名" class="headerlink" title="1、别名"></a>1、别名</h4><pre><code></code></pre><h2 id="五、依赖注入DI"><a href="#五、依赖注入DI" class="headerlink" title="五、依赖注入DI"></a>五、依赖注入DI</h2><h4 id="1、构造器注入"><a href="#1、构造器注入" class="headerlink" title="1、构造器注入"></a>1、构造器注入</h4><h4 id="2、set注入"><a href="#2、set注入" class="headerlink" title="2、set注入"></a>2、set注入</h4><p>基于 setter 的 DI</p><h4 id="3、拓展注入"><a href="#3、拓展注入" class="headerlink" title="3、拓展注入"></a>3、拓展注入</h4><blockquote><p>需要加入xml依赖</p></blockquote><p>P命名空间注入(proprety)</p><pre><code class="xml"> xmlns:p=&quot;http://www.springframework.org/schema/p&quot; &lt;bean id=&quot;user&quot; class=&quot;com.promefire.injection.User&quot; p:name=&quot;智杰&quot; p:age=&quot;18&quot;/&gt;</code></pre><p>C命名空间注入（construct）</p><pre><code class="xml"> xmlns:c=&quot;http://www.springframework.org/schema/c&quot;&lt;bean id=&quot;user2&quot; class=&quot;com.promefire.injection.User&quot; c:name=&quot;promefire&quot; c:age=&quot;20&quot; /&gt;</code></pre><h4 id="4、bean生命周期"><a href="#4、bean生命周期" class="headerlink" title="4、bean生命周期"></a>4、bean生命周期</h4><p>单例模型（默认）：<code>scope</code></p><pre><code class="xml"> &lt;bean id=&quot;user&quot; class=&quot;com.promefire.injection.User&quot; p:name=&quot;promefire&quot; p:age=&quot;18&quot; scope=&quot;singleton&quot;/&gt;</code></pre><p>原型模式 ：每次从容器中取出一个对象，都是一个新的对象</p><pre><code class="xml"> &lt;bean id=&quot;user&quot; class=&quot;com.promefire.injection.User&quot; p:name=&quot;promefire&quot; p:age=&quot;18&quot; scope=&quot;prototype&quot;/&gt;</code></pre><h2 id="六、自动装配"><a href="#六、自动装配" class="headerlink" title="六、自动装配"></a>六、自动装配</h2><p>1、在xml中显示的配置</p><p>2、在Java中显示的配置</p><p>3、隐式的自动装配bean</p><h4 id="1、Byname"><a href="#1、Byname" class="headerlink" title="1、Byname"></a>1、Byname</h4><p>​       会自动在容器上下文寻找与自己对象set方法后面的<strong>值</strong>对应的bean id</p><pre><code class="xml">  &lt;bean id=&quot;people&quot; class=&quot;com.promefire.pojo.People &quot; autowire=&quot;byName&quot; /&gt;</code></pre><blockquote><p>必须名字唯一</p></blockquote><h4 id="2、ByType"><a href="#2、ByType" class="headerlink" title="2、ByType"></a>2、ByType</h4><p>​        会自动在容器上下文寻找与自己对象set方法对象属性<strong>类型</strong>相同的bean</p><pre><code class="xml">    &lt;bean id=&quot;people&quot; class=&quot;com.promefire.pojo.People &quot; autowire=&quot;byType&quot; /&gt;</code></pre><blockquote><p>必须类型唯一</p></blockquote><h4 id="3、使用注解实现自动装配"><a href="#3、使用注解实现自动装配" class="headerlink" title="3、使用注解实现自动装配"></a>3、使用注解实现自动装配</h4><h6 id="Autowired注解"><a href="#Autowired注解" class="headerlink" title="@Autowired注解"></a>@Autowired注解</h6><p>1、导入约束</p><p>2、配置注解的支持:<a href="context:annotation-config/">context:annotation-config/</a></p><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://www.springframework.org/schema/context        http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;    &lt;context:annotation-config/&gt;&lt;/beans&gt;</code></pre><pre><code class="java">public class People {    @Autowired    private Cat cat;    @Autowired    private Dog dog;    private String name;</code></pre><blockquote><p>属性前加@Autowired注解可以省略setter（）方法，前提是属性在IOC容器中存在且名字相同</p></blockquote><pre><code class="java">public class People {    @Autowired(required = false)    private Cat cat;    @Autowired    @Qualifier(&quot;dog111&quot;)//显示地指定一个id    private Dog dog;    private String name;</code></pre><blockquote><p>自动装配环境比较复杂时，可以用Qualifier（“XXX”）配合Autowired使用</p></blockquote><h6 id="Resource注解"><a href="#Resource注解" class="headerlink" title="@Resource注解"></a>@Resource注解</h6><pre><code class="java">public class People {    @Resource(name = &quot;cat2&quot;)    private Cat cat;    @Resource    private Dog dog;    private String name;</code></pre><p>@Resource和@Autowired比较:</p><ul><li>都是用来自动装配，都可以放在属性字段上</li><li>@Autowired 默认先使用byType，必须要求这个对象存在</li><li>@Resource 默认ByName，找不到就用ByType实现，还找不到，报错</li></ul><h2 id="七、使用注解开发"><a href="#七、使用注解开发" class="headerlink" title="七、使用注解开发"></a>七、使用注解开发</h2><blockquote><p>1、开启注解约束，</p><p>2、扫描包，使该包下注解生效</p></blockquote><p>1、bean</p><p>2、属性如何注入</p><pre><code class="java">@Componentpublic class User {    //等价于&lt;bean id=&quot;user&quot; class=&quot;com.promefire.dao.User&quot;&gt;    //        &lt;property name=&quot;name&quot; value=&quot;智杰&quot;/&gt;    //    &lt;/bean&gt;    //@Value(&quot;智杰&quot;)    public String name ;    @Value(&quot;智杰&quot;)    public void setName(String name) {        this.name = name;    }}</code></pre><p>3、衍生的注解</p><p>4、自动装配</p><ul><li>@Autowired：自动装配，通过类型，名字<ul><li>如果不能唯一指定，需要@Qualifier(“xxx”)显示指定一个id</li></ul></li><li>@Nullable :该字段可以为null</li><li>@Resource: 自动装配，通过名字，类型</li></ul><p>5、作用域</p><ul><li>@Scope(“singleton”)</li><li>@Scope(“prototype”)</li></ul><h2 id="八、流程"><a href="#八、流程" class="headerlink" title="八、流程"></a>八、流程</h2><h3 id="SpringIOC启动流程"><a href="#SpringIOC启动流程" class="headerlink" title="SpringIOC启动流程"></a>SpringIOC启动流程</h3><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210208155607.png" srcset="/img/loading.gif" alt="IOC容器bean实例化主线"></p><h3 id="IOC容器启动主线"><a href="#IOC容器启动主线" class="headerlink" title="IOC容器启动主线"></a>IOC容器启动主线</h3><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210208155735.png" srcset="/img/loading.gif" alt="IOC容器启动主线"></p><h3 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h3><table><thead><tr><th>应用场景</th><th align="left">注解</th><th align="left">注解说明</th></tr></thead><tbody><tr><td>处理请求</td><td align="left">@Controller</td><td align="left">处理 Http 请求</td></tr><tr><td>处理请求</td><td align="left">@RestController</td><td align="left">@Controller 的衍生注解</td></tr><tr><td>路由请求</td><td align="left">@RequestMapping</td><td align="left">路由请求 可以设置各种操作方法</td></tr><tr><td>路由请求</td><td align="left">@GetMapping</td><td align="left">GET 方法的路由</td></tr><tr><td>路由请求</td><td align="left">@PostMapping</td><td align="left">POST 方法的路由</td></tr><tr><td>路由请求</td><td align="left">@PutMapping</td><td align="left">PUT 方法的路由</td></tr><tr><td>路由请求</td><td align="left">@DeleteMapping</td><td align="left">DELETE 方法的路由</td></tr><tr><td>请求参数</td><td align="left">@PathVariable</td><td align="left">处理请求 url 路径中的参数 /user/{id}</td></tr><tr><td>请求参数</td><td align="left">@RequestParam</td><td align="left">处理问号后面的参数</td></tr><tr><td>请求参数</td><td align="left">@RequestBody</td><td align="left">请求参数以json格式提交</td></tr><tr><td>返回参数</td><td align="left">@ResponseBody</td><td align="left">返回 json 格式</td></tr></tbody></table><ul><li>依赖：spring-webmvc</li></ul><pre><code>&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;&lt;dependency&gt;    &lt;groupId&gt;org.springframework&lt;/groupId&gt;    &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;    &lt;version&gt;5.2.9.RELEASE&lt;/version&gt;&lt;/dependency&gt;</code></pre><blockquote><p>快捷键 </p></blockquote><p><code>Ctrl+Alt+V</code>:生成变量名</p><p><code>psvm</code>：main函数</p><p><code>sout</code>:输出</p><p><code>Alt + Enter</code>:强制类型转换</p><p><code>Ctrl + /</code>: 注释</p><p><code>Ctrl + SHift + /</code>：块注释</p><blockquote><p>踩坑</p></blockquote><pre><code>&lt;bean id=&quot;hello&quot; class=&quot;com.promefire.Hello&quot;&gt;        &lt;property name=&quot;str&quot; value=&quot;Spring&quot;/&gt;    &lt;/bean&gt;</code></pre><blockquote><p>name 后面的值 要与Hello类中变量相同</p></blockquote><blockquote><p>id = 变量名 class = new的对象</p><p>Hello hello =  new Hello()</p><p>property 给对象中的属性设置一个值</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Spring</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Spring</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>秒杀系统</title>
+    <link href="/2021/02/08/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F(%E4%B8%80%EF%BC%89/"/>
+    <url>/2021/02/08/%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F(%E4%B8%80%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="学习记录"><a href="#学习记录" class="headerlink" title="学习记录"></a>学习记录</h1><h3 id="1、XML-CDATA"><a href="#1、XML-CDATA" class="headerlink" title="1、XML CDATA"></a>1、XML CDATA</h3><p>使用方法：<![CDATA[文本内容]]></p><p>XML文档中所有的文本均会被解析器解析，只有CDATA区段中的文本会被解析器忽略 </p><h3 id="2、mybatis和spring整合方式"><a href="#2、mybatis和spring整合方式" class="headerlink" title="2、mybatis和spring整合方式"></a>2、mybatis和spring整合方式</h3><ul><li>XML提供SQL</li><li>DAO接口Mapper</li></ul><h3 id="3、jdbc连接池是个什么东西"><a href="#3、jdbc连接池是个什么东西" class="headerlink" title="3、jdbc连接池是个什么东西?"></a>3、jdbc连接池是个什么东西?</h3><p>在增删改查操作中，避免频繁地创建和销毁JDBC连接，可以通过连接池复制已经创建好的连接</p><h3 id="4、class-path-resource-jdbc-properties-cannot-be-opened-because-it-does-not-exist"><a href="#4、class-path-resource-jdbc-properties-cannot-be-opened-because-it-does-not-exist" class="headerlink" title="4、class path resource [jdbc.properties] cannot be opened because it does not exist"></a>4、class path resource [jdbc.properties] cannot be opened because it does not exist</h3><p>之前的写法:</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/image-20210206181410274.png" srcset="/img/loading.gif" alt="image-20210206181410274"></p><p>修改为 相对路径 即 <code>spring/jdbc.properties</code>：</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/image-20210206181440925.png" srcset="/img/loading.gif" alt="image-20210206181440925"></p><h3 id="5、Connections-could-not-be-acquired-from-the-underlying-database"><a href="#5、Connections-could-not-be-acquired-from-the-underlying-database" class="headerlink" title="5、Connections could not be acquired from the underlying database!"></a>5、Connections could not be acquired from the underlying database!</h3><p>折腾了半天，最后把<code>jdbc.properties</code>中的配置直接写到<code>spring-dao.xml</code>中</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210206194704.png" srcset="/img/loading.gif" alt="image-20210206192625885"></p><p>结果是一个 &amp; 报错 ，删掉&amp;及后面的就成功了，我直接？？？</p><p>xml配置文件中，要用<code>&amp;amp;</code>代替</p><pre><code class="xml">  &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql://localhost:3306/seckill?useUnicode=true&amp;amp;characterEncoding=UTF-8&quot;/&gt;</code></pre><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210206194708.png" srcset="/img/loading.gif" alt="image-20210206193140866"></p><p>得出结论，<code>spring-dao.xml</code>不能读取<code>jdbc.properties</code>文件</p><p>暂未解决</p><p>6、java的运行不会保留形参</p><pre><code class="java">List&lt;Seckill&gt; queryAll(int offet, int limit)-&gt;queryAll(arg0,arg1);</code></pre><p>如果之后操作需要形参，如：</p><pre><code class="xml">&lt;select id=&quot;queryAll&quot; resultType=&quot;Seckill&quot;&gt;        select seckill_id,NAME,NUMBER ,start_time,end_time,create_time        from seckill        order by create_time DESC        limit #{offset},#{limit}    &lt;/select&gt;</code></pre><p>则可以通过<code>@Param()</code>注解实现</p><pre><code class="java">  List&lt;Seckill&gt; queryAll(@Param(&quot;offset&quot;) int offset,@Param(&quot;limit&quot;) int limit);</code></pre><h3 id="7、Error-instantiating-class-org-seckill-entity-Seckill-with-invalid-types-or-values"><a href="#7、Error-instantiating-class-org-seckill-entity-Seckill-with-invalid-types-or-values" class="headerlink" title="7、Error instantiating class org.seckill.entity.Seckill with invalid types () or values ()."></a>7、Error instantiating class org.seckill.entity.Seckill with invalid types () or values ().</h3><p>seckill实体类缺少无参构造</p><h3 id="8、这个dao层单元测试之前一直有几个属性报Null，检查之后发现是两个实体类共有的属性变量名不一致造成的。"><a href="#8、这个dao层单元测试之前一直有几个属性报Null，检查之后发现是两个实体类共有的属性变量名不一致造成的。" class="headerlink" title="8、这个dao层单元测试之前一直有几个属性报Null，检查之后发现是两个实体类共有的属性变量名不一致造成的。"></a>8、这个dao层单元测试之前一直有几个属性报Null，检查之后发现是两个实体类共有的属性变量名不一致造成的。</h3><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210206213044.png" srcset="/img/loading.gif" alt="image-20210206213044063"></p><h2 id="Service层"><a href="#Service层" class="headerlink" title="Service层"></a>Service层</h2><p>9、报错：不兼容的类型</p><p>Incompatible types. Required:  java.util.logging.Logger<br>                                    Found:       org.slf4j.Logger</p><p>解决：</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210214172740.png" srcset="/img/loading.gif" alt="image-20210214172718380"></p><p>将划红线的修改为</p><pre><code class="java">import org.slf4j.Logger;import org.slf4j.LoggerFactory;</code></pre><p>10、 roll back回滚？spring事务</p><pre><code class="java">Connection conn = DriverManager.getConnection();try {      conn.setAutoCommit(false);  //将自动提交设置为false                             执行CRUD操作     conn.commit();      //当两个操作成功后手动提交  } catch (Exception e) {      conn.rollback();    //一旦其中一个操作出错都将回滚，所有操作都不成功    e.printStackTrace();  } finally {    conn.colse();}</code></pre><p>​    事务是一系列的动作，一旦其中有一个动作出现错误，必须全部回滚，系统将事务中对数据库的所有已完成的操作全部撤消，滚回到事务开始的状态，避免出现由于数据不一致而导致的接下来一系列的错误。事务的出现是为了确保数据的完整性和一致性，在目前企业级应用开发中，事务管理是必不可少的。</p><p>11、spring整合mybatis Dao层注入失败,但是单元测试通过，无报错</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210222184343.png" srcset="/img/loading.gif" alt="image-20210222184343517"></p><h2 id="Web层"><a href="#Web层" class="headerlink" title="Web层"></a>Web层</h2><p>1、Restful是什么</p><p>一种url规范</p><p>参考：<a href="https://zhuanlan.zhihu.com/p/30396391" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/30396391</a></p><p>2、Spring的Model</p><p>作用：从控制层直接返回前端所需的数据</p><p>3、@RequestMapping()</p><p>参数produce：指定返回值类型还可以指定字符编码</p><p>@Responsebody</p><p>@ResponseBody的作用其实是将java对象转为json格式的数据</p><p>4、@Pathvariable()</p><p>通过 @PathVariable 可以将URL中占位符参数{xxx}绑定到处理器类的方法形参中@PathVariable(“xxx“)</p><p>5、重定向和请求转发</p><p>6、@CookieValue</p><p><strong>作用：</strong><br>用于把指定cookie名称的值传入控制器方法参数。<br><strong>属性：</strong><br><code>value</code>：指定cookie的名称。<br><code>required</code>：是否必须有此cookie。</p><p>7、重复秒杀、秒杀关闭异常，在service层直接抛出，需要在controller层处理</p><p>8、静态包含</p><pre><code class="xml">&lt;%@include file=&quot;common/head.jsp&quot;%&gt;    &lt;%--静态包含--%&gt;</code></pre><p>9、</p><p>jsp页面中<a> 标签中的target=_blank是什么意思?</p><p>解答：<br>表示该连接在新窗口中打开</p><p>_self相同框架<br>_top整页<br>_blank新建一个窗口<br>_parent父窗口<br>其它的就是自定义了，可以指向已有的窗口名称</p><p>10、html页面中文乱码</p><p>查看页面编码</p><pre><code class="shell">&quot;windows-1252&quot;</code></pre><p>修改系统编码（失败）</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210228211640.png" srcset="/img/loading.gif" alt="image-20210228211513054"></p><p>修稿jsp文件编码设置</p><p>原先设置</p><pre><code class="xml">&lt;%@page contentType=&quot;text/html; charset = utf-8&quot; language=&quot;java&quot; %&gt;</code></pre><p>解决方案：将<code>charser = utf-8</code>修改为<code>pageEncoding=utf-8</code></p><p>pageEncoding是jsp文件本身的编码</p><p>contentType的charset是指服务器发送给客户端时的内容编码</p><p>成功显示：</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210228215202.png" srcset="/img/loading.gif" alt="image-20210228215145090"></p><p>11、jquery选择器,选择到一个节点</p><pre><code class="xml">var killPhoneModal = $(&#39;#killPhoneModal&#39;)</code></pre><p>12、电话输入框无法弹出</p><p>原因：未能成功加载<code>seckill.js</code></p><p>将路径<code>resources/script/seckill.js</code>前加上<strong>‘ / ’</strong></p><pre><code class="xml">&lt;script src=&quot;/resources/script/seckill.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code></pre><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210301213822.png" srcset="/img/loading.gif" alt="image-20210301213806481"></p><p>13、电话输入框无法输入</p><p>解决方法：加入一个样式</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210301214822.png" srcset="/img/loading.gif" alt="image-20210301214822407"></p><p>14、/time/now加载失败</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210301220229.png" srcset="/img/loading.gif" alt="image-20210301220229002"></p><p>原因是web层SeckillController中没有加入@ResponseBody注解</p><pre><code class="java"> @RequestMapping(value = &quot;/time/now&quot;,method = RequestMethod.GET)    @ResponseBody    public SeckillResult&lt;Long&gt; time(){        Date now  = new Date();        return new SeckillResult(true,now.getTime());    }</code></pre><p>15、Uncaught TypeError: killPhoneModal.modal is not a function</p><p>jqury包含了两次，注释掉一个</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210307142611.png" srcset="/img/loading.gif" alt="image-20210307142611084"></p><p>16、修改Js无效</p><p>清除浏览器缓存并按F12 network中禁用缓存</p><p>17、IDEA中 JSP/HTML文件无法导入js文件</p><p>解决，需要把js文件所在的上级目录设置为<code>resources</code>文件夹</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210311225119.png" srcset="/img/loading.gif" alt="image-20210311225112298"></p><p>18、电话输入框一直弹出</p><p>原因是<code>seckill.js</code>文件中  <code>cookie</code>值与<code>SeckillController.java</code>中cookie值不一致，导致无法读入输入的手机号</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210312221706.png" srcset="/img/loading.gif" alt="image-20210312221659634"></p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210312221725.png" srcset="/img/loading.gif" alt="image-20210312221724921"></p><p>最后</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210312221926.png" srcset="/img/loading.gif" alt="image-20210312221926927"></p><p>数据库</p><p><img src="https://gitee.com/Promefire/pictures/raw/master/img/20210312221943.png" srcset="/img/loading.gif" alt="image-20210312221943382"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Spring</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Spring</tag>
+      
+      <tag>SSM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hexo博客相关</title>
+    <link href="/2020/03/01/First/"/>
+    <url>/2020/03/01/First/</url>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="f8769ded247afb3d88a0d842977f1c886f388983e2a022791bc64d2d04111224">c24603c5be0b4bca31c20b5bfea068b6513e6cffdf5736fbac329f6beadf13a33aa4c800db88991acca50ae2e162dae04b7f0d601def6b5684157db08305d923a41e42533c1e3816a90233a48f503e8ae3f5d0fd308caa2ec75c338c5bcd5807d52c34732c3decbca17e869775be95b650a711165d9aad1cf53b9f8c46e44dca1203b3bf3e867d835124a04609be4538bf68170f6a1bd7ee14324f257e543a735e35e2a07e7b19abdd08a155824eac4c917d57f6edf322bf933333a5424e106de410185095650a9eb6d58d413cee1da70a20a5d72fdcd09c390be08885fe1cf090ec8834d66a020bb48b8ef2e285c107de1a5e9a7738a39f42846a195bc4bdaec935be41badf96537464d904f041f1d31240fe19ba800c0e09756222b945f4ecbd422b5a70670754c31b5b788f97e7c664c3e04431a0103bba7ed469e24119d34b0d75d76d6e99825fb25cb52ab862056a18c567d3dfa1fb802f9449862b6cc3b8b3050386f0f40fa3c0efa3840b71c69029e39201157b2012ddbdd0401dfceeac4e4b1f0068d1ba59b4c741cba7400f1af911b40b984eed145a2962ee2493c456d28ae49fb5fb3eda961bab07bdd9d41fbef734960a3cb149d11faf238c8a24ce2293986cf62d44cd889348aa396201ad93e1a4b08797e34283023161dd445b5ab15c8c984d151eddb4b00928befd927a25c0153a9260a57d9a8af4159f40bb58f73772445e973828950ef28dcbb27184d83661b81bc2e01d862833059cf8eec4bfb494301a5f6dfec2220bbd38ec4714b50efcf224e63b80937c9c790a4bcdc4176e4b19349621ea55feab0483a2d3363b88c78337d20e7f1cef4425799829004a58f88ba1ea66493bc9a61eed8fcc72cc872ffb1abc057308cf1536048a4a555642e573eb9faeb40d809af33b06a088753e95ec437579d7050afc51a93c121295efc508347244f9804559fe558622df1289b90e656ba654fa74dd1e79fbc6c214f06ab3ae54e401cb90cb4f8d0fb9727289d5a548d701d9596d1121eb251d598175d21f08b38bc27b3e2e320334426faa007a9af9584a24f056a7dff4906a4f8d51326d987a623569e891f5bd18af199add0a1eb274205cab8a9a1ef5ee2ae37fecf4db41ecf8f696f5b63768ca7e38ae6deadb5c4f530aa0028debf75f390cb95cf81993fe7bd4d50ccb5313d7cd34b7fe95cae5e6dd8b3fcdaa1d376f111c3f3194834672d3d960c3611a2d8d511b144085d5f397c88c09262ee64b885828566b9b79f5ef92597884836ccf5365606e00125588f6483d0d222a6092e00e22bbee9b101f69200671554ccd4f9404ee2aac47fb3da27b478f549b8b0c8dd94f0f16a0a7abb001700c8e5aa425c274bc64f6b1eae38159dadee10bfdfacdad31eb518d16dbf06c717b41a31ed4a7bdb30923395c84c849c7e2a7d51c9f3ad3fe1161ccf2286c8229db57e06c335de0909822fcf28871553cf4e30ab3bfe76e8e445d9b98512c1465bc94731b7173595f20a6d96548fb28dc3cd664cfe882c9a2ff39b41033a67b939e8a158ad2c59dc5a493ff1596df6d946474b96b4acd69968b7df8e510eebaad20a90917f9500a168f9d46be13a0d03bf6efe9556a1c5bce4b21917d5d16c638524a9b024b03d87e079bd0c2f9a4f7a8b5800cc95b1ef3e6aae0441b17e7d261248c5bb67246b21534ca37b045ee311fc101e81617d682cc8bf55e87edf0bb8c4d40d8e1c9a470d730bf9a490f65467c9218187b8efb2f38059a1566ad56d38f4896b8df66d3f22a0eba230329faf60ecfe5836f9d654688a6e423a948f92a38cc9ccda891fd0d92d50408e15952d270aa8b95ab3094f2347c52799176b21f5239b2038acf65579954801e12b3f7e3ac795cd87998e1929f0a8a19047d8d2c6b6187295ea7287b849dc7ed409dffcac1e6bbbf4152026bcbae1e7ddaa551edabd94a7856ebffe8ce58eed5c7370c2b960780797882650881d921e26e61dfb2356ec019e386e548496210d5727af23fd54cf19bd9da71532b93899b6641f1da223203543655a655ae7de01c4122781780b08618ea53bdf8feb06a3774616284e45acadf32fbd8fa62def154faa8a099cb4caee609309ddfc0772437905d2637721ab91d22dc68ac201bd8996f87a116aa528a443efa6002d78c2e492369373fd2859742c8c53daeb51519a8e140ddf77c22e10a1e7524c11995a4295c9ca3676afea88a4582c05528ae776c6b4ffe227b3764f2b12dd44ea43fcb4dcd1439e514e0b53420baf75314578fe1aa393bb06580178be70239c2686488623ae52ebac516e04ef015161993cc2007097373964e97f83976a51809f550b29a567966be0d43b04d01cf26bf92a33c1e2e9d88251bd8f29d11007aad128dcf25d9a24ef1523554d3c72905ea8a0b21fb7c22d0bda309b782fa36a3cbe4ab8621632d7e610912c6e33b0740f01af88d094e81c74431d96d356b759b9c0db884b43e8445755b705496809b573bf971f3c163594f58784dbdc1ee79d740f4ed3084f529c1097a514ccc06e9b675c25b07f2e9228fe60a54afa6f3fa0c9766b6c0648be7b5b9ef34b6232d0bd357a482348d59b544f33a108f6c0758f983774ef14d457e958c3b51512be85fa5e10c2d462a903db38ed079fc111008a2e066882241b88d6a2106cab3b5c138e8df5dc42bfdcc01330f665d7de7268ce8a4dc32d379b356a6c3209ed115b8a8de7b654272dbeadd0ad2f562ac7d57fc7cd12bf31d8ca0442486edeb8783e4845b30ff640bbcd8c3dfd2b7dd05d0112b761d18c235046ecdd7b1513196cd8ce3674d49b4697d2309e875a9e610b4b511e97306986e6b63268a957102b1140e00025d2313f155c4b02d4ab82f3aeeed88f1d4fdb9572fab43bbfcc03dbc66f06ad138fd1b95b71f0f07c5322bafc9db2653caf069ea4b6a49cf6d7d4a2fa540db584dbb0a2ec0b404b8dfd7bbed576103b74d96299ddf0dc9d29e58ba21540e022183166eb34fcac535b271637e52ac1d4b689d95c2f153d25ab4c945453b75d1e7dcce02b731a47b64a0f45eb70c96c1d16ab9c0ce77aab70ca48dab9c4a3d8aeb0351ef207d77669a1222fbf2c755a2e1eb690943ef40a56ef7a563b87062123933d18ad5321a8c3c0291e58e2658bf1ee9a2f3a676ee16734e2c93fbd24cd8283143dd1133a7bf5a3d6998b8008f864f6e4ecd28e08b29c3460b79f14259768203c46115b0dc5248581de0558ef6cc132e4c0f61145da185f03a9be64d44e95ff11fb27e56731b272d35adc2a205dfaec4</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">密码456</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+      <tag>博客</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
