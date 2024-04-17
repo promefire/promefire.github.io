@@ -1,0 +1,891 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>unity-ruby大冒险 | 桥边红药的博客</title><meta name="author" content="桥边红药"><meta name="copyright" content="桥边红药"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="unity笔记，有点乱，有空再整理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unity-ruby大冒险">
+<meta property="og:url" content="http://example.com/post/20230605150148.html">
+<meta property="og:site_name" content="桥边红药的博客">
+<meta property="og:description" content="unity笔记，有点乱，有空再整理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.promefire.top/blog-img/20240110-4f699e0e7681be6ebaa5f96bd40f0a8c.png">
+<meta property="article:published_time" content="2023-06-05T15:01:48.000Z">
+<meta property="article:modified_time" content="2024-04-17T08:00:14.216Z">
+<meta property="article:author" content="桥边红药">
+<meta property="article:tag" content="unityProject">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.promefire.top/blog-img/20240110-4f699e0e7681be6ebaa5f96bd40f0a8c.png"><link rel="shortcut icon" href="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png"><link rel="canonical" href="http://example.com/post/20230605150148.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'unity-ruby大冒险',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-04-17 08:00:14'
+}</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4085662_tt8yn9tbdfe.css"><link rel="stylesheet" href="/css/transpancy.css"><link rel="stylesheet" href="/css/nineSquardGrid.css"><link rel="stylesheet" href="/css/runtime.css"><link rel="stylesheet" href="/css/galleries.css"><link rel="stylesheet" href="/css/equipment.css"><meta name="generator" content="Hexo 6.3.0"><style>.admonition{margin:1.5625em 0;padding:.6rem;overflow:hidden;font-size:.64rem;page-break-inside:avoid;border-left:.3rem solid #42b983;border-radius:.3rem;box-shadow:0 .1rem .4rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);background-color:#fafafa}p.admonition-title{position:relative;margin:-.6rem -.6rem .8em -.6rem!important;padding:.4rem .6rem .4rem 2.5rem;font-weight:700;background-color:rgba(66,185,131,.1)}.admonition-title::before{position:absolute;top:.9rem;left:1rem;width:12px;height:12px;background-color:#42b983;border-radius:50%;content:' '}.info>.admonition-title,.todo>.admonition-title{background-color:rgba(0,184,212,.1)}.attention>.admonition-title,.caution>.admonition-title,.warning>.admonition-title{background-color:rgba(255,145,0,.1)}.error>.admonition-title,.fail>.admonition-title,.failure>.admonition-title,.missing>.admonition-title{background-color:rgba(255,82,82,.1)}.admonition.info,.admonition.todo{border-color:#00b8d4}.admonition.attention,.admonition.caution,.admonition.warning{border-color:#ff9100}.admonition.error,.admonition.fail,.admonition.failure,.admonition.missing{border-color:#ff5252}.info>.admonition-title::before,.todo>.admonition-title::before{background-color:#00b8d4;border-radius:50%}.attention>.admonition-title::before,.caution>.admonition-title::before,.warning>.admonition-title::before{background-color:#ff9100;border-radius:50%}.error>.admonition-title::before,.fail>.admonition-title::before,.failure>.admonition-title::before,.missing>.admonition-title::before{background-color:#ff5252;border-radius:50%}.admonition>:last-child{margin-bottom:0!important}</style></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', () => { preloader.initLoading() }, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', () => { preloader.endLoading() }, 'preloader_end')
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li><li><a class="site-page child" href="/galleries/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.promefire.top/blog-img/20240110-4f699e0e7681be6ebaa5f96bd40f0a8c.png')"><nav id="nav"><span id="blog-info"><a href="/" title="桥边红药的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png" alt="Logo"/><span class="site-name">桥边红药的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li><li><a class="site-page child" href="/galleries/"><i class="fa-fw fas fa-images"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">unity-ruby大冒险</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-05T15:01:48.000Z" title="发表于 2023-06-05 15:01:48">2023-06-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-17T08:00:14.216Z" title="更新于 2024-04-17 08:00:14">2024-04-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Unity/">Unity</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>三天时间跟着B站教程终于把入门小游戏做完了！可喜可贺！记一下笔记</p>
+<p>贴上B站教程：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1V4411W787/?spm_id_from=333.337.search-card.all.click">Ruby大冒险</a></p>
+<hr>
+<ul>
+<li>切记一点：不要再场景运行时后进行修改，一定要关了之后再修改</li>
+</ul>
+<p>1、在人物属性刚体界面冻结Z轴旋转，可以使人物刚体碰撞时不旋转</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-518bcbf3446c71a0f30107eae80da5cf.png" alt="image-20230602103837705"></p>
+<p>2、碰撞抖动问题</p>
+<p>要使用刚体更新位置</p>
+<p>3、相机跟随</p>
+<p>窗口–&gt;包管理器—&gt;包：Unity注册表—&gt;cinemachine. 安装完成后可以在菜单游戏对象中找到。创建一个2d cinema</p>
+<p>4、设置水面不能走</p>
+<p>将除水面的其他tile右侧的碰撞器类型设置为无</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-6b7d1714d03da94ec2a23a1d38642fcd.png" alt="image-20230602111828620"></p>
+<p>5、合并一些碰撞格</p>
+<p>给tilemap添加组件 Composite Collider 2D,</p>
+<p>在由复合使用上打勾</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-e7b9fb558d0a2063087fc7b8865d6a9b.png" alt="image-20230602112421994"></p>
+<ul>
+<li>记得要在地图的Rigibody 2D中把重力关掉（只关这一个没用），把地图刚体设置为静态</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-fb841344318cffe5e9f4d3e5dbf4e201.png" alt="image-20230602112659463"></p>
+<p>6、取消地图边界外视野</p>
+<p>相机属性里添加一个cinemachineConfiner</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-30df5777989ae988596a8c652705526e.png" alt="image-20230602112830954"></p>
+<p>新建一个CameraConfiner</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-e417887ddbaa6df0860b668e94762e3f.png" alt="image-20230602113021563"></p>
+<p>属性里添加一个可编程的碰撞体</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/20230605150148/image-20230602113218724.png" alt="image-20230602113218724"></p>
+<p>点击编辑碰撞器，框出边界</p>
+<p>只是触发，要不然会和人物产生碰撞</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-18556ff956efaa5fd3c27f9fecc9e2ec.png" alt="image-20230602113519684"></p>
+<ul>
+<li>要把新建成的CameraConfiner拖动到2D相机的Bounding Shape 2D，要把框好的边界赋给相机，要不然就只是一个文件</li>
+</ul>
+<p>7、使用math函数时，直接添加了<code>using System;</code>添加``using System.Math`会报错，不晓得什么情况</p>
+<p>8、预置体，树木、草莓等元素设置好脚本和碰撞体积以后，想要批量复制，就用到了预置体，再Assets下新建一个prefabs文件夹，将做好的元素放入其中，如果变蓝了就说明已经是预置体了</p>
+<p>9、</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">#是进入有伤害
+void OnTriggerEnter2D(Collider2D other)&#123;&#125;
+#呆在区域内一直有伤害
+void OnTriggerStay2D(Collider2D other)&#123;&#125;</code></pre>
+<p>10、</p>
+<p>报错：[ AnimationEvent has no function name specified!</p>
+<p>在动画编辑器中添加了动画事件但没有进行后续处理，删除即可</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-b4dbe3d241499fb18a0373a5cd6d7733.png" alt="image-20230604112938771"></p>
+<p>11、图层之间不希望碰撞，在项目设置–&gt; 2d物理中把√去掉</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-e342164fc5e8b937cc2c2034291a293e.png" alt="image-20230604140038562"></p>
+<p>12、</p>
+<p>在对象刚生成的时候就会执行Awake方法，在start方法之前执行。</p>
+<pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">Void Awake()&#123;&#125;</code></pre>
+<p>发射子弹的时候，不能用start()方法</p>
+<p>13、</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">Destroy(this.gameObject,2f);</code></pre>
+<p>参数： 要销毁的游戏对象，经过多长时间销毁。</p>
+<p>14、</p>
+<p>这个不行</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">EnemyController ec &#x3D; other.GetComponent&lt;EnemyController&gt;();</code></pre>
+<p>要加一个gameObject</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">EnemyController ec &#x3D; other.gameObject.GetComponent&lt;EnemyController&gt;();</code></pre>
+<p>15、</p>
+<p>启动特定动画</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">private Animator anim;&#x2F;&#x2F;获取动画组件
+
+void Start()
+    &#123;
+        .
+        .
+        .
+        anim &#x3D; GetComponent&lt;Animator&gt;();
+    &#125;
+void something()&#123;
+    anim.SetTrigger(&quot;Launch&quot;);
+&#125;
+</code></pre>
+<p>16、特效</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-bc407720c1f1a380bb3ce8b6c2ff6324.png" alt="image-20230604144025643"></p>
+<p>0-2可以在两张贴图中随机</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-2dde14aa2aac267f015d182ad99ac318.png" alt="image-20230604143959187"></p>
+<p>生命周期颜色，烟冒到上面会变淡</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-bdf40630f7a6913a350c9084637f4c68.png" alt="image-20230604144837441"></p>
+<p>打败敌人后，停止特效</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">public ParticleSystem brokenEffect;&#x2F;&#x2F;获取特效组件
+
+public void Fixed()&#123;
+    .
+       .
+    
+       if(brokenEffect.isPlaying &#x3D;&#x3D; true)&#123;
+           brokenEffect.Stop();
+       &#125;
+    	.
+       .
+
+   &#125;</code></pre>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-1eda2b8012da3d8aa95495cc17aabd61.png" alt="image-20230604145736865"></p>
+<p>17、画布</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-dff000b023ed07e93095ceacb5cdfaf8.png" alt="image-20230604154233728"></p>
+<p>18、音乐组件<code>Audio source</code></p>
+<p>19、离敌人远声音小，声音改成3D，最大距离改小</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-c780ffcb7294ef963acf8328d4c39db5.png" alt="image-20230605093848619"></p>
+<p>20、UImanager中Text组件托不上去</p>
+<p>原因是组件类型是Text TMP，而代码中是Text，把代码改成:</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">using TMPro;
+public TMP_Text progressText;</code></pre>
+<p>21、地图编辑</p>
+<p>窗口—》2d–》平铺调色板</p>
+<p>22、</p>
+<p>vscode代码补全问题<a target="_blank" rel="noopener" href="https://blog.csdn.net/G0rgeoustray/article/details/106754628">https://blog.csdn.net/G0rgeoustray/article/details/106754628</a></p>
+<p>23、射线检测</p>
+<p>射线未能检测到碰撞体：最终发现问题是由于使用了错误的<code>Physics.Raycast</code>方法而不是<code>Physics2D.Raycast</code>。由于你的游戏对象是2D的，因此需要使用2D版本的射线检测方法。</p>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">foreach (Vector3 direction in directions)
+   &#123;
+       RaycastHit2D[] hits &#x3D; Physics2D.RaycastAll(explosionPosition, direction, power);
+           Debug.DrawRay(explosionPosition, direction * power, Color.red, 1f); &#x2F;&#x2F; 打印射线起始点和终点
+           foreach (RaycastHit2D hit in hits)
+           &#123;
+               if (hit.collider.CompareTag(&quot;iceCube&quot;))
+               &#123;
+                   Debug.Log(&quot;有冰块！！！&quot;);
+                   Destroy(hit.collider.gameObject);
+               &#125;
+           &#125;
+&#125;</code></pre>
+<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码：</h2>
+<p>1、PlayController.cs</p>
+<ul>
+<li>玩家</li>
+</ul>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+public class PlayerController : MonoBehaviour
+&#123;
+    &#x2F;&#x2F; Start is called before the first frame update
+    public float speed &#x3D; 5f;
+    private int maxHealth &#x3D; 5;
+    private int currentHealth ;
+
+    &#x2F;&#x2F;玩家的朝向
+    private   Vector2 lookDirection &#x3D; new Vector2(1,0);&#x2F;&#x2F;默认朝右  
+
+    Rigidbody2D rbody;&#x2F;&#x2F;刚体组件
+    public int MyMaxHealth&#123;get &#123;return maxHealth;&#125;&#125;
+    public int MyCurrentHealth&#123;get&#123;return currentHealth;&#125;&#125;
+
+    private float invincibleTime &#x3D; 2f;&#x2F;&#x2F;无敌时间2秒
+
+    private float invincibleTimer;&#x2F;&#x2F;无敌计时器
+
+    private bool isInvincible;&#x2F;&#x2F;是否无敌
+
+    private Animator anim;&#x2F;&#x2F;获取动画组件
+
+    public GameObject bulletPrefab;
+
+    &#x2F;&#x2F;音效
+    public AudioClip hitClip; &#x2F;&#x2F;受伤
+
+    public AudioClip bulletClip;
+
+    public int curBulletCount;
+
+    public int maxBulletCount &#x3D; 99;
+
+
+
+
+
+
+    void Start()
+    &#123;
+        rbody &#x3D; GetComponent&lt;Rigidbody2D&gt;();
+        invincibleTimer &#x3D; 0;
+        currentHealth &#x3D; maxHealth;
+
+        curBulletCount  &#x3D; 2;
+        anim &#x3D; GetComponent&lt;Animator&gt;();
+        UImanager.instance.UpdateHealthBar(currentHealth,maxHealth);&#x2F;&#x2F;更新血条
+        UImanager.instance.UpdateBulletCount(curBulletCount,maxBulletCount);
+
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        &#x2F;&#x2F; transform.Translate(transform.right * speed * Time.deltaTime);
+        float moveX &#x3D; Input.GetAxisRaw(&quot;Horizontal&quot;);&#x2F;&#x2F;控制水平
+        float moveY &#x3D; Input.GetAxisRaw(&quot;Vertical&quot;);&#x2F;&#x2F;W:1,S:-1;
+
+
+        &#x2F;&#x2F;
+        Vector2 moveVector &#x3D; new Vector2(moveX,moveY);
+        if(moveVector.x !&#x3D; 0 || moveVector.y !&#x3D; 0 )&#123;
+            lookDirection &#x3D; moveVector;
+        &#125;
+        anim.SetFloat(&quot;Look X&quot;,lookDirection.x);
+        anim.SetFloat(&quot;Look Y&quot;,lookDirection.y);
+        anim.SetFloat(&quot;Speed&quot;,moveVector.magnitude);&#x2F;&#x2F;取向量长度
+
+        
+        &#x2F;&#x2F;移动
+        Vector2 position &#x3D; rbody.position;
+        &#x2F;&#x2F; position.x +&#x3D; moveX * speed * Time.deltaTime;
+        &#x2F;&#x2F; position.y +&#x3D; moveY * speed * Time.deltaTime;
+        &#x2F;&#x2F; transform.position &#x3D; position;  更新组件位置
+        position +&#x3D; moveVector * speed *Time.deltaTime;
+        rbody.MovePosition(position);&#x2F;&#x2F;更新刚体位置
+
+        &#x2F;&#x2F;无敌计时
+        if(isInvincible)&#123;
+        invincibleTimer -&#x3D; Time.deltaTime;
+        if(invincibleTimer &lt; 0)&#123;
+            isInvincible &#x3D; false;
+        &#125;
+    &#125;  
+
+
+    &#x2F;&#x2F;按下J建进行攻击
+    if(Input.GetKeyDown(KeyCode.J) &amp;&amp; curBulletCount &gt; 0)&#123;
+        ChangeBulletCount(-1);
+        anim.SetTrigger(&quot;Launch&quot;);
+        GameObject bullet &#x3D; Instantiate(bulletPrefab,rbody.position + Vector2.up * 0.5f,Quaternion.identity);&#x2F;&#x2F;参数分别是对象、位置、方向（默认方向）
+        AudioManager.instance.AudioPlay(bulletClip);&#x2F;&#x2F;播放音效
+        BulletController bc &#x3D; bullet.GetComponent&lt;BulletController&gt;();
+        if(bc !&#x3D; null)&#123;
+            bc.move(lookDirection,300);
+            
+        &#125;
+
+    &#125;
+    &#x2F;&#x2F;按下E建与npc交互
+    if(Input.GetKeyDown(KeyCode.E))&#123;
+        RaycastHit2D hit &#x3D; Physics2D.Raycast(rbody.position,lookDirection,2f,LayerMask.GetMask(&quot;NPC&quot;));&#x2F;&#x2F;layerMask根据名字检测层级
+        if(hit.collider !&#x3D; null)&#123;
+            Debug.Log(&quot;hit npc!!&quot;);
+            NpcManager npc &#x3D; hit.collider.GetComponent&lt;NpcManager&gt;();
+            if(npc !&#x3D; null)&#123;
+                npc.show();
+            &#125;
+        &#125;
+    &#125;
+
+
+    &#125;
+
+
+    public void ChangeHealth(int amount)&#123;
+        &#x2F;&#x2F; 伤害是传入负值的，受到伤害，如果是无敌状态，就不进行伤害判定，反之，开启无敌状态
+        if(amount &lt; 0)&#123;
+            if(isInvincible)&#123;
+                return;
+            &#125;
+            anim.SetTrigger(&quot;Hit&quot;);
+            AudioManager.instance.AudioPlay(hitClip);&#x2F;&#x2F;播放音效
+            isInvincible &#x3D; true;
+            invincibleTimer &#x3D; invincibleTime;&#x2F;&#x2F;重置无敌时间
+            
+        &#125;
+
+        &#x2F;&#x2F; 约束一下玩家生命值，0---max
+        currentHealth &#x3D; Math.Clamp(currentHealth + amount ,0,maxHealth);
+        UImanager.instance.UpdateHealthBar(currentHealth,maxHealth);&#x2F;&#x2F;更新血条
+        Debug.Log(currentHealth + &quot;&#x2F;&quot; + maxHealth);
+    &#125;
+
+    public void ChangeBulletCount(int amount)&#123;
+        curBulletCount &#x3D; Math.Clamp(curBulletCount + amount ,0,maxBulletCount);
+        UImanager.instance.UpdateBulletCount(curBulletCount,maxBulletCount);
+    &#125;
+
+&#125;
+
+</code></pre>
+<p>2、EnemyController.cs</p>
+<ul>
+<li>敌人相关</li>
+</ul>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+public class EnemyController : MonoBehaviour
+&#123;
+    public int speed &#x3D; 3;
+    public float changeDirectionTime &#x3D; 2f;&#x2F;&#x2F;改变方向的时间。
+    public float changeTimer;&#x2F;&#x2F;改变方向的计时器 
+
+    private int Health &#x3D; 5;
+
+    public int getHealth&#123;get &#123;return Health;&#125;&#125;
+
+    private bool isDead;
+
+    public ParticleSystem brokenEffect;&#x2F;&#x2F;获取特效组件
+
+    &#x2F;&#x2F; private Health;
+    private Rigidbody2D rbody;
+    public bool isVertical;
+    private Vector2 moveDirection;
+    private Animator anim;&#x2F;&#x2F;获取动画组件
+
+    public AudioClip robotFixedClip;
+
+    &#x2F;&#x2F; public AudioClip robotWalkClip;
+
+
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        rbody &#x3D; GetComponent&lt;Rigidbody2D&gt;();
+        anim &#x3D; GetComponent&lt;Animator&gt;();
+        moveDirection &#x3D; isVertical ? Vector2.up : Vector2.right;
+        changeTimer &#x3D; changeDirectionTime;
+        isDead &#x3D; false;
+    
+        
+
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        if(isDead)&#123;return;&#125;&#x2F;&#x2F;挂了就别移动了
+        changeTimer -&#x3D; Time.deltaTime;
+        if(changeTimer &lt; 0)&#123;
+            moveDirection *&#x3D; -1;
+            changeTimer &#x3D; changeDirectionTime;
+        &#125;
+        Vector2 position &#x3D; rbody.position;
+        position.x +&#x3D; moveDirection.x * speed * Time.deltaTime;
+        position.y +&#x3D; moveDirection.y * speed * Time.deltaTime;
+        rbody.MovePosition(position);
+        anim.SetFloat(&quot;moveX&quot;,moveDirection.x);
+        anim.SetFloat(&quot;moveY&quot;,moveDirection.y);
+
+    &#125;
+    &#x2F;&#x2F;怪物掉血
+    public void ChangeHealth(int amount)&#123;
+        Health &#x3D; Math.Clamp(Health + amount ,0,Health);
+        if(Health &#x3D;&#x3D; 0)&#123;
+            Fixed();
+            Destroy(this.gameObject,3f);
+        &#125;
+        Debug.Log(Health);
+    &#125;
+    &#x2F;&#x2F;播放死亡动画
+    public void Fixed()&#123;
+        isDead &#x3D; true;
+        if(brokenEffect.isPlaying &#x3D;&#x3D; true)&#123;
+            brokenEffect.Stop();
+        &#125;
+        AudioManager.instance.AudioPlay(robotFixedClip);&#x2F;&#x2F;播放音效
+        &#x2F;&#x2F;死了就没碰撞掉血了
+        rbody.simulated &#x3D; false;
+        anim.SetTrigger(&quot;fix&quot;);
+    &#125;
+    
+    private void OnCollisionEnter2D(Collision2D other) &#123;
+        PlayerController pc &#x3D; other.gameObject.GetComponent&lt;PlayerController&gt;();
+        if(pc !&#x3D; null)&#123;
+            pc.ChangeHealth(-1);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>3、Collectible.cs</p>
+<ul>
+<li>草莓</li>
+</ul>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">using static System.Console;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+&#x2F;&#x2F; using System.Math;
+
+public class Collectible : MonoBehaviour
+&#123;
+
+    
+    public ParticleSystem collectEffect;
+
+    public AudioClip collectClip;
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        
+    &#125;
+
+    &#x2F;&#x2F; 碰撞检测相关类
+    &#x2F;&#x2F; &lt;param name&#x3D;&quot;other&quot;&gt;&lt;&#x2F;param&gt;
+
+    void OnTriggerEnter2D(Collider2D other)&#123;
+        &#x2F;&#x2F;检测一下与草莓碰撞的物体有没有挂载playercontroller脚本
+        PlayerController pc &#x3D; other.GetComponent&lt;PlayerController&gt;();
+        if(pc !&#x3D; null)&#123;
+            if(pc.MyCurrentHealth &lt; pc.MyMaxHealth)&#123;
+            
+            pc.ChangeHealth(1);  
+        
+            
+            Instantiate(collectEffect,transform.position,Quaternion.identity);
+            AudioManager.instance.AudioPlay(collectClip);&#x2F;&#x2F;播放音效
+            Destroy(this.gameObject);
+            &#125;
+            
+            &#x2F;&#x2F; Debug.Log(&quot;玩家碰到草莓&quot;);
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>4、BulletController.cs</p>
+<ul>
+<li>子弹相关</li>
+</ul>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BulletController : MonoBehaviour
+&#123;
+
+    Rigidbody2D rbody;
+    
+    public AudioClip hitEnemyClip;
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Awake()
+    &#123;
+        rbody &#x3D; GetComponent&lt;Rigidbody2D&gt;();
+
+        Destroy(this.gameObject,2f);
+
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        
+    &#125;
+
+    public void move(Vector2 moveDirection,float moveForce)&#123;
+        rbody.AddForce(moveDirection * moveForce);&#x2F;&#x2F;施加一个移动方向的力
+
+
+    &#125;
+    private void OnCollisionEnter2D(Collision2D other) &#123;
+        EnemyController ec &#x3D; other.gameObject.GetComponent&lt;EnemyController&gt;();
+        if(ec !&#x3D; null)&#123;
+            ec.ChangeHealth(-1);
+            
+        &#125;
+        AudioManager.instance.AudioPlay(hitEnemyClip);&#x2F;&#x2F;播放音效
+        Destroy(this.gameObject);&#x2F;&#x2F;碰到就销毁    
+    
+    &#125; 
+
+
+&#125;
+</code></pre>
+<p>5、BulletBox.cs</p>
+<ul>
+<li>子弹袋</li>
+</ul>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BulletBox : MonoBehaviour
+&#123;
+    public int bulletCount &#x3D; 10;
+
+    public ParticleSystem collectEffect;
+
+    public AudioClip collectClip;
+
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        
+    &#125;
+
+    void OnTriggerEnter2D(Collider2D other)&#123;
+        PlayerController pc &#x3D; other.GetComponent&lt;PlayerController&gt;();
+        if(pc !&#x3D; null)&#123;
+            if(pc.curBulletCount &lt; pc.maxBulletCount)&#123;
+            pc.ChangeBulletCount(bulletCount);
+
+            Instantiate(collectEffect,transform.position,Quaternion.identity);
+
+            &#x2F;&#x2F; AudioManager.instance.AudioPlay(collectClip);&#x2F;&#x2F;播放音效
+            Destroy(this.gameObject);
+        &#125;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>6、UImanager.cs</p>
+<ul>
+<li>UI界面（血条、子弹数量）</li>
+</ul>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class UImanager : MonoBehaviour
+&#123;
+    
+    public TMP_Text  bulletCountText;
+
+    public static UImanager instance&#123;get;  private set;&#125;
+
+    void Start()&#123;
+        instance &#x3D; this;
+    &#125;
+    public Image healthBar;&#x2F;&#x2F;角色血条
+
+    public void UpdateHealthBar(int curAmount,int maxAmount)&#123;
+        healthBar.fillAmount &#x3D; (float)curAmount &#x2F; (float)maxAmount;
+
+
+
+    &#125;
+
+    &#x2F;&#x2F;更新子弹数量文本
+    public void UpdateBulletCount(int curAmount,int maxAmount)&#123;
+        bulletCountText.text &#x3D; curAmount.ToString() + &quot; &#x2F; &quot; + maxAmount.ToString();
+    &#125;
+&#125;
+</code></pre>
+<p>7、AudioManager.cs</p>
+<ul>
+<li>音效</li>
+</ul>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AudioManager : MonoBehaviour
+&#123;
+    public static AudioManager instance &#123;get; private set;&#125;
+    private AudioSource audioS;
+
+
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        instance &#x3D; this;
+        audioS &#x3D; GetComponent&lt;AudioSource&gt;();
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        
+    &#125;
+
+
+    public void AudioPlay(AudioClip clip)&#123;
+        audioS.PlayOneShot(clip);
+    &#125;
+&#125;
+</code></pre>
+<p>8、NpcManager.cs</p>
+<ul>
+<li>NPC对话框显示</li>
+</ul>
+<pre class="line-numbers language-c#" data-language="c#"><code class="language-c#">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class NpcManager : MonoBehaviour
+&#123;
+
+    public GameObject dialogImage;
+
+    public GameObject tipImage;
+
+    public float showTime &#x3D; 4f;
+
+    public float showTimer;&#x2F;&#x2F;计时器
+    &#x2F;&#x2F; Start is called before the first frame update
+    void Start()
+    &#123;
+        showTimer &#x3D; -1;
+        tipImage.SetActive(true);
+        dialogImage.SetActive(false);
+    &#125;
+
+    &#x2F;&#x2F; Update is called once per frame
+    void Update()
+    &#123;
+        showTimer -&#x3D; Time.deltaTime;
+        if(showTimer &lt; 0)&#123;
+            dialogImage.SetActive(false);
+            tipImage.SetActive(true);
+        &#125;
+    &#125;
+    &#x2F;&#x2F;显示对话框
+    public void show()&#123;
+        showTimer &#x3D; showTime;
+        tipImage.SetActive(false);
+        dialogImage.SetActive(true);
+
+
+    &#125;
+&#125;
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">桥边红药</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/20230605150148.html">http://example.com/post/20230605150148.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">桥边红药的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/unityProject/">unityProject</a></div><div class="post_share"><div class="social-share" data-image="https://img.promefire.top/blog-img/20240110-4f699e0e7681be6ebaa5f96bd40f0a8c.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/20230608145027.html" title="城市点亮--天津"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240115-21e1ab99a290f1701e4f0fdf43f0de12.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">城市点亮--天津</div></div></a></div><div class="next-post pull-right"><a href="/post/20230601145759.html" title="城市点亮---石家庄"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-f4db33fdae0836f36604320cf16158d3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">城市点亮---石家庄</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">桥边红药</div><div class="author-info__description">我的技术与生活</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/promefire"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/promefire" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text"> 代码：</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://img.promefire.top/blog-img/20240110-4f699e0e7681be6ebaa5f96bd40f0a8c.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 桥边红药</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div id="runtime"></div> <div id = "ICP"><a  target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20240622"><img  class="icp-icon"  src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240411-dd5e1b977da05d208a65fbfeb2c8249e.png"><span>萌ICP备20240622号</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'promefire/myBlogComment',
+      'data-repo-id': 'R_kgDOJnPF5g',
+      'data-category-id': 'DIC_kwDOJnPF5s4CbscM',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },null)
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script>(() => {
+  window.Prism = window.Prism || {}
+  window.Prism.manual = true
+
+  const highlightAll = () => {
+    window.Prism.highlightAll()
+  }
+
+  window.addEventListener('load', highlightAll)
+  btf.addGlobalFn('pjaxComplete', highlightAll, 'prismjs')
+  btf.addGlobalFn('encrypt', highlightAll, 'prismjs')
+})()
+</script><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script><script src="/js/runtime.js"> </script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script></div></body></html>
