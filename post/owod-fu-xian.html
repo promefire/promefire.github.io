@@ -1,0 +1,462 @@
+<!DOCTYPE html><script>var date = "12/23,04/04"
+const currentDate = new Date();
+const targetDateParts = date.split(',')
+for(let i = 0;i < targetDateParts.length;i++){
+  
+} 
+
+
+
+</script><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>OWOD复现 | 桥边红药的博客</title><meta name="author" content="桥边红药"><meta name="copyright" content="桥边红药"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="代码复现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OWOD复现">
+<meta property="og:url" content="http://example.com/post/owod-fu-xian.html">
+<meta property="og:site_name" content="桥边红药的博客">
+<meta property="og:description" content="代码复现">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.promefire.top/blog-img/20240115-4af72295e85457dbad57f57af7b195ad.jpeg">
+<meta property="article:published_time" content="2023-06-14T10:02:10.000Z">
+<meta property="article:modified_time" content="2023-06-14T10:02:10.000Z">
+<meta property="article:author" content="桥边红药">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="目标检测">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.promefire.top/blog-img/20240115-4af72295e85457dbad57f57af7b195ad.jpeg"><link rel="shortcut icon" href="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png"><link rel="canonical" href="http://example.com/post/owod-fu-xian.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'OWOD复现',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-14 10:02:10'
+}</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4085662_tt8yn9tbdfe.css"><link rel="stylesheet" href="/css/transpancy.css"><link rel="stylesheet" href="/css/nineSquardGrid.css"><link rel="stylesheet" href="/css/runtime.css"><link rel="stylesheet" href="/css/galleries.css"><link rel="stylesheet" href="/css/equipment.css"><meta name="generator" content="Hexo 6.3.0"><style>.admonition{margin:1.5625em 0;padding:.6rem;overflow:hidden;font-size:.64rem;page-break-inside:avoid;border-left:.3rem solid #42b983;border-radius:.3rem;box-shadow:0 .1rem .4rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);background-color:#fafafa}p.admonition-title{position:relative;margin:-.6rem -.6rem .8em -.6rem!important;padding:.4rem .6rem .4rem 2.5rem;font-weight:700;background-color:rgba(66,185,131,.1)}.admonition-title::before{position:absolute;top:.9rem;left:1rem;width:12px;height:12px;background-color:#42b983;border-radius:50%;content:' '}.info>.admonition-title,.todo>.admonition-title{background-color:rgba(0,184,212,.1)}.attention>.admonition-title,.caution>.admonition-title,.warning>.admonition-title{background-color:rgba(255,145,0,.1)}.error>.admonition-title,.fail>.admonition-title,.failure>.admonition-title,.missing>.admonition-title{background-color:rgba(255,82,82,.1)}.admonition.info,.admonition.todo{border-color:#00b8d4}.admonition.attention,.admonition.caution,.admonition.warning{border-color:#ff9100}.admonition.error,.admonition.fail,.admonition.failure,.admonition.missing{border-color:#ff5252}.info>.admonition-title::before,.todo>.admonition-title::before{background-color:#00b8d4;border-radius:50%}.attention>.admonition-title::before,.caution>.admonition-title::before,.warning>.admonition-title::before{background-color:#ff9100;border-radius:50%}.error>.admonition-title::before,.fail>.admonition-title::before,.failure>.admonition-title::before,.missing>.admonition-title::before{background-color:#ff5252;border-radius:50%}.admonition>:last-child{margin-bottom:0!important}</style></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', () => { preloader.initLoading() }, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', () => { preloader.endLoading() }, 'preloader_end')
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.promefire.top/blog-img/20240115-4af72295e85457dbad57f57af7b195ad.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="桥边红药的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png" alt="Logo"/><span class="site-name">桥边红药的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">OWOD复现</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2023-06-14T10:02:10.000Z" title="发表于 2023-06-14 10:02:10">2023-06-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>项目环境：python3.7(python3.8)、cuda11.3、pytorch1.10</p>
+<p>论文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2103.02603">https://arxiv.org/abs/2103.02603</a></p>
+<p>代码地址：<a target="_blank" rel="noopener" href="https://github.com/JosephKJ/OWOD">https://github.com/JosephKJ/OWOD</a></p>
+<h2 id="安装detectron2"><a class="markdownIt-Anchor" href="#安装detectron2"></a> 安装Detectron2</h2>
+<h3 id="1-安装pytorch110-torchvision0110-opencv"><a class="markdownIt-Anchor" href="#1-安装pytorch110-torchvision0110-opencv"></a> 1、安装pytorch1.10 + torchvision0.11.0 + opencv</h3>
+<p>一开始没注意，安装了1.12的pytorch，结果官方给的文档上只到1.10，复现还是不要挑战高版本是否兼容了，尝试了一下pytorch版本降级，如下，但是没成功，还是1.12的。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda install pytorch&#x3D;0.1.10 -c soumith </code></pre>
+<p>果断退出虚拟环境，再建一个。</p>
+<p>在<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/previous-versions/">这里</a> 找对应1.10版本的pytorch，顺带<code>torchvision</code>也一起下了</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create -n OWOD2 python&#x3D;3.7
+# CUDA 11.3
+conda install pytorch&#x3D;&#x3D;1.10.0 torchvision&#x3D;&#x3D;0.11.0 torchaudio&#x3D;&#x3D;0.10.0 cudatoolkit&#x3D;11.3 -c pytorch -c conda-forge</code></pre>
+<p>报错了！！</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">(OWOD2) root@autodl-container-d8b611b252-d52809bf:~# conda install pytorch&#x3D;&#x3D;1.10.1 torchvision&#x3D;&#x3D;0.11.2 torchaudio&#x3D;&#x3D;0.10.1 cudatoolkit&#x3D;11.3 -c pytorch -c conda-forge
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): &#x2F; (OWOD2) root@autodl-container-d8b611b252-d52809bf:~#</code></pre>
+<p>添加清华源！（不行）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#添加镜像源
+conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;main
+conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free
+conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;r
+conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;pro
+conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;msys2
+
+#显示检索路径
+conda config --set show_channel_urls yes
+
+#显示镜像通道
+conda config --show channels</code></pre>
+<p>还是离线下载吧（成功）</p>
+<p>离线下载网址：<a target="_blank" rel="noopener" href="https://download.pytorch.org/whl/cu113/torch_stable.html">https://download.pytorch.org/whl/cu113/torch_stable.html</a></p>
+<p>下载<code>**torch-1.10.0+cu113-cp37-cp37m-linux_x86_64.whl**</code>和<code>torchvision-0.11.0+cu113-cp37-cp37m-linux_x86_64.whl</code>,</p>
+<p>上传到服务器，然后</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install torch-1.10.0+cu113-cp37-cp37m-linux_x86_64.whl
+pip install torchvision-0.11.0+cu113-cp37-cp37m-linux_x86_64.whl</code></pre>
+<p>查看一下torch版本怎么cuda版本也出来了，emmm，大抵是没毛病。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-68ee230ff715d7907c788eb3503ce5fb.png" alt="img"></p>
+<p>安装OpenCV</p>
+<pre class="line-numbers language-none"><code class="language-none">python -m pip install opencv-python -i http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F; --trusted-host pypi.douban.com</code></pre>
+<h3 id="2-安装detectron2"><a class="markdownIt-Anchor" href="#2-安装detectron2"></a> 2、安装Detectron2</h3>
+<p><a target="_blank" rel="noopener" href="https://github.com/facebookresearch/detectron2/blob/main/INSTALL.md#installation">这里</a> 获取对应版本的Detectron2</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-00ba652f2d4ca592bcf52c13eab9ee14.png" alt="img"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python -m pip install detectron2 -f \
+  https:&#x2F;&#x2F;dl.fbaipublicfiles.com&#x2F;detectron2&#x2F;wheels&#x2F;cu113&#x2F;torch1.10&#x2F;index.html</code></pre>
+<p>源代码构建</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git clone https:&#x2F;&#x2F;github.com&#x2F;facebookresearch&#x2F;detectron2.git
+python -m pip install -e detectron2</code></pre>
+<h3 id="3-再下载gcc-和g编译器"><a class="markdownIt-Anchor" href="#3-再下载gcc-和g编译器"></a> 3、再下载gcc 和g++编译器</h3>
+<pre class="line-numbers language-none"><code class="language-none">apt-get install gcc g++</code></pre>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-f9f1a41399d2cce98821b5e1a48c8776.png" alt="img"></p>
+<h3 id="4-安装依赖"><a class="markdownIt-Anchor" href="#4-安装依赖"></a> 4、安装依赖</h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install fvcore&#x3D;&#x3D;0.1.1.post20200716
+pip install &#39;git+https:&#x2F;&#x2F;github.com&#x2F;cocodataset&#x2F;cocoapi.git#subdirectory&#x3D;PythonAPI&#39;</code></pre>
+<p>4.1报错：<code>detectron2 0.6 requires fvcore&lt;0.1.6,&gt;=0.1.5, but you have fvcore 0.1.1.post20200716 which is incompatible.</code></p>
+<p>那就换成<code>pip install fvcore==0.1.5.post20210410</code>吧</p>
+<p>4.2报错：<code>detectron2 0.6 requires pycocotools&gt;=2.0.2, but you have pycocotools 2.0 which is incompatible.</code></p>
+<p>解决：从<a target="_blank" rel="noopener" href="https://pypi.org/project/pycocotools/2.0.2/#files">这里</a> 下载2.0.2的文件</p>
+<p>cd到pycocotools所在目录。执行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python setup.py build_ext --inplace
+python setup.py build_ext install</code></pre>
+<p><code>conda list</code> 查看pycocotools，安装成功</p>
+<ul>
+<li>记得要用<code>pip uninstall pycocotools</code>把之前2.0的卸载掉</li>
+</ul>
+<p>在demo文件夹下放一张照片测试一下</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python demo.py --config-file ..&#x2F;configs&#x2F;COCO-InstanceSegmentation&#x2F;mask_rcnn_R_50_FPN_3x.yaml --input 1.jpg --output .&#x2F;result.jpg --opts MODEL.WEIGHTS detectron2:&#x2F;&#x2F;COCO-InstanceSegmentation&#x2F;mask_rcnn_R_50_FPN_3x&#x2F;137849600&#x2F;model_final_f10217.pkl</code></pre>
+<p>报错：<code> cannot import name 'cached_property' from 'functools'</code></p>
+<p>搜索发现只有3.8以上才行？？？？我尼玛搞了这么久你说得3.8，前面说大于等于3.6是吃屎了吗？？？</p>
+<p>爷妥协了，重新建了3.8的环境，再来一遍，跑起来了</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-e5df1e07e96da936689172eb107f96f8.png" alt="img"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240115-4af72295e85457dbad57f57af7b195ad.jpeg" alt="1686361443462-23b2f48b-8d2e-42a2-881e-5665e25fff8a"></p>
+<h1 id="owod"><a class="markdownIt-Anchor" href="#owod"></a> OWOD</h1>
+<h2 id="1-数据集-文件夹"><a class="markdownIt-Anchor" href="#1-数据集-文件夹"></a> 1、数据集 文件夹</h2>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-e57b03f7e67f3a2e8842e383b0d7e4c8.png" alt="img"></p>
+<h2 id="2-下载预训练模型"><a class="markdownIt-Anchor" href="#2-下载预训练模型"></a> 2、下载预训练模型</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/JosephKJ/OWOD/issues/86">点击这里下载</a>，放在OWOD-master下，找到<code>OWOD-master/configs/OWOD/t1/t1_train.yaml</code>,把预训练模型的文件路径替换原文件中weight的内容。</p>
+<h2 id="3-打包代码上传"><a class="markdownIt-Anchor" href="#3-打包代码上传"></a> 3、打包代码上传</h2>
+<p>linux下解压zip压缩文件<code>unzip xxx.zip</code></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d 目录名</td>
+<td>将压缩文件解压到指定目录下。</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>解压时并不覆盖已经存在的文件。</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>解压时覆盖已经存在的文件，并且无需用户确认。</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>查看压缩文件的详细信息，包括压缩文件中包含的文件大小、文件名以及压缩比等，但并不做解压操作。</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>测试压缩文件有无损坏，但并不解压。</td>
+</tr>
+<tr>
+<td>-x 文件列表</td>
+<td>解压文件，但不包含文件列表中指定的文件。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-进入项目文件夹配置detectron"><a class="markdownIt-Anchor" href="#4-进入项目文件夹配置detectron"></a> 4、进入项目文件夹，配置detectron</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python setup.py build develop</code></pre>
+<ul>
+<li>不要使用该文件夹外部构建的Detectron2，运行代码时会报’Non-existent config key: OWOD’，具体原因是Detectron2的版本问题，所以一定要在OWOD内构建Detectron2</li>
+</ul>
+<p>解决方法：在OWOD内部运行<code>**python -m pip install -e ./**</code></p>
+<h2 id="5-开跑"><a class="markdownIt-Anchor" href="#5-开跑"></a> 5、开跑</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python tools&#x2F;train_net.py --num-gpus 1 --config-file .&#x2F;configs&#x2F;OWOD&#x2F;t1&#x2F;t1_train.yaml SOLVER.IMS_PER_BATCH 8 SOLVER.BASE_LR 0.0025 OUTPUT_DIR &quot;.&#x2F;output&#x2F;t1&quot;</code></pre>
+<ul>
+<li><strong>–num-gpus 1</strong>: 这个参数指定使用的GPU数量为1，表明训练将在单个GPU上进行。</li>
+<li><strong>–config-file ./configs/OWOD/t1/t1_train.yaml</strong>: 这个参数指定了配置文件的路径，配置文件是训练过程中使用的设置和参数的集合。在这个例子中，配置文件的路径为 <strong>./configs/OWOD/t1/t1_train.yaml</strong>。</li>
+<li><strong>SOLVER.IMS_PER_BATCH 8</strong>: 这个参数设置了每个训练批次（batch）的图像数目为8。在训练过程中，将每次从数据集中选择8张图像用于训练。</li>
+<li><strong>SOLVER.BASE_LR 0.0025</strong>: 这个参数设置了基础学习率（base learning rate）为0.0025。基础学习率是在训练过程中控制参数更新的速率的一个重要参数。</li>
+<li><strong>OUTPUT_DIR “./output/t1”</strong>: 这个参数设置了输出目录的路径为 <strong>./output/t1</strong>。在训练过程中，训练模型和其他输出文件将保存在这个目录中。</li>
+</ul>
+<h3 id="报错"><a class="markdownIt-Anchor" href="#报错"></a> 报错</h3>
+<ul>
+<li>报错：<code>**No module named 'reliability****'** </code></li>
+</ul>
+<p><code>pip install reliability -i https://pypi.tuna.tsinghua.edu.cn/simple</code>指定一下清华源</p>
+<ul>
+<li>又报错：<code>module 'numpy' has no attribute 'str'. </code></li>
+</ul>
+<p>查了一下是numpy版本的问题，我的是1.24.3，降级成1.22.0.但是另一个包要求numpy&gt;=1.24.2，🤮</p>
+<p>都tmd降级，numpy降到1.23</p>
+<ul>
+<li>报错：<code>distutils‘ has no attribute ‘version‘ </code></li>
+</ul>
+<p>是setuptools版本问题</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip uninstall setuptools
+pip install setuptools&#x3D;&#x3D;59.5.0</code></pre>
+<p>嗚嗚，out of memory了，batch_szie 只能設置爲2，開跑!!! 2000張圖片跑兩小時</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-ea339bd2bae8222fc089ab2a4208c22a.png" alt="img"></p>
+<p>参数解释：</p>
+<ul>
+<li>eta: 2:00:55 这个指标表示预计训练完成所需的剩余时间。在这个例子中，预计还需要2小时、55分钟来完成训练。</li>
+<li>iter: 19 这个指标表示当前的迭代次数。在这个例子中，当前迭代次数为19次。</li>
+<li>total_loss: 2.895 这个指标表示总体损失（total loss）。总体损失是在训练过程中使用的一个综合指标，用于衡量模型的训练效果。在这个例子中，总体损失为2.895。</li>
+<li>loss_cls: 1.497 这个指标表示分类损失（classification loss）。分类损失是用于衡量模型分类任务的损失函数值。在这个例子中，分类损失为1.497。</li>
+<li>loss_box_reg: 0.2146 这个指标表示边界框回归损失（bounding box regression loss）。边界框回归损失是用于衡量模型边界框回归任务的损失函数值。在这个例子中，边界框回归损失为0.2146。</li>
+<li>loss_clustering: 0 这个指标表示聚类损失（clustering loss）。聚类损失是用于衡量模型聚类任务的损失函数值。在这个例子中，聚类损失为0。</li>
+<li>loss_rpn_cls: 0.6775 这个指标表示区域生成网络分类损失（region proposal network classification loss）。区域生成网络分类损失是用于衡量模型区域生成网络分类任务的损失函数值。在这个例子中，区域生成网络分类损失为0.6775。</li>
+<li>loss_rpn_loc: 0.199 这个指标表示区域生成网络定位损失（region proposal network localization loss）。区域生成网络定位损失是用于衡量模型区域生成网络定位任务的损失函数值。在这个例子中，区域生成网络定位损失为0.199。</li>
+<li>time: 0.4011 这个指标表示当前迭代的耗时。在这个例子中，当前迭代的耗时为0.4011秒。</li>
+<li>data_time: 0.0515 这个指标表示数据加载的耗时。在这个例子中，数据加载的耗时为0.0515秒。</li>
+<li>lr: 0.00047703 这个指标表示学习率（learning rate）的值。学习率是控制模型参数更新的速率的一个重要超参数</li>
+</ul>
+<p>单张图片测试：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python demo.py --config-file &#x2F;root&#x2F;python_work&#x2F;OWOD-master&#x2F;configs&#x2F;OWOD&#x2F;t1&#x2F;t1_test.yaml  --input 2.jpg --output 2_res.jpg --opt MODEL.WEIGHTS &#x2F;root&#x2F;python_work&#x2F;OWOD-master&#x2F;output&#x2F;t1&#x2F;model_final.pth</code></pre>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-a54aa493bdedc532081077dd1a1eec4e.jpeg" alt="img"></p>
+<p>​     两千张图片训出来的果然不行，柜子检测成car了。而且还有一个问题，就是这2000张图片没有按类别进行挑选，导致不知道某一个类有没有经过训练，也就无法测试是不是新类要标注为unknown。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-74c7f653dfc5e03efbcc2d88e15920fc.jpeg" alt="img"></p>
+<p>可视化代码里要求output文件夹下有一个energy_dist.pkl文件，输出里面么得这个文件，稀碎。。。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cfg_file &#x3D;  &quot;&#x2F;root&#x2F;python_work&#x2F;OWOD-master&#x2F;configs&#x2F;OWOD&#x2F;t1&#x2F;t1_test.yaml&quot;
+model &#x3D; &#39;&#x2F;root&#x2F;python_work&#x2F;OWOD-master&#x2F;output&#x2F;t1&#x2F;model_final.pth&#39;
+im &#x3D; cv2.imread(&quot;&#x2F;root&#x2F;python_work&#x2F;OWOD-master&#x2F;datasets&#x2F;VOC2007&#x2F;JPEGImages&#x2F;&quot; + file_name + &quot;.jpg&quot;)
+param_save_location &#x3D; os.path.join(&#39;&#x2F;root&#x2F;python_work&#x2F;OWOD-master&#x2F;output&#x2F;t1_clustering_val&#x2F;energy_dist_&#39; + str(20) + &#39;.pkl&#39;)</code></pre>
+<h1 id="其他"><a class="markdownIt-Anchor" href="#其他"></a> 其他</h1>
+<p>1、查看服务器CUDA版本</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvcc -V</code></pre>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-82f1d3087121c54644e1db5e7863b905.png" alt="img"></p>
+<p>2、创建虚拟环境报错了！</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">CommandNotFoundError: Your shell has not been properly configured to use &#39;conda deactivate&#39;.
+To initialize your shell, run
+
+    $ conda init &lt;SHELL_NAME&gt;</code></pre>
+<p>解决：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda init bash</code></pre>
+<p>3、<a target="_blank" rel="noopener" href="https://pjreddie.com/projects/pascal-voc-dataset-mirror/">Pascal VOC Dataset Mirror</a></p>
+<p>4、查看torch版本</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">&gt;&gt;&gt; import torch
+&gt;&gt;&gt; torch.__version__
+&#39;1.12.1&#39;</code></pre>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考：</h2>
+<p>[OWOD复现过程总结_wangyanhuaa的博客-CSDN博客](<a target="_blank" rel="noopener" href="https://blog.csdn.net/wangyanhuaa/article/details/129970265#:~:text=detectron2%E6%90%AD%E5%BB%BA%E6%88%90%E5%8A%9F%E5%90%8E%E5%8D%B3%E5%8F%AF%E5%A4%8D%E7%8E%B0OWOD">https://blog.csdn.net/wangyanhuaa/article/details/129970265#:~:text=detectron2搭建成功后即可复现OWOD</a> 1.下载OWOD代码。 2. 进入项目文件夹（cd OWOD-master）,，激活环境，输入语句配置detectron python <a target="_blank" rel="noopener" href="http://setup.py">setup.py</a> build develop)</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_64720568/article/details/129802880?spm=1001.2014.3001.5502">Ubuntu下配置detectron2_于大宝0626的博客-CSDN博客</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">桥边红药</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/owod-fu-xian.html">http://example.com/post/owod-fu-xian.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">桥边红药的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">目标检测</a></div><div class="post_share"><div class="social-share" data-image="https://img.promefire.top/blog-img/20240115-4af72295e85457dbad57f57af7b195ad.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/wei-xin-gong-zhong-hao-tui-song-tian-qi-yu-bao.html" title="微信公众号推送天气预报"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-02921fa7cc3713ff355f69412498aec6.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">微信公众号推送天气预报</div></div></a></div><div class="next-post pull-right"><a href="/post/cheng-shi-dian-liang-tian-jin.html" title="城市点亮--天津"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240115-21e1ab99a290f1701e4f0fdf43f0de12.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">城市点亮--天津</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/selenium-shua-bo-ke-fang-wen-liang.html" title="selenium多线程简单应用"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-de3a1e1a60cd64c6869415338a65a6e7.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-10</div><div class="title">selenium多线程简单应用</div></div></a></div><div><a href="/post/wei-xin-gong-zhong-hao-tui-song-tian-qi-yu-bao.html" title="微信公众号推送天气预报"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-02921fa7cc3713ff355f69412498aec6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-17</div><div class="title">微信公众号推送天气预报</div></div></a></div><div><a href="/post/pa-qu-bing-tu-pian.html" title="实现博客每日换肤"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-0611f1bdb718ae860839ba2d9bc10960.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-22</div><div class="title">实现博客每日换肤</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">桥边红药</div><div class="author-info__description">我的技术与生活</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/promefire"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/promefire" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85detectron2"><span class="toc-number">1.</span> <span class="toc-text"> 安装Detectron2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85pytorch110-torchvision0110-opencv"><span class="toc-number">1.1.</span> <span class="toc-text"> 1、安装pytorch1.10 + torchvision0.11.0 + opencv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85detectron2"><span class="toc-number">1.2.</span> <span class="toc-text"> 2、安装Detectron2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%86%8D%E4%B8%8B%E8%BD%BDgcc-%E5%92%8Cg%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text"> 3、再下载gcc 和g++编译器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-number">1.4.</span> <span class="toc-text"> 4、安装依赖</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#owod"><span class="toc-number"></span> <span class="toc-text"> OWOD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E9%9B%86-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.</span> <span class="toc-text"> 1、数据集 文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%8B%E8%BD%BD%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text"> 2、下载预训练模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%93%E5%8C%85%E4%BB%A3%E7%A0%81%E4%B8%8A%E4%BC%A0"><span class="toc-number">3.</span> <span class="toc-text"> 3、打包代码上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BF%9B%E5%85%A5%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%A4%B9%E9%85%8D%E7%BD%AEdetectron"><span class="toc-number">4.</span> <span class="toc-text"> 4、进入项目文件夹，配置detectron</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%BC%80%E8%B7%91"><span class="toc-number">5.</span> <span class="toc-text"> 5、开跑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A5%E9%94%99"><span class="toc-number">5.1.</span> <span class="toc-text"> 报错</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number"></span> <span class="toc-text"> 其他</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">1.</span> <span class="toc-text"> 参考：</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://img.promefire.top/blog-img/20240115-4af72295e85457dbad57f57af7b195ad.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 桥边红药</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div id="runtime"></div> <div id = "ICP"><a  target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><img  class="icp-icon"  src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240411-dd5e1b977da05d208a65fbfeb2c8249e.png"><span>冀ICP备2024069835号</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'promefire/myBlogComment',
+      'data-repo-id': 'R_kgDOJnPF5g',
+      'data-category-id': 'DIC_kwDOJnPF5s4CbscM',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },{"mapping":"title"})
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script>(() => {
+  window.Prism = window.Prism || {}
+  window.Prism.manual = true
+
+  const highlightAll = () => {
+    window.Prism.highlightAll()
+  }
+
+  window.addEventListener('load', highlightAll)
+  btf.addGlobalFn('pjaxComplete', highlightAll, 'prismjs')
+  btf.addGlobalFn('encrypt', highlightAll, 'prismjs')
+})()
+</script><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script><script src="/js/runtime.js"> </script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script></div></body></html>

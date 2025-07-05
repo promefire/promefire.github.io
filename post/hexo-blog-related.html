@@ -1,0 +1,399 @@
+<!DOCTYPE html><script>var date = "12/23,04/04"
+const currentDate = new Date();
+const targetDateParts = date.split(',')
+for(let i = 0;i < targetDateParts.length;i++){
+  
+} 
+
+
+
+</script><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>博客相关 | 桥边红药的博客</title><meta name="author" content="桥边红药"><meta name="copyright" content="桥边红药"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录一些hexo &#x2F; git 操作记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客相关">
+<meta property="og:url" content="http://example.com/post/hexo-blog-related.html">
+<meta property="og:site_name" content="桥边红药的博客">
+<meta property="og:description" content="记录一些hexo &#x2F; git 操作记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.promefire.top/blog-img/20240110-37a1322538be2a451be51ebf62118dc5.png">
+<meta property="article:published_time" content="2020-03-01T22:16:38.000Z">
+<meta property="article:modified_time" content="2020-03-01T22:16:38.000Z">
+<meta property="article:author" content="桥边红药">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="优化">
+<meta property="article:tag" content="部署">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.promefire.top/blog-img/20240110-37a1322538be2a451be51ebf62118dc5.png"><link rel="shortcut icon" href="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png"><link rel="canonical" href="http://example.com/post/hexo-blog-related.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '博客相关',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2020-03-01 22:16:38'
+}</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4085662_tt8yn9tbdfe.css"><link rel="stylesheet" href="/css/transpancy.css"><link rel="stylesheet" href="/css/nineSquardGrid.css"><link rel="stylesheet" href="/css/runtime.css"><link rel="stylesheet" href="/css/galleries.css"><link rel="stylesheet" href="/css/equipment.css"><meta name="generator" content="Hexo 6.3.0"><style>.admonition{margin:1.5625em 0;padding:.6rem;overflow:hidden;font-size:.64rem;page-break-inside:avoid;border-left:.3rem solid #42b983;border-radius:.3rem;box-shadow:0 .1rem .4rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);background-color:#fafafa}p.admonition-title{position:relative;margin:-.6rem -.6rem .8em -.6rem!important;padding:.4rem .6rem .4rem 2.5rem;font-weight:700;background-color:rgba(66,185,131,.1)}.admonition-title::before{position:absolute;top:.9rem;left:1rem;width:12px;height:12px;background-color:#42b983;border-radius:50%;content:' '}.info>.admonition-title,.todo>.admonition-title{background-color:rgba(0,184,212,.1)}.attention>.admonition-title,.caution>.admonition-title,.warning>.admonition-title{background-color:rgba(255,145,0,.1)}.error>.admonition-title,.fail>.admonition-title,.failure>.admonition-title,.missing>.admonition-title{background-color:rgba(255,82,82,.1)}.admonition.info,.admonition.todo{border-color:#00b8d4}.admonition.attention,.admonition.caution,.admonition.warning{border-color:#ff9100}.admonition.error,.admonition.fail,.admonition.failure,.admonition.missing{border-color:#ff5252}.info>.admonition-title::before,.todo>.admonition-title::before{background-color:#00b8d4;border-radius:50%}.attention>.admonition-title::before,.caution>.admonition-title::before,.warning>.admonition-title::before{background-color:#ff9100;border-radius:50%}.error>.admonition-title::before,.fail>.admonition-title::before,.failure>.admonition-title::before,.missing>.admonition-title::before{background-color:#ff5252;border-radius:50%}.admonition>:last-child{margin-bottom:0!important}</style></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', () => { preloader.initLoading() }, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', () => { preloader.endLoading() }, 'preloader_end')
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.promefire.top/blog-img/20240110-37a1322538be2a451be51ebf62118dc5.png')"><nav id="nav"><span id="blog-info"><a href="/" title="桥边红药的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png" alt="Logo"/><span class="site-name">桥边红药的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">博客相关</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2020-03-01T22:16:38.000Z" title="发表于 2020-03-01 22:16:38">2020-03-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2/">博客</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
+<li>还行吧，空有博客没有内容是不行滴，要多记录哦</li>
+<li>贴上参考教程:<a target="_blank" rel="noopener" href="https://www.cnblogs.com/visugar/p/6821777.html">https://www.cnblogs.com/visugar/p/6821777.html</a></li>
+</ul>
+<hr>
+<p>0、使用的插件</p>
+<p>寒假期间入手一台阿里云ECS服务器，现将hexo博客由GithubPage迁到阿里云上</p>
+<p>现记录如下：</p>
+<p>1、本地有git和npm但是hexo命令无效</p>
+<p>解决：检查后是环境变量的问题，应把hexo根目录下<code>~\node_modules\.bin</code>添加至系统变量.</p>
+<p>2、修改完文章部署命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean &amp;&amp; hexo d -g</code></pre>
+<p>等于</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean    --清除缓存，每次部署前建议执行这一步
+hexo generate --生成静态文件
+hexo deploy   --部署至服务器</code></pre>
+<p>将环境文件推送至github</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git add . &amp; git commit -m &quot;save&quot; &amp; git push origin source</code></pre>
+<p>3、一些命令</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo new &quot;文章题目&quot;         --新建文章
+hexo new page &quot;pagename&quot;   --新建页面</code></pre>
+<p>4、hexo同步管理</p>
+<blockquote>
+<p>将本地的一些环境文件存放至github，防止误删或使用新电脑</p>
+</blockquote>
+<ul>
+<li>在<code>promefire.github.io</code>仓库中新建一个<code>source</code>分支</li>
+<li>github切换到source分支，<code>git clone</code>到本地</li>
+<li>进入<code>promefire.github.io</code>文件夹，只保留<code>	.git</code>文件夹，其他全部删除</li>
+<li><code>git add -A</code>  <code>git commit -m &quot;some description&quot;</code> <code>git push origin</code>推送至github，此时<code>source</code>分支下为空白</li>
+<li>将<code>promefire.github.io</code>目录下的<code>.git</code>文件夹复制到hexo根目录下，此时，hexo项目已经变成了和远程hexo分支关联的本地仓库了</li>
+<li>每次发布新文章或修改时，<code>git add . &amp; git commit -m &quot;save&quot; &amp; git push origin source</code>即可把环境文件推送到source分支，然后再使用<code>hexo d -g</code>发布网站。</li>
+</ul>
+<p>5、更改后每次都要执行hexo三件套+备份实在太麻烦了，新建一个<code>deploy.sh</code>脚本放在博客目录下，需要部署和备份时运行即可</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean
+hexo generate
+hexo deploy
+
+git add .
+git commit -m &quot;save&quot;
+git push</code></pre>
+<p><code>git add xx</code> 后悔了，使用 <code>git reset &lt;file&gt;</code> 或<code>git reset</code> 撤销</p>
+<p>6、博客中插入哔哩哔哩视频,视频要点分享–&gt;嵌入代码</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;div style&#x3D;&quot;position: relative; width: 100%; height: 0; padding-bottom: 75%;&quot;&gt;&lt;iframe src&#x3D;&quot;&#x2F;&#x2F;player.bilibili.com&#x2F;player.html?aid&#x3D;529707372&amp;bvid&#x3D;BV1Du411Y7tB&amp;cid&#x3D;1161446244&amp;page&#x3D;1&quot;scrolling&#x3D;&quot;no&quot; border&#x3D;&quot;0&quot; frameborder&#x3D;&quot;no&quot; framespacing&#x3D;&quot;0&quot; allowfullscreen&#x3D;&quot;true&quot; style&#x3D;&quot;position: absolute; width: 100%; height: 100%; Left: 0; top: 0;&quot;&gt; &lt;&#x2F;iframe&gt;&lt;&#x2F;div&gt;</code></pre>
+<p>7、空格消失</p>
+<p>把tab替换成这个</p>
+<p><code>&lt;html&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/html&gt; </code></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fceaf373d797">https://www.jianshu.com/p/fceaf373d797</a></p>
+<p>8、草稿</p>
+<p>有些时候某篇文章还没写完，发布其他文章的时候会把未完成的也发布，hexo自带了草稿功能，我竟然一直不知道，都是在其他地方写完再拉到post文件夹下</p>
+<ul>
+<li>新建草稿</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new draft &lt;title&gt;</code></pre>
+<p>Hexo 另外提供 <code>draft</code> 机制，它的原理是新文章将建立在 <code>source/_drafts</code> 目录下，因此 <code>hexo generate</code> 并不会将其编译到 <code>public</code> 目录下，所以 <code>hexo deploy</code> 也不会将其部署到 GitHub。</p>
+<ul>
+<li>本机预览草稿</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo S --draft</code></pre>
+<ul>
+<li>将草稿发布为正式文章</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo P &lt;filename&gt;</code></pre>
+<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称。它的原理只是将文章从 <code>source/_drafts</code> 移动到 <code>source/_posts</code> 而已。</p>
+<p>9、</p>
+<p>报错</p>
+<blockquote>
+<p>Updates were rejected because the remote contains work that you do<br>
+not have locally. This is usually caused by another repository pushing<br>
+to the same ref. You may want to first integrate the remote changes<br>
+(e.g., ‘git pull …’) before pushing again.<br>
+See the ‘Note about fast-forwards’ in ‘git push --help’ for details.</p>
+</blockquote>
+<p>解决</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git pull origin master &#x2F;&#x2F;run this first, then
+git push origin master</code></pre>
+<p>10、git push后代码回滚</p>
+<p>今天莫名奇妙，博客首页404了，我寻思也没改什么东西，最后选择回滚代码解决。</p>
+<ul>
+<li><code>git log</code> 查看push日志</li>
+<li><code>git reset --hard 回退到的版本号</code></li>
+<li><code>git push -f origin</code> 强制同步</li>
+</ul>
+<p>11、hexo永久链接设置英文</p>
+<blockquote>
+<p>Markdown <code>Front-matter</code> 区域可以看到，我这里除了 <code>title</code>， <code>date</code> 以及 <code>tags</code> 外，自己添加了一个新的变量 <code>urlname</code> ，这个新的变量用来保存每个文章的英文名字，这样一来可以有利于 SEO，二来可以缩短博客文章 URL 的层数。</p>
+</blockquote>
+<p>那么，<code>Front-matter</code> 区域新增一个变量 <code>urlname</code> ，值为前面说的英文字母格式</p>
+<p>再在 Hexo 配置文件 <code>_config.yml</code> 中，把 <code>permalink:</code> 的值设为 <code>urlname.html</code></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">permalink: :urlname.html</code></pre>
+<p>12、修改创建文章时<code>Front-matter</code> 区域模板</p>
+<p>修改<code>/scaffolds/post.md</code>文件即可,修改如下</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">title: &#123;&#123; title &#125;&#125;
+date: &#123;&#123; date &#125;&#125;
+tags:
+    -
+categories:
+    -
+cover:
+description: 
+</code></pre>
+<p>13、文章置顶</p>
+<p><code>sticky</code> 数字越大，越靠前</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">--- 
+title: Hello World
+date: 2013&#x2F;7&#x2F;13 20:46:25
+sticky: 100
+---</code></pre>
+<p>14、文章永久链接</p>
+<p>原先使用title会在链接中存在中文，复制粘贴打开不方便，使用日期时间作为url</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"># URL
+## Set your site url here. For example, if you use GitHub Page, set url as &#39;https:&#x2F;&#x2F;username.github.io&#x2F;project&#39;
+url: http:&#x2F;&#x2F;example.com
+permalink: &#x2F;post&#x2F;:year:month:day:hour:minute:second.html
+#permalink: &#x2F;post&#x2F;:title.html
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks
+  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</code></pre>
+<p>15、导入外部CSS</p>
+<p>在<code>[BlogRoot]</code>的<code>source</code>文件夹下新建CSS文件夹，存放<code>.css</code>文件</p>
+<p>在主题<code>_config.butterfly.yml</code> 的<code>inject</code>下导入</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240116-59304e7eefe2627c7c927e4dc667d4dc.png" alt="image-20240116155059633"></p>
+<p>16、Git设置代理</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git config --global http.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:10808&#39; 
+git config --global https.proxy &#39;socks5:&#x2F;&#x2F;127.0.0.1:10808&#39;</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">桥边红药</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/hexo-blog-related.html">http://example.com/post/hexo-blog-related.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">桥边红药的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/%E4%BC%98%E5%8C%96/">优化</a><a class="post-meta__tags" href="/tags/%E9%83%A8%E7%BD%B2/">部署</a></div><div class="post_share"><div class="social-share" data-image="https://img.promefire.top/blog-img/20240110-37a1322538be2a451be51ebf62118dc5.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/post/miao-sha-xi-tong-yi.html" title="秒杀系统"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-be48d7b800271f0d834345e1bce7a06c.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">秒杀系统</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/blogspeedup.html" title="给博客提提速！"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240116-65c9d911d479e3ee19493fb524b9493f.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-16</div><div class="title">给博客提提速！</div></div></a></div><div><a href="/post/hexo-online-editing-synchronization.html" title="hexo恢复及使用hexon实现在线编辑同步"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-2e990d6e7860c95f607084cd84862c82.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-01</div><div class="title">hexo恢复及使用hexon实现在线编辑同步</div></div></a></div><div><a href="/post/hexo-transfer-aliyun.html" title="hexo部署到服务器"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-5a9cbb1a3889d4b602abab31de530bbc.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-04-17</div><div class="title">hexo部署到服务器</div></div></a></div><div><a href="/post/gao-xiao-tian-jia-dao-hang-zhan-dian.html" title="高效添加导航站点"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-81a0dc32e8d5007ebd3002515248b8b6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-24</div><div class="title">高效添加导航站点</div></div></a></div><div><a href="/post/hexo-github-action-auto-deploy.html" title="hexo + Github Action自动部署"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-792d1bd494178eeff2249e4b32c8d2e2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-17</div><div class="title">hexo + Github Action自动部署</div></div></a></div><div><a href="/post/blog-category-tag-guide.html" title="博客分类与标签使用规范"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-5a9cbb1a3889d4b602abab31de530bbc.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-03-21</div><div class="title">博客分类与标签使用规范</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">桥边红药</div><div class="author-info__description">我的技术与生活</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/promefire"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/promefire" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"></div></div></main><footer id="footer" style="background-image: url('https://img.promefire.top/blog-img/20240110-37a1322538be2a451be51ebf62118dc5.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 桥边红药</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div id="runtime"></div> <div id = "ICP"><a  target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><img  class="icp-icon"  src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240411-dd5e1b977da05d208a65fbfeb2c8249e.png"><span>冀ICP备2024069835号</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'promefire/myBlogComment',
+      'data-repo-id': 'R_kgDOJnPF5g',
+      'data-category-id': 'DIC_kwDOJnPF5s4CbscM',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },{"mapping":"title"})
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script>(() => {
+  window.Prism = window.Prism || {}
+  window.Prism.manual = true
+
+  const highlightAll = () => {
+    window.Prism.highlightAll()
+  }
+
+  window.addEventListener('load', highlightAll)
+  btf.addGlobalFn('pjaxComplete', highlightAll, 'prismjs')
+  btf.addGlobalFn('encrypt', highlightAll, 'prismjs')
+})()
+</script><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script><script src="/js/runtime.js"> </script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script></div></body></html>

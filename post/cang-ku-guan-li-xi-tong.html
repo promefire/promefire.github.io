@@ -1,0 +1,1076 @@
+<!DOCTYPE html><script>var date = "12/23,04/04"
+const currentDate = new Date();
+const targetDateParts = date.split(',')
+for(let i = 0;i < targetDateParts.length;i++){
+  
+} 
+
+
+
+</script><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>spring boot+vue管理系统 | 桥边红药的博客</title><meta name="author" content="桥边红药"><meta name="copyright" content="桥边红药"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="仓库管理系统，启动！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring boot+vue管理系统">
+<meta property="og:url" content="http://example.com/post/cang-ku-guan-li-xi-tong.html">
+<meta property="og:site_name" content="桥边红药的博客">
+<meta property="og:description" content="仓库管理系统，启动！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.promefire.top/blog-img/20240417-01be170a54f6655eebc4d701ee023a2d.jpg">
+<meta property="article:published_time" content="2024-05-10T18:12:40.000Z">
+<meta property="article:modified_time" content="2024-05-10T18:12:40.000Z">
+<meta property="article:author" content="桥边红药">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring Boot">
+<meta property="article:tag" content="项目开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.promefire.top/blog-img/20240417-01be170a54f6655eebc4d701ee023a2d.jpg"><link rel="shortcut icon" href="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png"><link rel="canonical" href="http://example.com/post/cang-ku-guan-li-xi-tong.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'spring boot+vue管理系统',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-10 18:12:40'
+}</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4085662_tt8yn9tbdfe.css"><link rel="stylesheet" href="/css/transpancy.css"><link rel="stylesheet" href="/css/nineSquardGrid.css"><link rel="stylesheet" href="/css/runtime.css"><link rel="stylesheet" href="/css/galleries.css"><link rel="stylesheet" href="/css/equipment.css"><meta name="generator" content="Hexo 6.3.0"><style>.admonition{margin:1.5625em 0;padding:.6rem;overflow:hidden;font-size:.64rem;page-break-inside:avoid;border-left:.3rem solid #42b983;border-radius:.3rem;box-shadow:0 .1rem .4rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);background-color:#fafafa}p.admonition-title{position:relative;margin:-.6rem -.6rem .8em -.6rem!important;padding:.4rem .6rem .4rem 2.5rem;font-weight:700;background-color:rgba(66,185,131,.1)}.admonition-title::before{position:absolute;top:.9rem;left:1rem;width:12px;height:12px;background-color:#42b983;border-radius:50%;content:' '}.info>.admonition-title,.todo>.admonition-title{background-color:rgba(0,184,212,.1)}.attention>.admonition-title,.caution>.admonition-title,.warning>.admonition-title{background-color:rgba(255,145,0,.1)}.error>.admonition-title,.fail>.admonition-title,.failure>.admonition-title,.missing>.admonition-title{background-color:rgba(255,82,82,.1)}.admonition.info,.admonition.todo{border-color:#00b8d4}.admonition.attention,.admonition.caution,.admonition.warning{border-color:#ff9100}.admonition.error,.admonition.fail,.admonition.failure,.admonition.missing{border-color:#ff5252}.info>.admonition-title::before,.todo>.admonition-title::before{background-color:#00b8d4;border-radius:50%}.attention>.admonition-title::before,.caution>.admonition-title::before,.warning>.admonition-title::before{background-color:#ff9100;border-radius:50%}.error>.admonition-title::before,.fail>.admonition-title::before,.failure>.admonition-title::before,.missing>.admonition-title::before{background-color:#ff5252;border-radius:50%}.admonition>:last-child{margin-bottom:0!important}</style></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', () => { preloader.initLoading() }, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', () => { preloader.endLoading() }, 'preloader_end')
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.promefire.top/blog-img/20240417-01be170a54f6655eebc4d701ee023a2d.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="桥边红药的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png" alt="Logo"/><span class="site-name">桥边红药的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">spring boot+vue管理系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2024-05-10T18:12:40.000Z" title="发表于 2024-05-10 18:12:40">2024-05-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/">项目记录</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>​		一个仓库管理系统，后端实现只有简单的增删查改，主要是前端Vue2页面搭建 + 前后端通信 + 路由。前端页面布局可以照抄element-ui，没什么技术含量，纯属细心。属于是非常入门级别spring boot + Vue了。</p>
+<h2 id="文档"><a class="markdownIt-Anchor" href="#文档"></a> 文档</h2>
+<p>1、Vue Router：<a target="_blank" rel="noopener" href="https://v3.router.vuejs.org/zh/guide/">https://v3.router.vuejs.org/zh/guide/</a><br>2、Vuex：<a target="_blank" rel="noopener" href="https://v3.vuex.vuejs.org/zh/">https://v3.vuex.vuejs.org/zh/</a><br>3、element-ui:<a target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN/">https://element.eleme.cn/#/zh-CN/</a><br>4、Mybatis-plus: <a target="_blank" rel="noopener" href="https://baomidou.com/">https://baomidou.com/</a><br>
+<a name="RXFCQ"></a></p>
+<h2 id="后端项目"><a class="markdownIt-Anchor" href="#后端项目"></a> 后端项目</h2>
+<p><a name="m9hsz"></a></p>
+<h3 id="常用注解"><a class="markdownIt-Anchor" href="#常用注解"></a> 常用注解</h3>
+<p><code>@Controller</code>页面与数据</p>
+<p><code>@ResrController</code> 数据</p>
+<blockquote>
+<p>前后端分离项目一般只用RestController，默认情况会将后端返回的对象数据转换为json格式</p>
+</blockquote>
+<p><code>@RequestBody</code> 将http请求得内容绑定到到方法的参数上（一般是封装为Json格式）</p>
+<p><code>@Autowired</code> 自动导入对象到类中，被spring 容器管理</p>
+<p><code>@Configuration</code> 声明配置类</p>
+<p><code>@PathVariable</code>用于获取路径参数</p>
+<p><code>@RequestParam</code>用于获取查询参数。</p>
+<h3 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递"></a> 参数传递</h3>
+<p>访问链接有参数（与变量名一致）</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;    &#x2F;hello?nickname&#x3D;promefire&amp;phone&#x3D;12345
+    @GetMapping(&quot;&#x2F;hello&quot;)
+    public String hello(String nickname,String phone)&#123;
+        return &quot;hello &quot; + nickname + phone;
+    &#125;</code></pre>
+<p>访问链接有参数（与变量名<strong>不一致</strong>）<br>使用<code>@RequestParam(&quot;nickname&quot;)</code>注解</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F;    &#x2F;hello?nickname&#x3D;promefire&amp;phone&#x3D;12345
+    @RequestMapping(value &#x3D; &quot;&#x2F;hello&quot;,method &#x3D; RequestMethod.GET)
+    public String hello(@RequestParam(&quot;nickname&quot;) String name, String phone)&#123;
+        return &quot;hello &quot; + name + phone;
+    &#125;
+</code></pre>
+<p><a name="uYVbv"></a></p>
+<h3 id="访问静态资源"><a class="markdownIt-Anchor" href="#访问静态资源"></a> 访问静态资源</h3>
+<ul>
+<li>在<code>resources</code>下新建<code>static</code>文件夹，导入图片<code>2.png</code>，直接访问<code>localhost:8090/2.png</code>即可，</li>
+</ul>
+<p>定义过滤规则表示访问时路径需要加上<code>/images</code>即访问<code>localhost:8090/images/2.png</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">spring.mvc.static-path-pattern&#x3D;&#x2F;images&#x2F;**</code></pre>
+<p>默认静态资源目录为<code>classpath:/static/</code>，自定义静态目录</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">spring.web.resources.static-locations&#x3D;classpath:&#x2F;static&#x2F;</code></pre>
+<blockquote>
+<p>classpath表示类路径，java文件编译后会放在类路径下，即target目录下的classes</p>
+</blockquote>
+<p><a name="BwJzr"></a></p>
+<h3 id="文件上传"><a class="markdownIt-Anchor" href="#文件上传"></a> 文件上传</h3>
+<p>默认设置限制了上传文件的大小，更改设置在配置文件加入如下两行</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">#单个文件大小
+spring.servlet.multipart.max-file-size&#x3D;10MB
+#每次请求所有文件大小
+spring.servlet.multipart.max-request-size&#x3D;10MB
+</code></pre>
+<p>用户上传的图片也属于静态文件，也要遵循上面的过滤规则，前加/images<br>
+<a name="bKvHE"></a></p>
+<h3 id="拦截器"><a class="markdownIt-Anchor" href="#拦截器"></a> 拦截器</h3>
+<p>配置类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+public class WebConfig implements WebMvcConfigurer &#123;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) &#123;
+&#x2F;&#x2F;        创建一个自定义的拦截器，增加拦截的的路径
+        registry.addInterceptor(new LogonInterceptor()).addPathPatterns(&quot;&#x2F;user&#x2F;**&quot;);
+    &#125;
+&#125;</code></pre>
+<p><a name="iI8ws"></a></p>
+<h3 id="多表查询"><a class="markdownIt-Anchor" href="#多表查询"></a> 多表查询</h3>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Select(&quot;select * from user&quot;)
+   @Results(
+
+           &#123;
+                   @Result(column &#x3D; &quot;id&quot;, property &#x3D; &quot;id&quot;),
+                   @Result(column &#x3D; &quot;no&quot;, property &#x3D; &quot;no&quot;),
+                   @Result(column &#x3D; &quot;name&quot;, property &#x3D; &quot;name&quot;),
+                   @Result(column &#x3D; &quot;password&quot;, property &#x3D; &quot;password&quot;),
+                   @Result(column &#x3D; &quot;age&quot;, property &#x3D; &quot;age&quot;),
+                   @Result(column &#x3D; &quot;sex&quot;, property &#x3D; &quot;sex&quot;),
+                   @Result(column &#x3D; &quot;phone&quot;, property &#x3D; &quot;phone&quot;),
+                   @Result(column &#x3D; &quot;role_id&quot;, property &#x3D; &quot;roleId&quot;),
+                   @Result(column &#x3D; &quot;isValid&quot;, property &#x3D; &quot;isvalid&quot;),
+                   @Result(column &#x3D; &quot;id&quot;, property &#x3D; &quot;records&quot;, javaType &#x3D; List.class,
+                           many &#x3D; @Many(select &#x3D; &quot;com.warehouse.mapper.RecordMapper.selectByUid&quot;))
+           &#125;
+   )
+   List&lt;User&gt; selectUserAndRecord();</code></pre>
+<ul>
+<li>实体类User新增变量records后，要加上getter和setter方法，要不然结果会不显示</li>
+<li>@Result中column表示查到的表中的字段，property表示实体类中的字段。此处表示映射关系，所有的映射都要写</li>
+<li><code>@Result(column = &quot;id&quot;, property = &quot;records&quot;, javaType = List.class, many = @Many(select = &quot;com.warehouse.mapper.RecordMapper.selectByUid&quot;))</code>需用 <code>javaType</code>指明records类型为集合List，使用<code>many@many(select = )</code>因为一个用户有多个订单。订单查用户则用<code>one@one(select = )</code></li>
+</ul>
+<p><a name="V0X09"></a></p>
+<h3 id="条件查询"><a class="markdownIt-Anchor" href="#条件查询"></a> 条件查询</h3>
+<p>使用QueryWrapper在Service层使用 <a target="_blank" rel="noopener" href="https://baomidou.com/pages/10c804/">https://baomidou.com/pages/10c804/</a></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public List&lt;User&gt; selectList() &#123;
+        QueryWrapper&lt;User&gt; queryWrapper &#x3D; new QueryWrapper&lt;&gt;();
+        queryWrapper.ge(&quot;age&quot;,20);
+        return userMapper.selectList(queryWrapper);
+    &#125;</code></pre>
+<p><a name="QYWlM"></a></p>
+<h3 id="分页查询"><a class="markdownIt-Anchor" href="#分页查询"></a> 分页查询</h3>
+<p>配置类-一个分页拦截器</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+public class MybatisPlusConfig &#123;
+
+    @Bean
+    public MybatisPlusInterceptor mybatisPlusInterceptor() &#123;
+        MybatisPlusInterceptor interceptor &#x3D; new MybatisPlusInterceptor();
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+        return interceptor;
+    &#125;
+&#125;
+</code></pre>
+<p>查询</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">    @GetMapping(&quot;&#x2F;user&#x2F;findByPage&quot;)
+    public IPage findByPage()&#123;
+&#x2F;&#x2F;        User:查询的是那张表，   0：起始值 从第几条开始取     2:每页条数  取几条
+        Page&lt;User&gt; page &#x3D; new Page&lt;User&gt;(0,2);
+        IPage iPage &#x3D; userMapper.selectPage(page,null);
+        return iPage;
+
+    &#125;</code></pre>
+<ul>
+<li>更简单的方法使用<code>PageHepler</code></li>
+</ul>
+<p><a name="ofM7O"></a></p>
+<h3 id="代码生成器"><a class="markdownIt-Anchor" href="#代码生成器"></a> 代码生成器</h3>
+<p>根据数据库中表来生成controller、mapper、service、entity层代码，虽然只是新建了类，省去手动的麻烦，<br>需要注意的时生成后要在service实现类和mapper类顶端加入@Service @Mapper注解</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.warehouse.common;
+
+import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.baomidou.mybatisplus.generator.AutoGenerator;
+import com.baomidou.mybatisplus.generator.InjectionConfig;
+import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class CodeGenerator &#123;
+    &#x2F;**
+     * &lt;p&gt;
+     * 读取控制台内容
+     * &lt;&#x2F;p&gt;
+     *&#x2F;
+    public static String scanner(String tip) &#123;
+        Scanner scanner &#x3D; new Scanner(System.in);
+        StringBuilder help &#x3D; new StringBuilder();
+        help.append(&quot;请输入&quot; + tip + &quot;：&quot;);
+        System.out.println(help.toString());
+        if (scanner.hasNext()) &#123;
+            String ipt &#x3D; scanner.next();
+            if (StringUtils.isNotBlank(ipt)) &#123;
+                return ipt;
+            &#125;
+        &#125;
+        throw new MybatisPlusException(&quot;请输入正确的&quot; + tip + &quot;！&quot;);
+    &#125;
+
+    &#x2F;**
+     * 操作步骤：
+     *  1.修改数据源包括地址密码信息，对应代码标记：一、 下同
+     *  2.模块配置，可以修改包名
+     *  3.修改模板（这步可忽略）
+     * @param args
+     *&#x2F;
+    public static void main(String[] args) &#123;
+        &#x2F;&#x2F; 代码生成器
+        AutoGenerator mpg &#x3D; new AutoGenerator();
+
+        &#x2F;&#x2F; 全局配置
+        GlobalConfig gc &#x3D; new GlobalConfig();
+        String projectPath &#x3D; System.getProperty(&quot;user.dir&quot;)+&quot;&#x2F;warehouse&quot;;
+        gc.setOutputDir(projectPath + &quot;&#x2F;src&#x2F;main&#x2F;java&quot;);
+        gc.setAuthor(&quot;promefire&quot;);
+        gc.setOpen(false);
+        gc.setSwagger2(true); &#x2F;&#x2F;实体属性 Swagger2 注解
+        gc.setBaseResultMap(true);&#x2F;&#x2F; XML ResultMap
+        gc.setBaseColumnList(true);&#x2F;&#x2F; XML columList
+        &#x2F;&#x2F;去掉service接口首字母的I, 如DO为User则叫UserService
+        gc.setServiceName(&quot;%sService&quot;);
+        mpg.setGlobalConfig(gc);
+
+        &#x2F;&#x2F; 数据源配置
+        DataSourceConfig dsc &#x3D; new DataSourceConfig();
+        &#x2F;&#x2F; 一、修改数据源
+        dsc.setUrl(&quot;jdbc:mysql:&#x2F;&#x2F;101.200.228.42:3306&#x2F;warehouse?useUnicode&#x3D;true&amp;characterEncoding&#x3D;utf8&amp;useSSL&#x3D;false&amp;serverTimezone&#x3D;GMT%2B8&quot;);
+        &#x2F;&#x2F; dsc.setSchemaName(&quot;public&quot;);
+        dsc.setDriverName(&quot;com.mysql.jdbc.Driver&quot;);
+        dsc.setUsername(&quot;root&quot;);
+        dsc.setPassword(&quot;zhijie311&quot;);
+        mpg.setDataSource(dsc);
+
+        &#x2F;&#x2F; 包配置
+        PackageConfig pc &#x3D; new PackageConfig();
+        &#x2F;&#x2F;pc.setModuleName(scanner(&quot;模块名&quot;));
+        &#x2F;&#x2F; 二、模块配置
+        pc.setParent(&quot;com.warehouse&quot;)
+                .setEntity(&quot;entity&quot;)
+                .setMapper(&quot;mapper&quot;)
+                .setService(&quot;service&quot;)
+                .setServiceImpl(&quot;service.impl&quot;)
+                .setController(&quot;controller&quot;);
+        mpg.setPackageInfo(pc);
+
+        &#x2F;&#x2F; 自定义配置
+        InjectionConfig cfg &#x3D; new InjectionConfig() &#123;
+            @Override
+            public void initMap() &#123;
+                &#x2F;&#x2F; to do nothing
+            &#125;
+        &#125;;
+
+        &#x2F;&#x2F; 如果模板引擎是 freemarker
+        String templatePath &#x3D; &quot;templates&#x2F;mapper.xml.ftl&quot;;
+        &#x2F;&#x2F; 如果模板引擎是 velocity
+        &#x2F;&#x2F; String templatePath &#x3D; &quot;&#x2F;templates&#x2F;mapper.xml.vm&quot;;
+
+        &#x2F;&#x2F; 自定义输出配置
+        List&lt;FileOutConfig&gt; focList &#x3D; new ArrayList&lt;&gt;();
+        &#x2F;&#x2F; 自定义配置会被优先输出
+        focList.add(new FileOutConfig(templatePath) &#123;
+            @Override
+            public String outputFile(TableInfo tableInfo) &#123;
+                &#x2F;&#x2F; 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
+                return projectPath + &quot;&#x2F;src&#x2F;main&#x2F;resources&#x2F;mapper&#x2F;&quot; + pc.getModuleName()
+                        + &quot;&#x2F;&quot; + tableInfo.getEntityName() + &quot;Mapper&quot; + StringPool.DOT_XML;
+            &#125;
+        &#125;);
+        cfg.setFileOutConfigList(focList);
+        mpg.setCfg(cfg);
+
+        &#x2F;&#x2F; 配置模板
+        TemplateConfig templateConfig &#x3D; new TemplateConfig();
+
+
+        templateConfig.setXml(null);
+        mpg.setTemplate(templateConfig);
+
+        &#x2F;&#x2F; 策略配置
+        StrategyConfig strategy &#x3D; new StrategyConfig();
+        strategy.setNaming(NamingStrategy.underline_to_camel);
+        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
+        strategy.setEntityLombokModel(true);
+        strategy.setRestControllerStyle(true);
+        strategy.setInclude(scanner(&quot;表名，多个英文逗号分割&quot;).split(&quot;,&quot;));
+        strategy.setControllerMappingHyphenStyle(true);
+        mpg.setStrategy(strategy);
+        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
+        mpg.execute();
+    &#125;
+&#125;
+</code></pre>
+<p><a name="g1jMp"></a></p>
+<h2 id="前端vue"><a class="markdownIt-Anchor" href="#前端vue"></a> 前端Vue</h2>
+<p><a name="gqopA"></a></p>
+<h3 id="前端项目导入到idea"><a class="markdownIt-Anchor" href="#前端项目导入到idea"></a> 前端项目导入到IDEA</h3>
+<p>直接拷贝进项目目录下<br>1、在terminal中cd进前端文件夹，<code>npm run serve</code>启动<br>2、新建运行配置<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240621-0db31889c489ab64ae8de4aee2aea926.png" alt="image.png"><br>
+<a name="PNsHK"></a></p>
+<h4 id="导入element-plus适配vue3"><a class="markdownIt-Anchor" href="#导入element-plus适配vue3"></a> 导入Element Plus(适配Vue3)</h4>
+<p>官网教程<a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/guide/quickstart.html#%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE">https://element-plus.org/zh-CN/guide/</a><br>1、安装</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">npm install element-plus --save</code></pre>
+<p>2、全局导入<br>在<code>main.js</code>中加入</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">import &#123; createApp &#125; from &#39;vue&#39;
+import ElementPlus from &#39;element-plus&#39;
+import &#39;element-plus&#x2F;dist&#x2F;index.css&#39;
+import App from &#39;.&#x2F;App.vue&#39;
+
+const app &#x3D; createApp(App)
+app.use(ElementPlus)
+app.mount(&#39;#app&#39;)</code></pre>
+<p><a name="DCUo5"></a></p>
+<h4 id="导入element-ui适配vue2"><a class="markdownIt-Anchor" href="#导入element-ui适配vue2"></a> 导入Element UI（适配Vue2）</h4>
+<p>文档：<a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/">https://element-plus.org/zh-CN/</a></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">npm i element-ui -S</code></pre>
+<p>在<code>main.js</code>中导入</p>
+<pre class="line-numbers language-diff" data-language="diff"><code class="language-diff">import Vue from &#39;vue&#39;;
++ import ElementUI from &#39;element-ui&#39;;
++ import &#39;element-ui&#x2F;lib&#x2F;theme-chalk&#x2F;index.css&#39;;
+import App from &#39;.&#x2F;App.vue&#39;;
+
++ Vue.use(ElementUI);
+
+new Vue(&#123;
+    el: &#39;#app&#39;,
+    render: h &#x3D;&gt; h(App)
+&#125;);</code></pre>
+<p><a name="ZtBoH"></a></p>
+<h3 id="搭建页面布局"><a class="markdownIt-Anchor" href="#搭建页面布局"></a> 搭建页面布局</h3>
+<blockquote>
+<p>使用containter容器</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://element-plus.org/zh-CN/component/container.html#%E4%BE%8B%E5%AD%90">https://element-plus.org/zh-CN/component/container.html#%E4%BE%8B%E5%AD%90</a></p>
+<p><a name="anjNg"></a></p>
+<h3 id="页面布局的拆分"><a class="markdownIt-Anchor" href="#页面布局的拆分"></a> 页面布局的拆分</h3>
+<p>例如将<code>index</code>页拆分成 Header、Main、Aside 。将<Header></Header>前后行保留在index.vue文件中</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">&lt;el-header style&#x3D;&quot;text-align: right; font-size: 12px; height: 100%&quot;&gt;
+        &lt;Header&gt;&lt;&#x2F;Header&gt;
+      &lt;&#x2F;el-header&gt;</code></pre>
+<ul>
+<li>数据记得要同步转移</li>
+<li>记得要在index页面中导入组件<br>
+<a name="qTx28"></a></li>
+</ul>
+<h3 id="header页面编写"><a class="markdownIt-Anchor" href="#header页面编写"></a> Header页面编写</h3>
+<p>1、下拉菜单<br>2、导航栏伸缩</p>
+<ul>
+<li>使用图标时要先导入</li>
+</ul>
+<p><code> &lt;el-icon &gt;&lt;Memo /&gt;&lt;/el-icon&gt;</code>前要导入<code>import &#123;Memo,&#125; from '@element-plus/icons-vue'</code></p>
+<p><a name="HPV5Y"></a></p>
+<h3 id="菜单导航页面编写"><a class="markdownIt-Anchor" href="#菜单导航页面编写"></a> 菜单导航页面编写</h3>
+<p><a name="Rp8e7"></a></p>
+<h4 id="导航页伸缩实现"><a class="markdownIt-Anchor" href="#导航页伸缩实现"></a> 导航页伸缩实现</h4>
+<p>思路：header点击图标–&gt;提交到父组件—&gt;改变aside组件<br></p>
+<p>涉及到两次通信，第一次： header向父组件通信（子-&gt;父）。第二次：父组件向侧边栏组件通信（父-&gt;子）</p>
+<p><a name="XDo80"></a></p>
+<h4 id="组件间通信"><a class="markdownIt-Anchor" href="#组件间通信"></a> 组件间通信</h4>
+<p><a name="zLZ8v"></a></p>
+<h5 id="父子props"><a class="markdownIt-Anchor" href="#父子props"></a> 父–&gt;子（props）：</h5>
+<p>父组件</p>
+<ul>
+<li><code>:propIsCollapse=&quot;isCollapse&quot;</code>前要加冒号</li>
+</ul>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">
+&lt;template&gt;
+    &lt;Aside :propIsCollapse&#x3D;&quot;isCollapse&quot;&gt;&lt;&#x2F;Aside&gt;
+&lt;&#x2F;template&gt;</code></pre>
+<p>子组件</p>
+<ul>
+<li>要声明父组件传来的数据类型</li>
+</ul>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script&gt;
+export default &#123;
+  name: &quot;Aside&quot;,
+  props:&#123;
+    propIsCollapse:Boolean,
+  &#125;
+&#125;
+&lt;&#x2F;script&gt;</code></pre>
+<p><a name="MGzBC"></a></p>
+<h5 id="子父emit"><a class="markdownIt-Anchor" href="#子父emit"></a> 子—&gt;父（$emit）</h5>
+<p>子组件 在方法sendMessage函数中emit了一个自定义事件，名为<code>emitCollapse</code><br>也可以传递参数<code>this.$emit(&quot;emitCollapse&quot;,1111)</code></p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script&gt;
+export default &#123;
+    sendMessage()&#123;
+      this.$emit(&quot;emitCollapse&quot;)
+      &#x2F;&#x2F; this.$emit(&quot;emitCollapse&quot;,1111)
+    &#125;
+  &#125;,
+&lt;&#x2F;script&gt;</code></pre>
+<p>父组件<br><code>@emitCollapse</code>表示事件名，与上面子组件emit的事件名称一致，<code>doCollapse</code>表示接收到子组件信息时运行这个函数，</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;script&gt;
+export default &#123;
+  name: &quot;index&quot;,
+  components: &#123;Main, Header, Aside&#125;,
+  methods:&#123;
+    doCollapse(data)&#123;
+      console.log(data)
+      &#x2F;&#x2F; 将子组件传递的参数输出到控制台
+    &#125;
+  &#125;
+&#125;  
+&lt;&#x2F;script&gt;
+
+&lt;template&gt;
+  &lt;Header @emitCollapse&#x3D;&quot;doCollapse&quot; &gt;&lt;&#x2F;Header&gt;
+&lt;&#x2F;template&gt;</code></pre>
+<p><a name="nzL0Q"></a></p>
+<h3 id="axios网络请求"><a class="markdownIt-Anchor" href="#axios网络请求"></a> Axios网络请求</h3>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240606-deaadc2dff6f2a62c84f7ad057d174c0.png" alt="image.png"><br>文档地址：<a target="_blank" rel="noopener" href="https://www.axios-http.cn/docs/intro">https://www.axios-http.cn/docs/intro</a><br>在前端项目<code>main.js</code>文件中加入</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">import axios from &#39;axios&#39;
+Vue.prototype.$axios &#x3D; axios</code></pre>
+<p>后端<br>1、全局<br>在后端项目新增配置类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+public class CorsConfig implements WebMvcConfigurer &#123;
+    @Override
+    public void addCorsMappings(CorsRegistry registry) &#123;
+        registry.addMapping(&quot;&#x2F;**&quot;) &#x2F;&#x2F;允许跨域访问的路径
+                &#x2F;&#x2F;是否发送Cookie
+                .allowCredentials(true)
+                &#x2F;&#x2F;允许跨域访问的源
+                .allowedOriginPatterns(&quot;*&quot;)
+                .allowedMethods(new String[]&#123;&quot;GET&quot;, &quot;POST&quot;, &quot;PUT&quot;, &quot;DELETE&quot;&#125;) &#x2F;&#x2F;允许请求方法
+                .allowedHeaders(&quot;*&quot;) &#x2F;&#x2F;允许头部设置
+                .exposedHeaders(&quot;*&quot;);
+    &#125;
+&#125;
+</code></pre>
+<p>2、单独Controller<br>单独一个控制器可以通过加``@CrossOrigin `注解实现，该controller下所有方法都可以跨域</p>
+<p>在组件创建时运行获取后端数据，赋值给变量tableData</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">created:function () &#123;
+    this.$axios.get(&quot;http:&#x2F;&#x2F;localhost:8090&#x2F;&#x2F;user&#x2F;findAll&quot;).then(response&#x3D;&gt;&#123;
+      this.tableData &#x3D; response.data
+      console.log(response.data)
+    &#125;)
+  &#125;</code></pre>
+<blockquote>
+<p>在main.js中配置<code>axios.defaults.baseURL = &quot;http://localhost:8090&quot;</code>后，可简写成<code>this.$axios.get(&quot;user/findAll&quot;)</code></p>
+</blockquote>
+<p>将<code>tableData</code>数据显示在表格中，需要创建初始的id、no等字段</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue"> &lt;el-table :data&#x3D;&quot;tableData&quot;
+  :header-cell-style&#x3D;&quot;&#123;background: &#39;#d9d8d8&#39;,color: &#39;#000000&#39;&#125;&quot;
+  &gt;
+    &lt;el-table-column prop&#x3D;&quot;id&quot; label&#x3D;&quot;日期&quot; width&#x3D;&quot;140&quot;&gt;
+    &lt;&#x2F;el-table-column&gt;
+    &lt;el-table-column prop&#x3D;&quot;no&quot; label&#x3D;&quot;账号&quot; width&#x3D;&quot;120&quot;&gt;
+    &lt;&#x2F;el-table-column&gt;
+    &lt;el-table-column prop&#x3D;&quot;name&quot; label&#x3D;&quot;姓名&quot; width&#x3D;&quot;120&quot;&gt;
+    &lt;&#x2F;el-table-column&gt;
+&lt;&#x2F;el-table&gt;</code></pre>
+<blockquote>
+<p>其中id、no、name要与实体类中的变量名称对应</p>
+</blockquote>
+<p><a name="v1xqb"></a></p>
+<h3 id="vue-router路由-组件切换"><a class="markdownIt-Anchor" href="#vue-router路由-组件切换"></a> vue Router路由-组件切换</h3>
+<p>安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install vue-router@3</code></pre>
+<blockquote>
+<p>@3表示安装版本</p>
+</blockquote>
+<p>三个组件<code>Friends.vue</code>、<code>My.vue</code> <code>Discover.vue</code></p>
+<p>Friends.vue</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+ &lt;div&gt;
+   &lt;h1&gt;关注&lt;&#x2F;h1&gt;
+ &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+</code></pre>
+<p>My.vue</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+&lt;div&gt;
+  &lt;h1&gt;我的音乐&lt;&#x2F;h1&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;</code></pre>
+<p>Discover.vue</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+&lt;div&gt;
+  &lt;h1&gt;发现音乐&lt;&#x2F;h1&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;</code></pre>
+<p>在App.vue中</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div id&#x3D;&quot;app&quot;&gt;
+  &lt;router-link to&#x3D;&quot;&#x2F;discover&quot;&gt;发现音乐&lt;&#x2F;router-link&gt;
+  &lt;router-link to&#x3D;&quot;&#x2F;my&quot;&gt;我的&lt;&#x2F;router-link&gt;
+  &lt;router-link to&#x3D;&quot;&#x2F;friends&quot;&gt;关注&lt;&#x2F;router-link&gt;
+&lt;!--占位符  --&gt;
+  &lt;router-view&gt;&lt;&#x2F;router-view&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script&gt;
+
+
+import My from &quot;@&#x2F;components&#x2F;My.vue&quot;;
+import Discover from &quot;@&#x2F;components&#x2F;Discover.vue&quot;;
+import Friends from &quot;@&#x2F;components&#x2F;Friends.vue&quot;;
+
+export default &#123;
+  name: &#39;App&#39;,
+  components: &#123;
+    My,
+    Discover,
+    Friends,
+
+  &#125;
+&#125;
+&lt;&#x2F;script&gt;
+</code></pre>
+<blockquote>
+<p>此时只有链接，还需要配置路径和组件之间的对应关系</p>
+</blockquote>
+<ul>
+<li>注意占位符<code>  &lt;router-view&gt;&lt;/router-view&gt;</code>不能丢</li>
+<li><code>router.push(...)</code>等同于<code>&lt;router-link : to=&quot;...&quot;&gt;</code></li>
+</ul>
+<p>新建文件夹router,存放 路由–组件映射文件。新建index.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">import VueRouter from &quot;vue-router&quot;;
+import Vue  from &quot;vue&quot;;
+
+import My from &#39;..&#x2F;components&#x2F;My.vue&#39;
+import Friends from &quot;@&#x2F;components&#x2F;Friends.vue&quot;;
+import Discover from &quot;@&#x2F;components&#x2F;Discover.vue&quot;;
+Vue.use(VueRouter)
+
+const  router &#x3D; new VueRouter(&#123;
+    routes: [
+        &#x2F;&#x2F; 指定hash属性与组件之间的对应关系
+        &#123;path: &#39;&#x2F;discover&#39;, component: Discover&#125;,
+        &#123;path: &#39;&#x2F;friends&#39;, component: Friends&#125;,
+        &#123;path: &#39;&#x2F;my&#39;, component: My&#125;,
+      &#x2F;&#x2F; 重定向
+      &#x2F;&#x2F; 将首页重定向到discover页
+        &#123;path:&#39;&#39;, redirect:&#39;&#x2F;discover&#39;&#125;，
+
+    ]
+&#125;)
+
+export default router</code></pre>
+<blockquote>
+<p>需要修改的只有<code>routes</code>中路径与组件的对应关系</p>
+</blockquote>
+<p>之后在<code>main.js</code>中引入</p>
+<pre class="line-numbers language-diff" data-language="diff"><code class="language-diff">import Vue from &#39;vue&#39;;
+import ElementUI from &#39;element-ui&#39;;
+import &#39;element-ui&#x2F;lib&#x2F;theme-chalk&#x2F;index.css&#39;;
+import axios from &#39;axios&#39;
+axios.defaults.baseURL &#x3D; &quot;http:&#x2F;&#x2F;localhost:8090&quot;
+Vue.prototype.$axios &#x3D; axios
+
++ import router from &quot;.&#x2F;router&#x2F;index&quot;;
+
+import App from &#39;.&#x2F;App.vue&#39;;
+
+Vue.use(ElementUI);
+
+new Vue(&#123;
+    el: &#39;#app&#39;,
++     router:router,
+    render: h &#x3D;&gt; h(App)
+&#125;);</code></pre>
+<p><a name="uXZQS"></a></p>
+<h4 id="子路由"><a class="markdownIt-Anchor" href="#子路由"></a> 子路由</h4>
+<p>1、直接按之前的格式写，path路径写二级路径</p>
+<pre class="line-numbers language-diff" data-language="diff"><code class="language-diff">
+const  router &#x3D; new VueRouter(&#123;
+    routes: [
+        &#x2F;&#x2F; 指定hash属性与组件之间的对应关系
+        &#123;path: &#39;&#x2F;discover&#39;, component: Discover&#125;,
+          .	
+          .
+          .
++        &#123;path:&#39;&#x2F;discover&#x2F;today&#39;,component: today&#125;
+
+    ]
+&#125;)</code></pre>
+<p>2、使用chidren属性</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">&#123;path: &#39;&#x2F;discover&#39;, component: Discover,
+        children:[
+            &#123;path:&#39;today&#39;,component:today&#125;,
+        ]
+&#125;,</code></pre>
+<p><a name="UdIHh"></a></p>
+<h4 id="动态路由"><a class="markdownIt-Anchor" href="#动态路由"></a> 动态路由</h4>
+<p>文档：<a target="_blank" rel="noopener" href="https://v3.router.vuejs.org/zh/guide/">https://v3.router.vuejs.org/zh/guide/</a></p>
+<blockquote>
+<p>每一个商品都有一个详情页，不可能为每一个详情页写一个组件，这时就需要动态路由</p>
+</blockquote>
+<p>将多个链接跳转到一个组件,使用<code>:id</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">const  router &#x3D; new VueRouter(&#123;
+    routes: [
+        &#x2F;&#x2F; 指定hash属性与组件之间的对应关系
+
+        &#123;path: &#39;&#x2F;my&#39;, component: My,
+        children:[
+            &#123;path: &#39;:id&#39;,component: Product&#125;
+        ]
+        &#125;,
+
+    ]
+&#125;)</code></pre>
+<p><a name="n4uok"></a></p>
+<h4 id="导航守卫"><a class="markdownIt-Anchor" href="#导航守卫"></a> 导航守卫</h4>
+<p><a target="_blank" rel="noopener" href="https://v3.router.vuejs.org/zh/guide/advanced/navigation-guards.html">https://v3.router.vuejs.org/zh/guide/advanced/navigation-guards.html</a></p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">router.beforeEach((to, from, next) &#x3D;&gt; &#123;
+  if (to.name !&#x3D;&#x3D; &#39;Login&#39; &amp;&amp; !isAuthenticated) next(&#123; name: &#39;Login&#39; &#125;)
+  else next()
+&#125;)</code></pre>
+<ul>
+<li><strong>to: Route</strong>: 即将要进入的目标 <a target="_blank" rel="noopener" href="https://v3.router.vuejs.org/zh/api/#%E8%B7%AF%E7%94%B1%E5%AF%B9%E8%B1%A1">路由对象</a></li>
+<li><strong>from: Route</strong>: 当前导航正要离开的路由</li>
+<li>守卫方法中如果声明了next形参，则必须调用next()函数，否则不允许用户访问任何一个路由
+<ul>
+<li>直接放行：next()</li>
+<li>强制停留在当前页面：next(false)</li>
+<li>强制跳转到登录页面：next(‘/login’)<br>
+<a name="AwX9Q"></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="vuex状态管理"><a class="markdownIt-Anchor" href="#vuex状态管理"></a> VUEX状态管理</h3>
+<p>文档：<a target="_blank" rel="noopener" href="https://v3.vuex.vuejs.org/zh/">https://v3.vuex.vuejs.org/zh/</a><br>相当于把所用的值放在一起，谁用谁取，省去了组件之间的繁琐通信<br>安装：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm install vuex@3</code></pre>
+<p>创建一个state在 <code>/store/indes.js</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">import vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+
+vue.use(Vuex)
+
+export default new Vuex.Store(&#123;
+    state:&#123;
+        menu:[]
+    &#125;,
+    mutations:&#123;
+        setMenu(state,menu)&#123;
+            state.menu &#x3D; menu
+        &#125;,
+        getMenu(state)&#123;
+            return state.menu
+        &#125;
+
+    &#125;
+&#125;)</code></pre>
+<p>在main.js中导入</p>
+<pre class="line-numbers language-diff" data-language="diff"><code class="language-diff">+ import store from &#39;.&#x2F;store&#39;
+
+
+new Vue(&#123;
+    el: &#39;#app&#39;,
+    router:router,
++     store,
+    render: h &#x3D;&gt; h(App)
+&#125;);</code></pre>
+<p>通过<code> store.state</code> 来获取状态对象，以及通过 <code>store.commit(&quot;xxx&quot;)</code>  方法触发状态变更：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">this.$store.commit(&quot;setMenu&quot;,res.data.menu)</code></pre>
+<p><a name="ZNU4m"></a></p>
+<h4 id="动态显示菜单和添加路由"><a class="markdownIt-Anchor" href="#动态显示菜单和添加路由"></a> 动态显示菜单和添加路由</h4>
+<p>登录时根据用户权限类型取出用户可以访问的菜单，存到store中，侧边栏Aside读取store中menu显示菜单。同时根据menu将路由跳转信息动态添加到<code>router</code>中，</p>
+<p>组件Aside中取store中的菜单数据,使用computed</p>
+<blockquote>
+<p>在 Vue.js 中，computed 属性用于计算属性的值，其值根据其他属性的值动态计算得出。在你的示例中，computed 属性 “menu” 用于从 Vuex 的状态中获取菜单数据<br>
+使用 computed 的主要优势在于：</p>
+<ol>
+<li><strong>响应式更新</strong>：computed 属性的值会根据其依赖的状态的变化而动态更新。当依赖的状态发生变化时，computed 属性会自动重新计算其值，并在视图中进行更新。</li>
+<li><strong>缓存</strong>：computed 属性的值会被缓存，只有在其依赖的状态发生变化时才会重新计算。这样可以提高性能，避免不必要的计算。</li>
+<li><strong>简洁性</strong>：computed 属性能够简化模板中的逻辑，使代码更加清晰和易读。通过在模板中直接使用 computed 属性，可以减少重复的计算和逻辑。</li>
+</ol>
+</blockquote>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">computed:&#123;
+  &quot;menu&quot;:&#123;
+    get()&#123;
+      return this.$store.state.menu
+    &#125;
+  &#125;
+&#125;,</code></pre>
+<p>根据menu显示菜单</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;el-menu-item :index&#x3D;&quot;&#39;&#x2F;&#39; + item.menuclick &quot;  v-for&#x3D;&quot;(item,i) in menu&quot; :key&#x3D;&quot;i&quot;&gt;
+      &lt;i :class&#x3D;&quot;item.menuicon&quot;&gt;&lt;&#x2F;i&gt;
+      &lt;span slot&#x3D;&quot;title&quot; &gt;&#123;&#123; item.menuname &#125;&#125;&lt;&#x2F;span&gt;
+    &lt;&#x2F;el-menu-item&gt;</code></pre>
+<p>根据menu信息添加路由<br>在<code>/store/index.js</code>中新建一个方法addNewRouter，在setMenu中调用。登录时保存菜单信息的同时添加路由</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">function addNewRouter(menulist)&#123;
+    let routes &#x3D; router.options.routes
+    console.log(routes)
+
+    routes.forEach(routerItem&#x3D;&gt;&#123;
+        if(routerItem.path &#x3D;&#x3D; &#39;&#x2F;Index&#39;)&#123;
+            menulist.forEach(menuitem&#x3D;&gt;&#123;
+                let childRoute &#x3D; &#123;
+                    path:&quot;&#x2F;&quot; + menuitem.menuclick,
+                    &#x2F;&#x2F; component: menuitem.menucomponent,
+                    name: menuitem.menuname,
+                    meta:&#123;
+                        title: menuitem.menuname
+                    &#125;,
+                    component:()&#x3D;&gt;import(&#39;..&#x2F;components&#x2F;&#39; + menuitem.menucomponent)
+                &#125;
+
+                routerItem.children.push(childRoute)
+            &#125;)
+
+        &#125;
+
+    &#125;)
+    router.addRoutes(routes)
+&#125;s</code></pre>
+<p><a name="gN2qn"></a></p>
+<h3 id="登录页面"><a class="markdownIt-Anchor" href="#登录页面"></a> 登录页面</h3>
+<p>sessionStorage 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。存储的是 key/value <br>保存数据</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">sessionStorage.setItem(&quot;CurUser&quot;,JSON.stringify(res.data.user))</code></pre>
+<p>获取数据</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">sessionStorage.getItem(&quot;CurUser&quot;)</code></pre>
+<ul>
+<li>获取到的数据是字符串格式，要使用<code>JSON.parse(&quot;xxx&quot;)</code>转换为json格式</li>
+</ul>
+<p><a name="CdHvY"></a></p>
+<h3 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h3>
+<p><a name="FuM17"></a></p>
+<h4 id="报错navigationduplicated-avoided-redundant-navigation-to-current-location-home"><a class="markdownIt-Anchor" href="#报错navigationduplicated-avoided-redundant-navigation-to-current-location-home"></a> 报错：NavigationDuplicated: Avoided redundant navigation to current location: “/Home”</h4>
+<p>这个警告通常在Vue Router中出现，它表示尝试导航到当前位置的冗余导航。这可能是因为你正在尝试导航到一个路由，而该路由已经是当前活动的路由。<br>解决：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/62462276/how-to-solve-avoided-redundant-navigation-to-current-location-error-in-vue">https://stackoverflow.com/questions/62462276/how-to-solve-avoided-redundant-navigation-to-current-location-error-in-vue</a></p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">this.$router.push(&quot;&#x2F;Home&quot;).catch(()&#x3D;&gt;&#123;&#125;);</code></pre>
+<p>避免错误显示，让浏览器以为错误被处理了。</p>
+<p><a name="WpPAl"></a></p>
+<h4 id="vue启动项目卡在24"><a class="markdownIt-Anchor" href="#vue启动项目卡在24"></a> Vue启动项目卡在24%</h4>
+<p>解决：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_60967241/article/details/124308389">https://blog.csdn.net/m0_60967241/article/details/124308389</a><br>原因是某个vue组件中<code>&lt;template&gt;&lt;/template&gt;</code> 出现了未用<code>&lt;div&gt;</code> 包装起来的东西</p>
+<p><a name="PLmUp"></a></p>
+<h3 id="菜单跳转"><a class="markdownIt-Anchor" href="#菜单跳转"></a> 菜单跳转</h3>
+<ul>
+<li>主要要加router！！！！！！！！！！！！！！！！！！！！！！！</li>
+</ul>
+<pre class="line-numbers language-diff" data-language="diff"><code class="language-diff">&lt;el-menu
+      default-active&#x3D;&quot;&#x2F;Home&quot;
+      background-color&#x3D;&quot;#545c64&quot;
+      text-color&#x3D;&quot;#fff&quot;
+      active-text-color&#x3D;&quot;#ffd04b&quot;
+      :collapse&#x3D;&quot;propIsCollapse&quot;
+      :collapse-transition&#x3D;&quot;false&quot;
+      style&#x3D;&quot;height: 100vh&quot;
++      router
+        &gt;
+    &lt;el-menu-item index&#x3D;&quot;&#x2F;Home&quot;&gt;
+      &lt;i class&#x3D;&quot;el-icon-s-home&quot;&gt;&lt;&#x2F;i&gt;
+      &lt;span slot&#x3D;&quot;title&quot; &gt;主页&lt;&#x2F;span&gt;
+    &lt;&#x2F;el-menu-item&gt;
+    &lt;el-menu-item index&#x3D;&quot;&#x2F;User&quot;&gt;
+      &lt;i class&#x3D;&quot;el-icon-s-home&quot;&gt;&lt;&#x2F;i&gt;
+      &lt;span slot&#x3D;&quot;title&quot; &gt;导航一&lt;&#x2F;span&gt;
+    &lt;&#x2F;el-menu-item&gt;
+    &lt;el-menu-item index&#x3D;&quot;&#x2F;Record&quot;&gt;
+      &lt;i class&#x3D;&quot;el-icon-s-home&quot;&gt;&lt;&#x2F;i&gt;
+      &lt;span slot&#x3D;&quot;title&quot; &gt;导航一&lt;&#x2F;span&gt;
+    &lt;&#x2F;el-menu-item&gt;
+
+
+  &lt;&#x2F;el-menu&gt;</code></pre>
+<p><a name="bFCJ0"></a></p>
+<h3 id="form表单重置"><a class="markdownIt-Anchor" href="#form表单重置"></a> Form表单重置</h3>
+<p>表单重置：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ggsddu/p/12297980.html">https://www.cnblogs.com/ggsddu/p/12297980.html</a></p>
+<p>表格中选中的物品某一栏，点击入库，自动填充物品名不变化，去掉<code>prop=&quot;name&quot;</code></p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;el-form-item label&#x3D;&quot;物品名&quot; 
+-         prop&#x3D;&quot;name&quot;
+  &gt;
+          &lt;el-col :span&#x3D;&quot;20&quot;&gt;
+            &lt;el-input v-model&#x3D;&quot;form1.name&quot;&gt;&lt;&#x2F;el-input&gt;
+          &lt;&#x2F;el-col&gt;
+        &lt;&#x2F;el-form-item&gt;</code></pre>
+<p><a name="io79P"></a></p>
+<h2 id="部署"><a class="markdownIt-Anchor" href="#部署"></a> 部署</h2>
+<p>服务器：centos<br>前端：Vue<br>后端：Spring boot <br>数据库：Mysql</p>
+<p>JDK8 linux安装<br><a target="_blank" rel="noopener" href="https://repo.huaweicloud.com/java/jdk/8u151-b12/">https://repo.huaweicloud.com/java/jdk/8u151-b12/</a></p>
+<p><a name="qqudx"></a></p>
+<h3 id="前端项目部署"><a class="markdownIt-Anchor" href="#前端项目部署"></a> 前端项目部署</h3>
+<p>1、cd进前端项目目录，执行<code>npm run build</code>打包，运行后会生成<code>dist</code>文件夹，打包上传到服务器<br>2、服务器端<br>查看nginx配置文件路径</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nginx -t</code></pre>
+<p>修改配置文件，新增一个server如下</p>
+<pre class="line-numbers language-nginx" data-language="nginx"><code class="language-nginx">
+.
+.
+.
+
+
+server
+    &#123;
+        listen 888;
+        server_name phpmyadmin;
+        index index.html index.htm index.php;
+        root  &#x2F;www&#x2F;server&#x2F;phpmyadmin;
+
+        #error_page   404   &#x2F;404.html;
+        include enable-php.conf;
+
+        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+        &#123;
+            expires      30d;
+        &#125;
+
+        location ~ .*\.(js|css)?$
+        &#123;
+            expires      12h;
+        &#125;
+
+        location ~ &#x2F;\.
+        &#123;
+            deny all;
+        &#125;
+
+        access_log  &#x2F;www&#x2F;wwwlogs&#x2F;access.log;
+    &#125;
++server &#123;
++    listen 8091;
++    server_name 101.200.228.42;  # 替换为你的域名或 IP 地址
++
++    root &#x2F;usr&#x2F;server&#x2F;Vue&#x2F;dist&#x2F;;
++    index index.html;
+
++    location &#x2F; &#123;
++        try_files $uri $uri&#x2F; &#x2F;index.html;
++    &#125;
++&#125;
+</code></pre>
+<ul>
+<li>路径修改为存放dist的目录<br>
+<a name="C2h2v"></a></li>
+</ul>
+<h3 id="后端项目部署"><a class="markdownIt-Anchor" href="#后端项目部署"></a> 后端项目部署</h3>
+<p>0：安装maven环境<br>下载地址：<a target="_blank" rel="noopener" href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a><br>1、项目打包（jar包）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mvn package</code></pre>
+<blockquote>
+<p>jar包自带tomcat服务器，打包成war包的话需要自己配置服务器</p>
+</blockquote>
+<p>2、后台运行jar包<br>上传到服务器后指定端口运行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">java -jar -Dserver.port&#x3D;8090 warehouse.jar</code></pre>
+<p>使用<code>screen -U</code>后台运行</p>
+<ul>
+<li>如果之前用的本地数据库要修改为服务器数据库</li>
+<li>vue项目中从后端取数据的路径要修改为服务器ip或域名</li>
+<li>端口<strong>安全组</strong>、<strong>防火墙</strong>放行</li>
+</ul>
+<p><a name="rQF52"></a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">桥边红药</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/cang-ku-guan-li-xi-tong.html">http://example.com/post/cang-ku-guan-li-xi-tong.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">桥边红药的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/Spring-Boot/">Spring Boot</a><a class="post-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/">项目开发</a></div><div class="post_share"><div class="social-share" data-image="https://img.promefire.top/blog-img/20240417-01be170a54f6655eebc4d701ee023a2d.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/git-xiang-guan.html" title="Git相关"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240621-f075f52abba3010085b88a24969d23e4.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Git相关</div></div></a></div><div class="next-post pull-right"><a href="/post/hexo-transfer-aliyun.html" title="hexo部署到服务器"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-5a9cbb1a3889d4b602abab31de530bbc.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hexo部署到服务器</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/bi-ye-she-ji.html" title="毕业设计"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-321479bd3726634f30e34c11cbe59c0e.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-06</div><div class="title">毕业设计</div></div></a></div><div><a href="/post/yu-dao-de-cuo-wu-ji-jie-jue.html" title="错误及解决"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-f8661dabdb366643997dc94114b6876b.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-06</div><div class="title">错误及解决</div></div></a></div><div><a href="/post/miao-sha-xi-tong-yi.html" title="秒杀系统"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-be48d7b800271f0d834345e1bce7a06c.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-08</div><div class="title">秒杀系统</div></div></a></div><div><a href="/post/java-xiang-mu-bu-shu-zhi-fu-wu-qi.html" title="Java项目部署至服务器"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-5a9cbb1a3889d4b602abab31de530bbc.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-06</div><div class="title">Java项目部署至服务器</div></div></a></div><div><a href="/post/maven.html" title="Maven"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/2024/12/ec00ba607bd8bcdba50ea57906219818.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-22</div><div class="title">Maven</div></div></a></div><div><a href="/post/spring-yi.html" title="Spring(一)"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-f8661dabdb366643997dc94114b6876b.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-11</div><div class="title">Spring(一)</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">桥边红药</div><div class="author-info__description">我的技术与生活</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/promefire"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/promefire" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3"><span class="toc-number">1.</span> <span class="toc-text"> 文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE"><span class="toc-number">2.</span> <span class="toc-text"> 后端项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3"><span class="toc-number">2.1.</span> <span class="toc-text"> 常用注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">2.2.</span> <span class="toc-text"> 参数传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90"><span class="toc-number">2.3.</span> <span class="toc-text"> 访问静态资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">2.4.</span> <span class="toc-text"> 文件上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-number">2.5.</span> <span class="toc-text"> 拦截器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.6.</span> <span class="toc-text"> 多表查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.7.</span> <span class="toc-text"> 条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.8.</span> <span class="toc-text"> 分页查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-number">2.9.</span> <span class="toc-text"> 代码生成器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AFvue"><span class="toc-number">3.</span> <span class="toc-text"> 前端Vue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%AF%BC%E5%85%A5%E5%88%B0idea"><span class="toc-number">3.1.</span> <span class="toc-text"> 前端项目导入到IDEA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5element-plus%E9%80%82%E9%85%8Dvue3"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 导入Element Plus(适配Vue3)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5element-ui%E9%80%82%E9%85%8Dvue2"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 导入Element UI（适配Vue2）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80"><span class="toc-number">3.2.</span> <span class="toc-text"> 搭建页面布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E7%9A%84%E6%8B%86%E5%88%86"><span class="toc-number">3.3.</span> <span class="toc-text"> 页面布局的拆分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#header%E9%A1%B5%E9%9D%A2%E7%BC%96%E5%86%99"><span class="toc-number">3.4.</span> <span class="toc-text"> Header页面编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95%E5%AF%BC%E8%88%AA%E9%A1%B5%E9%9D%A2%E7%BC%96%E5%86%99"><span class="toc-number">3.5.</span> <span class="toc-text"> 菜单导航页面编写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E9%A1%B5%E4%BC%B8%E7%BC%A9%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.5.1.</span> <span class="toc-text"> 导航页伸缩实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="toc-number">3.5.2.</span> <span class="toc-text"> 组件间通信</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%88%B6%E5%AD%90props"><span class="toc-number">3.5.2.1.</span> <span class="toc-text"> 父–&gt;子（props）：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%90%E7%88%B6emit"><span class="toc-number">3.5.2.2.</span> <span class="toc-text"> 子—&gt;父（$emit）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#axios%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82"><span class="toc-number">3.6.</span> <span class="toc-text"> Axios网络请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue-router%E8%B7%AF%E7%94%B1-%E7%BB%84%E4%BB%B6%E5%88%87%E6%8D%A2"><span class="toc-number">3.7.</span> <span class="toc-text"> vue Router路由-组件切换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E8%B7%AF%E7%94%B1"><span class="toc-number">3.7.1.</span> <span class="toc-text"> 子路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">3.7.2.</span> <span class="toc-text"> 动态路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB"><span class="toc-number">3.7.3.</span> <span class="toc-text"> 导航守卫</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vuex%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86"><span class="toc-number">3.8.</span> <span class="toc-text"> VUEX状态管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%98%BE%E7%A4%BA%E8%8F%9C%E5%8D%95%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%B7%AF%E7%94%B1"><span class="toc-number">3.8.1.</span> <span class="toc-text"> 动态显示菜单和添加路由</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2"><span class="toc-number">3.9.</span> <span class="toc-text"> 登录页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-number">3.10.</span> <span class="toc-text"> 问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%A5%E9%94%99navigationduplicated-avoided-redundant-navigation-to-current-location-home"><span class="toc-number">3.10.1.</span> <span class="toc-text"> 报错：NavigationDuplicated: Avoided redundant navigation to current location: “&#x2F;Home”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE%E5%8D%A1%E5%9C%A824"><span class="toc-number">3.10.2.</span> <span class="toc-text"> Vue启动项目卡在24%</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95%E8%B7%B3%E8%BD%AC"><span class="toc-number">3.11.</span> <span class="toc-text"> 菜单跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#form%E8%A1%A8%E5%8D%95%E9%87%8D%E7%BD%AE"><span class="toc-number">3.12.</span> <span class="toc-text"> Form表单重置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-number">4.</span> <span class="toc-text"> 部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">4.1.</span> <span class="toc-text"> 前端项目部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">4.2.</span> <span class="toc-text"> 后端项目部署</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://img.promefire.top/blog-img/20240417-01be170a54f6655eebc4d701ee023a2d.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 桥边红药</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div id="runtime"></div> <div id = "ICP"><a  target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><img  class="icp-icon"  src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240411-dd5e1b977da05d208a65fbfeb2c8249e.png"><span>冀ICP备2024069835号</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'promefire/myBlogComment',
+      'data-repo-id': 'R_kgDOJnPF5g',
+      'data-category-id': 'DIC_kwDOJnPF5s4CbscM',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },{"mapping":"title"})
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script>(() => {
+  window.Prism = window.Prism || {}
+  window.Prism.manual = true
+
+  const highlightAll = () => {
+    window.Prism.highlightAll()
+  }
+
+  window.addEventListener('load', highlightAll)
+  btf.addGlobalFn('pjaxComplete', highlightAll, 'prismjs')
+  btf.addGlobalFn('encrypt', highlightAll, 'prismjs')
+})()
+</script><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script><script src="/js/runtime.js"> </script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script></div></body></html>

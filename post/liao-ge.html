@@ -1,0 +1,283 @@
+<!DOCTYPE html><script>var date = "12/23,04/04"
+const currentDate = new Date();
+const targetDateParts = date.split(',')
+for(let i = 0;i < targetDateParts.length;i++){
+  
+} 
+
+
+
+</script><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>🐏了个🐏 | 桥边红药的博客</title><meta name="author" content="桥边红药"><meta name="copyright" content="桥边红药"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="🐏了个🐏">
+<meta property="og:url" content="http://example.com/post/liao-ge.html">
+<meta property="og:site_name" content="桥边红药的博客">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.promefire.top/blog-img/20240417-f8641be9d0cd758ea569b9573433fe27.jpg">
+<meta property="article:published_time" content="2023-05-14T17:17:24.000Z">
+<meta property="article:modified_time" content="2023-05-14T17:17:24.000Z">
+<meta property="article:author" content="桥边红药">
+<meta property="article:tag" content="生活">
+<meta property="article:tag" content="日记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.promefire.top/blog-img/20240417-f8641be9d0cd758ea569b9573433fe27.jpg"><link rel="shortcut icon" href="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png"><link rel="canonical" href="http://example.com/post/liao-ge.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '🐏了个🐏',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-14 17:17:24'
+}</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4085662_tt8yn9tbdfe.css"><link rel="stylesheet" href="/css/transpancy.css"><link rel="stylesheet" href="/css/nineSquardGrid.css"><link rel="stylesheet" href="/css/runtime.css"><link rel="stylesheet" href="/css/galleries.css"><link rel="stylesheet" href="/css/equipment.css"><meta name="generator" content="Hexo 6.3.0"><style>.admonition{margin:1.5625em 0;padding:.6rem;overflow:hidden;font-size:.64rem;page-break-inside:avoid;border-left:.3rem solid #42b983;border-radius:.3rem;box-shadow:0 .1rem .4rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);background-color:#fafafa}p.admonition-title{position:relative;margin:-.6rem -.6rem .8em -.6rem!important;padding:.4rem .6rem .4rem 2.5rem;font-weight:700;background-color:rgba(66,185,131,.1)}.admonition-title::before{position:absolute;top:.9rem;left:1rem;width:12px;height:12px;background-color:#42b983;border-radius:50%;content:' '}.info>.admonition-title,.todo>.admonition-title{background-color:rgba(0,184,212,.1)}.attention>.admonition-title,.caution>.admonition-title,.warning>.admonition-title{background-color:rgba(255,145,0,.1)}.error>.admonition-title,.fail>.admonition-title,.failure>.admonition-title,.missing>.admonition-title{background-color:rgba(255,82,82,.1)}.admonition.info,.admonition.todo{border-color:#00b8d4}.admonition.attention,.admonition.caution,.admonition.warning{border-color:#ff9100}.admonition.error,.admonition.fail,.admonition.failure,.admonition.missing{border-color:#ff5252}.info>.admonition-title::before,.todo>.admonition-title::before{background-color:#00b8d4;border-radius:50%}.attention>.admonition-title::before,.caution>.admonition-title::before,.warning>.admonition-title::before{background-color:#ff9100;border-radius:50%}.error>.admonition-title::before,.fail>.admonition-title::before,.failure>.admonition-title::before,.missing>.admonition-title::before{background-color:#ff5252;border-radius:50%}.admonition>:last-child{margin-bottom:0!important}</style></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', () => { preloader.initLoading() }, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', () => { preloader.endLoading() }, 'preloader_end')
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.promefire.top/blog-img/20240417-f8641be9d0cd758ea569b9573433fe27.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="桥边红药的博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240116-43743aa6690dbee7667a39844877db1f.png" alt="Logo"/><span class="site-name">桥边红药的博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw iconfont  icon-shudan"></i><span> 书单</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/bbtime/"><i class="fa-fw iconfont icon-leaf"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">🐏了个🐏</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2023-05-14T17:17:24.000Z" title="发表于 2023-05-14 17:17:24">2023-05-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/%E6%97%A5%E5%B8%B8/">日常</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="ba9d0015f748fdedc6a6d977fa7a95a252e3ac3fa6be1e1c4087e0635ea84172">7f8f5ef90040bb282dc46b024da533d43f02c602b636c458f08ae8abe00ef2cf2caab408cecfbede667089544f71d2254ce10be68e7576e768b347a5dd0cfd0daf55f1be3a5d41805ecf754e7c8622e6b9a82d5edbe9240709a3e2d75058a3b1dc2b855d813220209521d470c35d2ae085a07622de077b54e12a2fff082e7c28c4f9e09d7aae44f005366de399929a35323ef1785b4bf143c8ba50f8858b0fd4deda9f9da5726d739839700e52ef2a876871cc98c0dc0e4d3839195d38d4ac4aaaeac214a690737e867f3eef1b5fcd41bf80c65eb376cb2dfa7eafbff4a269fe564576f9e31932e57c5cbf3512c2366f6759544a13f365db89025ff4d11257d2b3cae568c2d60347766d459aafa0cb397c63dfc910ac865084e7d8165923ed4ade18f47b109a8ee9b820c940888b3b3471c7e4ca70b49281a5bb7dc84b14c0ded09e4fad0bb05417a7413ebdd4e5ea52a6169152d9d678d970a446e63b03d1502edcbac1346c5307d80fe84b7672a6e799cc2c4a40bfd4ed128b4f12205ede11ea5c1517e6beb4f3d98b1ba9cb37aab2cfc68de03ebc22aedc3f10b56cb465ed13a5a7b892951041811b442a209e8c2f95342c26fa1ade39ca0d17cf5f711461a727f0f7a7d5fb56d3be55fd020192262e9761200e95a19308729141e795c00bef49c5020a5ac66fe07646ca492720f7d6fa880ca8e467cbbae946164d780ddfa9fa0dc2e89869bf04034cfb051686960b78ab27b29a0e75ebe533f8d253d8aa3eb598fa32cb3bcf93708a0449ade111a44ebd150abe1ba42aebea5d47b40110a3a27bb2de1dbcf1ae749656391217e4cabbf029a149e2ebfe81c6e62608eeb42ebbfa639aa3a3184f88188a881fd3f5ffc4d27ce8bbabf39bc66eccf6f0a1aa770fa7aa998f010fda3cccb2e24e8c93b52c076d93affab3ff95e2b7ac6a03e0d44895667f0f836fcedca12a66be58020ab1dcb4c0a29e5ab67330ab4b91592c6161caeadbf91283533c049e1dc71d7da192a60e344705889b2e8b2ef4f5e78dcac547cc36f65782d121ab29db792a35c94d6a00502dae6926f594368cccd5ce99ab74cbc5d6552d0c79966401fe57468cb0f0d9cd3119833848906c79f6f28bf46e655c9549892d70b884ed689896b69fc67421bfc38f43d0a7a5c9c79795cfc337ce0e5d546d68d98dec606e953b8df418e434ef0e1d8d63209bb95728ba9b076e72d92c84e20ede70d78f866a16f8f7e11eea84ab89b4af5af9e3d43a30d94393604629b32466f5769c7f209b87c25e64e20ac8d945b6a5ab6a98ab065ce5056e48271d8a0cb9b00865ed3a1312fa0093c574ae6f121fd1c99cc2deaf7114d65f7475fc4a61627ad353d24517a58b0767acbc03a3a2486bec5aab535d4580897f47f47188746aec738ca812b6475e2dd362a879f2b5dcc9bbcc6588c44d47bb01f375a977749f9b22ede200b93ede19d944a4493a8232d61500784dec24803837ddb084509e845e1d63b07ff9be480752b16fef79f704d947a9ac84914b00d7bbf82e43f8954af2f3a887fe621d5404a40fdc79a2d160d834af2ed8ef36533ae46ee61ca9b8df6ebd1d6b17244d284338a64b9444d51ce44ae62ba7a04d2014b3fe59586b704b8726adee85b0a592c90674aa1e81c64a878ef5ba2c9a70384694171d5305fc4330cc5c841db81527139e79699097083199c55719363d4f3ea93a2beff0521da8b9e2246f97205c167f1417a9b47c303f73acfce69d9dfdc8b1b4f8b8a4e8bc20c324646cd5525574a90bc5d7f1b8090a4eba7222ce8526e0406574ffc7fc3ca5271c38df4edcf838ba9b18fe3124183e19fbf9be8e2bcb71fd0dd0213f127248fca43da8fc65068c2d71578c966bb152e37a5cbb4a1118aa018169a50d616fe5c9ec049b5552082143abe43249319b3e611dca89b9dc359cfc84a5ae0460cf0f75e2ff7d9a986a0b2f2d933322d3e10c574c08a8c7bd11e62dd16708e962460894aec0ab8e7d07ac5b3abfe0c023f792411840e5c027eb4e9d5baad3794f035d84ed104b78f8b9266de69246a92855a01608e76ba2c082ea1c54d1a947b5d62d2646e5212fc412a8b731803cab917b2cdfb9af6bf3e079d6098dc389204bdd8d0fd6d8f984929899b4ff56fcbf38d18a54f134601d9e8d6f8a9e7611206bfac28fbc8801755bae4cdd0b86fc02621e10d40a109ee573e7edb2f39b716fe90201fbb6570dcac210c13aa842e669db23a3e25984bcecc827d9f83db86b38370ff0829391b951e96d158bde345cf55818736bd92fe3fcc2d468aa93a9beb77ff45019cd90e1ecf712b283a84121c8b9f7cf69c569cdb97eb395eb0600fa203e3e0105d89d03c4b63689986e131187943cf2638263f0f9f231231c96b3f5c4d3b4edc75887b07af17f27133657a74378bb455299c95c5130a7e35ce5c10443d88b4abf156cacdd34efa6f1257aff672af76c79520593557876fc22b67d5d874577202fe496854e5b2e3d15ac6f864889b52fde73cc34c55dbb15951e68d60aee23433dcdedc07d36b95b046d6232168454f545f51b07c8c66142643e243989b776c54dc812dbcdfe38dfaaf80947b13d79bedcbf646eb32cfe7a7965c910a168a685be50046ca0d3fb41978e25f3f0570016faf2f234ae0ee99cd4f26cfe71e3557154dec0872677e10a347827a1b0453ac1525e8c2c19903ce2ba3055f6532835a58fa1644a7b7e65d7016a4a2c422622d7bf52ec7ed7cf493a1c01123f5cf5a09b263c63cecc1f26e87e298703053de92f271254a5cf1177fde5dabb75727500cd91d16a52049980ccb15ebdafab35840456813ea5c99a103cc22aeb841721e0576f3b72f4ffc40ce4e311f73da3434ebd4f883e99adb8b02ae8986c651719b7d222b9948e919a8ed812ab6b5bdb092fb04f1ea18478b58b262b5695be655b15c26bc60c0b4d566e5f603fc7c1b76f355ab11cbbd1df62b77fb445a52d7ecc4e8b6f06d15b0f91a0186d0d82a594d4e76fa645e25d39cd76cec8c188b1bd0c4d9562e1d777d6b18023352fa5ba90f2c1c2e06377122c9f94c7bb433ce1aa1394135d34619c7f8622e90eade070061d85ee9da76232b4cd8752fd33f787221c504374e240ad82faab21cdcf6e67fab96760635a2d8b9aed903179d9080e5a56cc1155c49524d98ea8136f002ec93ea5be69f2745ce32c4e1ba857912807726c15a70839a0379d184824a09abd9bf63f5ca1e59a1cb427f039409da5dd70c5622f03fe22bc3cc0155325b0db9fd3e140f0ffc9727c238eab7e055012a22d7f9d72d308adb7d90d654ebd15baea6b2def94c0d6b5947dbeec7be778a73f017a9c51f481084658142bc9965a8559ce653bba3b7bf3d6d0c23076d7aafd6a1a82210ff1a8cd3915362e2d0ce87bca85bd0da92ae1213ffb473d7bb8ed37fe0377b0f3a04f29c0540e190303291db9d4f585220a96f96c8c4fe25e3ae796975a1c612c839a5b5d0568560c8b5983335b66039c68688ad6f14bd63babf251b99e95f0f883bf57d7ec35205eb44173369b3274c53f3e0f5acb7d17d94a295aa2fa6ff07a6f55f0a6c8b804d70caf76ced10c243186a6b3f0c36021b7e34b74539574a84ddc073ed40603ecf752e552f0b2c97e4702e8df6addfb06a05e8ee085377d282d53af20078cecf149b27491b9ad1a024aa0e85e45f438dd14ce7be669c631666ff5e86a5c45ac556d3341786589bddefb215e1807f1c21e56b56477785fa499ff08180436c8a17c2eaf5f15e3a0ac669742b1145d8e02426927</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">桥边红药</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/liao-ge.html">http://example.com/post/liao-ge.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">桥边红药的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%94%9F%E6%B4%BB/">生活</a><a class="post-meta__tags" href="/tags/%E6%97%A5%E8%AE%B0/">日记</a></div><div class="post_share"><div class="social-share" data-image="https://img.promefire.top/blog-img/20240417-f8641be9d0cd758ea569b9573433fe27.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/tong-nian.html" title="回不去的童年/(ㄒoㄒ)/~~"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240417-0611f1bdb718ae860839ba2d9bc10960.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">回不去的童年/(ㄒoㄒ)/~~</div></div></a></div><div class="next-post pull-right"><a href="/post/shi-yan-shi-fu-wu-qi-an-zhuang-pytorch-gpu.html" title="实验室服务器安装pytorch-gpu"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240110-e8ae7c031c2726aa6dd30afe5aa11e67.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">实验室服务器安装pytorch-gpu</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">桥边红药</div><div class="author-info__description">我的技术与生活</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">27</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/promefire"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/promefire" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class" style="display:none"></div></div></div></div></main><footer id="footer" style="background-image: url('https://img.promefire.top/blog-img/20240417-f8641be9d0cd758ea569b9573433fe27.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 桥边红药</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div id="runtime"></div> <div id = "ICP"><a  target="_blank" rel="noopener" href="https://beian.miit.gov.cn"><img  class="icp-icon"  src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.promefire.top/blog-img/20240411-dd5e1b977da05d208a65fbfeb2c8249e.png"><span>冀ICP备2024069835号</span></a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'promefire/myBlogComment',
+      'data-repo-id': 'R_kgDOJnPF5g',
+      'data-category-id': 'DIC_kwDOJnPF5s4CbscM',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },{"mapping":"title"})
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script></div><script>(() => {
+  window.Prism = window.Prism || {}
+  window.Prism.manual = true
+
+  const highlightAll = () => {
+    window.Prism.highlightAll()
+  }
+
+  window.addEventListener('load', highlightAll)
+  btf.addGlobalFn('pjaxComplete', highlightAll, 'prismjs')
+  btf.addGlobalFn('encrypt', highlightAll, 'prismjs')
+})()
+</script><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script><script src="/js/runtime.js"> </script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script></div></body></html>
